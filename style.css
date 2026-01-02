@@ -571,25 +571,27 @@ section h2::after {
 
 .portfolio-info {
     position: absolute;
-    bottom: -55%;
+    bottom: 0;
     left: 0;
     right: 0;
-    padding: 2rem 3rem;
+    padding: 0;
     background: linear-gradient(to top,
         rgba(42, 42, 42, 0.75) 0%,
         rgba(42, 42, 42, 0.5) 20%,
         transparent 20%);
     color: var(--white);
     z-index: 10;
-    transition: bottom 0.6s cubic-bezier(0.4, 0, 0.2, 1), background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 20%;
+    transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1), background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-card:hover .portfolio-info {
-    bottom: 0;
+    height: 100%;
     background: linear-gradient(to top,
         rgba(42, 42, 42, 0.95) 0%,
         rgba(42, 42, 42, 0.85) 50%,
         transparent 100%);
+    padding: 3.5rem 3rem;
 }
 
 .portfolio-category {
@@ -617,10 +619,22 @@ section h2::after {
     font-size: 2rem;
     font-weight: 300;
     letter-spacing: 2px;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.5rem;
     color: var(--white);
     text-transform: uppercase;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    bottom: 1.5rem;
+    left: 3rem;
+    right: 3rem;
+}
+
+.portfolio-card:hover .portfolio-title {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin-bottom: 1.2rem;
 }
 
 .portfolio-description {
@@ -1117,21 +1131,33 @@ footer {
     }
 
     .portfolio-info {
-        padding: 2.5rem 2rem;
-        bottom: -55%;
+        padding: 0;
+        bottom: 0;
+        height: 20%;
     }
 
     .portfolio-card:hover .portfolio-info {
-        bottom: 0;
+        height: 100%;
         background: linear-gradient(to top,
             rgba(42, 42, 42, 0.95) 0%,
             rgba(42, 42, 42, 0.85) 50%,
             transparent 100%);
+        padding: 2.5rem 2rem;
     }
 
     .portfolio-title {
         font-size: 1.5rem;
         letter-spacing: 1.5px;
+        bottom: 1rem;
+        left: 2rem;
+        right: 2rem;
+    }
+
+    .portfolio-card:hover .portfolio-title {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
     }
 
     .portfolio-description {
