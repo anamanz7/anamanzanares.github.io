@@ -15,19 +15,22 @@ Repositorio profesional para mantener y gestionar:
 
 ```
 my-life/
-├── index.html              # GitHub Pages - Página principal del portfolio
-├── style.css               # Estilos del sitio web
-├── README.md               # Descripción del repositorio
-├── auto-commit.sh          # Script de auto-commit y push
-├── PORTFOLIO/              # Directorio con proyectos y documentos
+├── index.html                # GitHub Pages - Página principal del portfolio
+├── style.css                 # Estilos del sitio web
+├── README.md                 # Descripción del repositorio
+├── auto-commit.sh            # Script manual de commit/push
+├── auto-commit-daemon.sh     # Daemon para commits automáticos
+├── manage-autocommit.sh      # Script de gestión del servicio
+├── .auto-commit.log          # Log de actividad automática
+├── PORTFOLIO/                # Directorio con proyectos y documentos
 │   ├── BOM PROJECT.pdf
 │   ├── CURRICULUM ANA.pdf
 │   ├── MAS CREATION RED.pdf
-│   ├── optimize_*.sh       # Scripts de optimización de PDFs
-│   ├── optimize_images.sh  # Script de optimización de imágenes
-│   └── optimized/          # Directorio para archivos optimizados
-├── .claude/                # Configuración de Claude Code
-└── .git/hooks/pre-push     # Hook automático para commits antes de push
+│   ├── optimize_*.sh         # Scripts de optimización de PDFs
+│   ├── optimize_images.sh    # Script de optimización de imágenes
+│   └── optimized/            # Directorio para archivos optimizados
+├── .claude/                  # Configuración de Claude Code
+└── .git/hooks/pre-push       # Hook automático para commits antes de push
 ```
 
 ## 🛠️ Tecnologías y Herramientas
@@ -70,32 +73,42 @@ my-life/
 
 ## 🔄 Flujos de Trabajo Comunes
 
-### 🤖 Auto-Commit (NUEVO)
-El repositorio incluye un sistema de automatización de commits:
+### 🤖 Auto-Commit AUTOMÁTICO (NUEVO)
+El repositorio tiene un sistema **completamente automático** de commits cada 10 minutos:
 
-**Script Manual** - `./auto-commit.sh`
+**🎯 Sistema Principal: Servicio Automático Launchd**
+- ✅ **Activo 24/7** - Hace commits automáticamente cada 10 minutos
+- ✅ **Cero intervención** - Solo edita archivos y el resto es automático
+- ✅ **Auto-push** - Publica a GitHub Pages automáticamente
+- ✅ **Logs detallados** - Registra toda la actividad
+
+**Gestión del Servicio** - `./manage-autocommit.sh`
 ```bash
-# Commit automático con mensaje personalizado
+./manage-autocommit.sh status   # Ver estado del servicio
+./manage-autocommit.sh logs     # Ver actividad reciente
+./manage-autocommit.sh now      # Ejecutar commit inmediato
+./manage-autocommit.sh stop     # Pausar servicio
+./manage-autocommit.sh start    # Reactivar servicio
+```
+
+**Script Manual (Opcional)** - `./auto-commit.sh`
+```bash
+# Para commits inmediatos sin esperar los 10 minutos
 ./auto-commit.sh "Tu mensaje aquí"
-
-# Commit automático con mensaje generado
-./auto-commit.sh
-
-# El script te preguntará si quieres hacer push a GitHub
 ```
 
 **Git Hook Pre-Push** - `.git/hooks/pre-push`
-- Se ejecuta automáticamente antes de cada `git push`
-- Detecta cambios sin commitear (modificados, nuevos, eliminados)
-- Crea un commit automático si hay cambios pendientes
-- Permite que el push continúe normalmente
+- Red de seguridad adicional si haces `git push` manual
+- Detecta cambios olvidados y los commitea automáticamente
 
-**Características:**
+**Características del Sistema:**
+- ✅ 100% automático - commits cada 10 minutos
+- ✅ Se inicia automáticamente al iniciar sesión en macOS
 - ✅ Detecta archivos modificados, nuevos y eliminados
 - ✅ Genera mensajes de commit descriptivos
-- ✅ Incluye colores en la salida para mejor legibilidad
-- ✅ Pregunta confirmación antes de hacer push (en script manual)
-- ✅ Hook automático asegura que no se olviden cambios
+- ✅ Push automático a GitHub
+- ✅ Logs detallados de toda la actividad
+- ✅ Gestión fácil con comandos simples
 
 ### Optimización de PDFs
 Los scripts en PORTFOLIO/ permiten optimizar PDFs de diferentes maneras:
@@ -113,14 +126,16 @@ Los scripts en PORTFOLIO/ permiten optimizar PDFs de diferentes maneras:
 1. Agregar nuevos PDFs a PORTFOLIO/
 2. Optimizar si es necesario con los scripts disponibles
 3. Actualizar index.html con referencias a nuevos proyectos
-4. Usar `./auto-commit.sh` para commit y push automático
-5. GitHub Pages se actualiza automáticamente
+4. **¡Listo!** El sistema hace commit y push automáticamente en max. 10 minutos
+5. (Opcional) Usa `./manage-autocommit.sh now` para publicar inmediatamente
+6. GitHub Pages se actualiza automáticamente
 
 ### Git Workflow
 - Branch principal: `main`
-- Commits descriptivos en español
-- Push a GitHub actualiza automáticamente GitHub Pages
-- **NUEVO**: Hook pre-push hace commit automático de cambios pendientes
+- **AUTOMÁTICO**: Commits cada 10 minutos sin intervención manual
+- Push automático a GitHub actualiza GitHub Pages
+- Logs disponibles en `.auto-commit.log`
+- Control del servicio con `./manage-autocommit.sh`
 
 ## 🎯 Comandos Útiles
 
@@ -141,21 +156,33 @@ cd PORTFOLIO && ./optimize_pdfs.sh
 cd PORTFOLIO && ./optimize_images.sh
 ```
 
-### Git
+### Auto-Commit (Sistema Automático)
 ```bash
-# Ver estado
-git status
+# Ver estado del servicio automático
+./manage-autocommit.sh status
 
-# Método RECOMENDADO: Auto-commit y push
+# Ver logs de actividad
+./manage-autocommit.sh logs
+
+# Ejecutar commit/push inmediato (sin esperar 10 min)
+./manage-autocommit.sh now
+
+# Pausar/reactivar el servicio
+./manage-autocommit.sh stop
+./manage-autocommit.sh start
+
+# Método manual tradicional (opcional)
 ./auto-commit.sh "Descripción del cambio"
+```
 
-# Método tradicional: Commit manual
+### Git (Comandos tradicionales - Ya no necesarios)
+```bash
+# El sistema automático hace esto por ti cada 10 minutos:
 git add .
-git commit -m "Descripción del cambio"
-
-# Publicar a GitHub Pages
+git commit -m "mensaje"
 git push origin main
-# (El hook pre-push hará commit automático si hay cambios pendientes)
+
+# Pero si quieres hacerlo manualmente, sigue funcionando
 ```
 
 ## 🚫 Archivos a Ignorar

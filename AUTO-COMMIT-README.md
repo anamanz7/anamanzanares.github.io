@@ -1,6 +1,8 @@
-# 🤖 Sistema de Auto-Commit
+# 🤖 Sistema de Auto-Commit AUTOMÁTICO
 
-Sistema de automatización para commits y deployment del portfolio.
+Sistema de automatización **completamente automática** para commits y deployment del portfolio.
+
+⚡ **NUEVO**: Ahora con servicio automático que hace commits cada 10 minutos sin intervención manual.
 
 ## 📦 Componentes
 
@@ -52,9 +54,49 @@ y
 ════════════════════════════════════════
 ```
 
-### 2. Git Hook: `.git/hooks/pre-push`
+### 2. 🤖 Servicio Automático: `auto-commit-daemon.sh` + Launchd (PRINCIPAL)
 
-Hook que se ejecuta automáticamente **antes** de cada `git push`.
+**Este es el sistema principal** - Servicio de macOS que ejecuta commits automáticos cada 10 minutos.
+
+#### Funcionamiento:
+1. Launchd ejecuta el daemon cada 10 minutos automáticamente
+2. El daemon verifica si hay cambios en el repositorio
+3. Si hay cambios, crea un commit con mensaje descriptivo
+4. Hace push automático a GitHub
+5. Registra toda la actividad en logs
+
+#### Características:
+- ✅ **100% automático** - No requiere intervención manual
+- ✅ Se ejecuta en background cada 10 minutos
+- ✅ Se inicia automáticamente al iniciar sesión en macOS
+- ✅ Genera logs detallados de toda la actividad
+- ✅ Gestión fácil con script de control
+
+#### Script de Gestión: `manage-autocommit.sh`
+
+```bash
+# Ver estado del servicio
+./manage-autocommit.sh status
+
+# Iniciar el servicio
+./manage-autocommit.sh start
+
+# Detener el servicio
+./manage-autocommit.sh stop
+
+# Reiniciar el servicio
+./manage-autocommit.sh restart
+
+# Ver logs de actividad
+./manage-autocommit.sh logs
+
+# Ejecutar commit inmediatamente (sin esperar 10 min)
+./manage-autocommit.sh now
+```
+
+### 3. Git Hook: `.git/hooks/pre-push`
+
+Hook que se ejecuta automáticamente **antes** de cada `git push` manual.
 
 #### Funcionamiento:
 1. Se activa al ejecutar `git push`
@@ -83,29 +125,45 @@ $ git push origin main
 
 ## 🎯 ¿Cuándo usar cada uno?
 
-### Usa `auto-commit.sh` cuando:
-- Quieras tener control sobre el mensaje de commit
-- Necesites revisar los cambios antes de publicar
-- Prefieras confirmar antes de hacer push
-- Estés haciendo cambios importantes que requieren descripción detallada
+### 🤖 Servicio Automático (RECOMENDADO - Ya activo por defecto):
+- **Se ejecuta solo** cada 10 minutos
+- Detecta y commitea cambios automáticamente
+- No requiere hacer nada, solo edita tus archivos
+- Perfecto para flujo de trabajo continuo
+- Usa `./manage-autocommit.sh status` para verificar que esté activo
 
-### El hook `pre-push` se usa automáticamente:
-- Cada vez que hagas `git push`
+### Usa `auto-commit.sh` cuando:
+- Quieras hacer commit/push inmediato (sin esperar 10 min)
+- Necesites un mensaje de commit personalizado
+- Prefieras tener control manual sobre cuándo se publica
+
+### El hook `pre-push` funciona automáticamente:
+- Como respaldo si haces `git push` manual
 - Para capturar cambios que olvidaste commitear
-- Como red de seguridad para no perder cambios
-- Sin necesidad de ejecutar nada manualmente
+- Red de seguridad adicional
 
 ## 🔧 Instalación
 
-El sistema ya está instalado y configurado. Los archivos son:
+El sistema ya está **completamente instalado y activo**. Los componentes son:
 
 ```
 my-life/
-├── auto-commit.sh              # Script manual (ejecutable)
-└── .git/hooks/pre-push         # Hook automático (ejecutable)
+├── auto-commit.sh                    # Script manual (ejecutable)
+├── auto-commit-daemon.sh             # Daemon automático (ejecutable)
+├── manage-autocommit.sh              # Script de gestión (ejecutable)
+├── .auto-commit.log                  # Log de actividad
+├── .git/hooks/pre-push               # Hook automático (ejecutable)
+└── ~/Library/LaunchAgents/           # Servicio de macOS
+    └── com.anamanzanares.portfolio.autocommit.plist
 ```
 
-Ambos tienen permisos de ejecución (+x) configurados.
+### ✅ Estado Actual
+
+El servicio automático ya está **ACTIVO** y funcionando en background. Verifica con:
+
+```bash
+./manage-autocommit.sh status
+```
 
 ## ⚙️ Configuración
 
@@ -139,22 +197,26 @@ Puedes editar los archivos para personalizar los mensajes:
 
 ## 🚀 Workflow Recomendado
 
-### Flujo Normal de Trabajo:
+### ✨ Flujo AUTOMÁTICO (Recomendado):
 
 ```bash
-# 1. Hacer cambios en archivos
-# 2. Usar el script de auto-commit
-./auto-commit.sh "Descripción de tus cambios"
-# 3. ¡Listo! GitHub Pages se actualiza automáticamente
+# 1. Edita tus archivos normalmente (HTML, CSS, PDFs, etc.)
+# 2. ¡Eso es todo! El sistema hace commit y push automáticamente cada 10 minutos
+# 3. GitHub Pages se actualiza solo
+
+# Opcional: Ver logs de actividad
+./manage-autocommit.sh logs
 ```
 
-### Flujo Alternativo (Git tradicional):
+### ⚡ Flujo Manual (Para commits inmediatos):
 
 ```bash
 # 1. Hacer cambios en archivos
-# 2. Hacer push directamente
-git push origin main
-# 3. El hook pre-push hará commit automático si hay cambios
+# 2. Ejecutar commit/push inmediato
+./auto-commit.sh "Descripción de tus cambios"
+# o sin esperar:
+./manage-autocommit.sh now
+# 3. ¡Listo! Se publica inmediatamente
 ```
 
 ## 📝 Ejemplos de Mensajes de Commit
