@@ -382,3 +382,44 @@ To https://github.com/anamanz7/my-life.git
 [2026-01-02 20:28:06] === Verificación completada ===
 [2026-01-02 20:38:06] === Iniciando verificación automática ===
 [2026-01-02 20:38:06] Cambios detectados, creando commit...
+[main 6ae8116] Auto-commit: 1 modificado(s), 2 nuevo(s), 1 eliminado(s)
+ Committer: Ana Manzanares <anamanzanares@MacBook-Pro-de-Ana.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 25 files changed, 426 insertions(+), 77 deletions(-)
+ create mode 100644 PORTFOLIO/bom_planos/01_portada.jpg
+ create mode 100644 PORTFOLIO/bom_planos/07_alzado_proyectado.jpg
+ create mode 100644 PORTFOLIO/bom_planos/08_planta_proyectada.jpg
+ create mode 100644 PORTFOLIO/bom_planos/09_secciones_longitudinales.jpg
+ create mode 100644 PORTFOLIO/bom_planos/10_seccion_transversal.jpg
+ create mode 100644 PORTFOLIO/bom_planos/11_planta_mobiliario.jpg
+ create mode 100644 PORTFOLIO/bom_planos/12_secciones_mobiliario_A_C.jpg
+ create mode 100644 PORTFOLIO/bom_planos/13_seccion_mobiliario_B.jpg
+ create mode 100644 PORTFOLIO/bom_planos/18_detalle_taller.jpg
+ create mode 100644 PORTFOLIO/bom_planos/19_detalle_constructivo.jpg
+ create mode 100644 PORTFOLIO/bom_planos/20_planta_mobiliario_color.jpg
+ create mode 100644 PORTFOLIO/bom_planos/23_pavimentos.jpg
+ create mode 100644 PORTFOLIO/bom_planos/27_planta_mobiliario_equipamiento.jpg
+ create mode 100644 PORTFOLIO/bom_planos/28_planta_iluminaria.jpg
+ create mode 100644 PORTFOLIO/bom_planos/README.md
+ create mode 100644 PORTFOLIO/bom_planos/galeria.html
+ create mode 100644 PORTFOLIO/bom_planos/render_01.jpg
+ create mode 100644 PORTFOLIO/bom_planos/render_02.jpg
+ create mode 100644 PORTFOLIO/bom_planos/render_03.jpg
+ create mode 100644 PORTFOLIO/bom_planos/render_04.jpg
+ create mode 100644 PORTFOLIO/bom_planos/render_05.jpg
+ create mode 100644 PORTFOLIO/bom_planos/render_06.jpg
+ create mode 100755 PORTFOLIO/convert_bom_pdf.py
+ delete mode 100755 PORTFOLIO/convert_pdf_to_images.sh
+[2026-01-02 20:38:06] ✅ Commit creado exitosamente
+[1;33m🔍 Verificando cambios pendientes...[0m
+[1;33m📝 Cambios detectados. Creando commit automático...[0m
