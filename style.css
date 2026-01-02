@@ -574,11 +574,11 @@ section h2::after {
     bottom: -55%;
     left: 0;
     right: 0;
-    padding: 3.5rem 3rem;
+    padding: 2rem 3rem;
     background: linear-gradient(to top,
-        rgba(42, 42, 42, 0.2) 0%,
-        rgba(42, 42, 42, 0.15) 30%,
-        transparent 100%);
+        rgba(42, 42, 42, 0.75) 0%,
+        rgba(42, 42, 42, 0.5) 20%,
+        transparent 20%);
     color: var(--white);
     z-index: 10;
     transition: bottom 0.6s cubic-bezier(0.4, 0, 0.2, 1), background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
