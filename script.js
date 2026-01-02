@@ -515,22 +515,50 @@ function openProject(event, projectId) {
         project.planos.forEach((image, index) => {
             const imageItem = document.createElement('div');
             imageItem.className = 'project-image-item';
+
+            // Si es PDF, mostrar con un ícono especial
+            const isPDF = image.src.toLowerCase().endsWith('.pdf');
+            const thumbnailHTML = isPDF
+                ? `<div class="pdf-thumbnail" data-index="${index}" data-type="planos" data-pdf="${image.src}">
+                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                       <polyline points="14 2 14 8 20 8"></polyline>
+                       <text x="12" y="16" text-anchor="middle" fill="currentColor" font-size="6" font-weight="600">PDF</text>
+                     </svg>
+                     <span class="pdf-label">Ver plano técnico</span>
+                   </div>`
+                : `<img src="${image.src}" alt="${image.caption}" loading="lazy" class="project-thumbnail" data-index="${index}" data-type="planos">`;
+
             imageItem.innerHTML = `
-                <img src="${image.src}" alt="${image.caption}" loading="lazy" class="project-thumbnail" data-index="${index}" data-type="planos">
+                ${thumbnailHTML}
                 <p class="project-image-caption">${image.caption}</p>
             `;
             projectPlanosGrid.appendChild(imageItem);
         });
     }
 
-    // Añadir event listeners para abrir lightbox
-    const allThumbnails = document.querySelectorAll('.project-thumbnail');
+    // Añadir event listeners para abrir lightbox o PDF
+    const allThumbnails = document.querySelectorAll('.project-thumbnail, .pdf-thumbnail');
     allThumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('click', function() {
+            // Si tiene atributo data-pdf, abrir el PDF directamente
+            if (this.dataset.pdf) {
+                window.open(this.dataset.pdf, '_blank');
+                return;
+            }
+
             const index = parseInt(this.dataset.index);
             const type = this.dataset.type;
             const images = type === 'renderizados' ? project.renderizados : project.planos;
-            openLightbox(images, index);
+            const item = images[index];
+
+            // Si es un PDF, abrirlo en nueva pestaña
+            if (item.src.toLowerCase().endsWith('.pdf')) {
+                window.open(item.src, '_blank');
+            } else {
+                // Si es imagen, abrir en lightbox
+                openLightbox(images, index);
+            }
         });
         thumbnail.style.cursor = 'pointer';
     });

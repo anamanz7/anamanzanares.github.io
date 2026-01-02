@@ -571,16 +571,25 @@ section h2::after {
 
 .portfolio-info {
     position: absolute;
-    bottom: 0;
+    bottom: -55%;
     left: 0;
     right: 0;
     padding: 3.5rem 3rem;
     background: linear-gradient(to top,
-        rgba(42, 42, 42, 0.95) 0%,
-        rgba(42, 42, 42, 0.85) 50%,
+        rgba(42, 42, 42, 0.2) 0%,
+        rgba(42, 42, 42, 0.15) 30%,
         transparent 100%);
     color: var(--white);
     z-index: 10;
+    transition: bottom 0.6s cubic-bezier(0.4, 0, 0.2, 1), background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-card:hover .portfolio-info {
+    bottom: 0;
+    background: linear-gradient(to top,
+        rgba(42, 42, 42, 0.95) 0%,
+        rgba(42, 42, 42, 0.85) 50%,
+        transparent 100%);
 }
 
 .portfolio-category {
@@ -611,7 +620,7 @@ section h2::after {
     margin-bottom: 1.2rem;
     color: var(--white);
     text-transform: uppercase;
-    transition: color 0.3s ease;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-description {
@@ -1109,6 +1118,11 @@ footer {
 
     .portfolio-info {
         padding: 2.5rem 2rem;
+        bottom: -40%;
+    }
+
+    .portfolio-card:hover .portfolio-info {
+        bottom: 0;
     }
 
     .portfolio-title {
@@ -1636,6 +1650,41 @@ footer {
 .project-thumbnail:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* PDF Thumbnails */
+.pdf-thumbnail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--light-beige) 0%, var(--cream) 100%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--beige-accent);
+}
+
+.pdf-thumbnail:hover {
+    background: linear-gradient(135deg, var(--beige-accent) 0%, var(--light-beige) 100%);
+    border-color: var(--sand);
+    transform: scale(1.02);
+}
+
+.pdf-thumbnail svg {
+    width: 60px;
+    height: 60px;
+    color: var(--dark-mauve);
+    margin-bottom: 8px;
+}
+
+.pdf-thumbnail .pdf-label {
+    font-size: 0.75rem;
+    color: var(--soft-gray);
+    text-align: center;
+    font-weight: 500;
+    margin-top: 4px;
 }
 
 /* Responsive Lightbox */
