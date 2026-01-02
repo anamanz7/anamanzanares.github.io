@@ -12,3 +12,4 @@ Este repositorio está organizado para mantener toda mi información profesional
 - CV/Curriculum
 - Proyectos
 - Documentación personal
+- Others

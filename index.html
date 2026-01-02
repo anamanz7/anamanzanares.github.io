@@ -7,9 +7,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.0.1">
 </head>
 <body>
+    <!-- SVG Definitions for Metallic Gradients -->
+    <svg style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <linearGradient id="metallic-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#8b7074;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#c9a9a1;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#c4a9a0;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
     <header>
         <nav>
             <!-- Botón Hamburguesa (izquierda) -->
@@ -37,53 +48,83 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h2>Creatividad & Pasión</h2>
-                <p>Profesional creativa dedicada al diseño, la innovación y la excelencia en cada proyecto</p>
+                <h2>Diseñadora de Interiores</h2>
+                <p>Marbella, España</p>
             </div>
         </section>
 
         <section id="about">
             <div class="container">
                 <h2>Sobre mí</h2>
-                <p>Profesional dedicada con experiencia en gestión de proyectos y diseño creativo.</p>
+                <p>Trabajo en diseño de interiores desde 2022, especializándome en proyectos residenciales de alto nivel en la Costa del Sol. Gestiono proyectos completos desde el concepto inicial hasta la entrega final, coordinando equipos y trabajando directamente con clientes de diferentes culturas.</p>
+                <p>Me gradué en Estudios Superiores de Diseño de Interiores en la Escuela de Artes de Almería. Actualmente formo parte del equipo de Decor Studio en El Corte Inglés Puerto Banús, donde coordino una media de 30 proyectos al año.</p>
             </div>
         </section>
 
         <section id="portfolio">
             <div class="container">
                 <h2>Portfolio</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <h3>BOM Project</h3>
-                        <p>Proyecto de gestión y organización</p>
-                        <a href="PORTFOLIO/BOM PROJECT.pdf" target="_blank" class="btn">Ver Proyecto</a>
-                    </div>
-                    <div class="portfolio-item">
-                        <h3>MAS Creation Red</h3>
-                        <p>Proyecto creativo de desarrollo</p>
-                        <a href="PORTFOLIO/MAS CREATION RED.pdf" target="_blank" class="btn">Ver Proyecto</a>
-                    </div>
-                    <div class="portfolio-item">
-                        <h3>Portfolio Interactivo</h3>
-                        <p>Colección completa de trabajos</p>
-                        <a href="PORTFOLIO/PORTFOLIO INTERACTIVO.pdf" target="_blank" class="btn">Ver Portfolio</a>
-                    </div>
+                <div class="portfolio-grid-irregular">
+                    <article class="portfolio-card" data-category="interiorismo">
+                        <a href="PORTFOLIO/BOM PROJECT.pdf" target="_blank" class="portfolio-link">
+                            <div class="portfolio-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=1000&fit=crop" alt="BOM Project" class="portfolio-image">
+                                <div class="portfolio-overlay"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <span class="portfolio-category">Gestión de Proyectos</span>
+                                <h3 class="portfolio-title">BOM Project</h3>
+                                <p class="portfolio-description">Gestión de proveedores y materiales para proyectos de interiorismo. Coordinación de equipos y control de presupuestos.</p>
+                                <span class="portfolio-year">2024</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="portfolio-card" data-category="diseño">
+                        <a href="PORTFOLIO/MAS CREATION RED.pdf" target="_blank" class="portfolio-link">
+                            <div class="portfolio-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=1000&fit=crop" alt="MAS Creation Red" class="portfolio-image">
+                                <div class="portfolio-overlay"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <span class="portfolio-category">Identidad Visual</span>
+                                <h3 class="portfolio-title">MAS Creation Red</h3>
+                                <p class="portfolio-description">Desarrollo de identidad visual y diseño de espacios comerciales. Trabajo con cliente desde concepto hasta implementación.</p>
+                                <span class="portfolio-year">2023</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="portfolio-card portfolio-card-wide" data-category="portfolio">
+                        <a href="PORTFOLIO/PORTFOLIO INTERACTIVO.pdf" target="_blank" class="portfolio-link">
+                            <div class="portfolio-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&h=1000&fit=crop" alt="Portfolio Interactivo" class="portfolio-image">
+                                <div class="portfolio-overlay"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <span class="portfolio-category">Colección</span>
+                                <h3 class="portfolio-title">Portfolio Interactivo</h3>
+                                <p class="portfolio-description">Selección de proyectos residenciales y comerciales realizados entre 2020-2024. Incluye renders, planos y fotografías de obra finalizada.</p>
+                                <span class="portfolio-year">2020-2024</span>
+                            </div>
+                        </a>
+                    </article>
                 </div>
             </div>
         </section>
 
         <section id="cv">
             <div class="container">
-                <h2>Curriculum Vitae</h2>
-                <p>Descarga mi CV completo para conocer más sobre mi experiencia y formación.</p>
-                <a href="PORTFOLIO/CURRICULUM ANA .pdf" target="_blank" class="btn btn-primary">Descargar CV</a>
+                <h2>Curriculum</h2>
+                <p>Experiencia profesional, formación académica y herramientas de trabajo.</p>
+                <a href="cv.html" class="btn btn-primary">Ver CV Completo</a>
             </div>
         </section>
 
         <section id="contact">
             <div class="container">
                 <h2>Contacto</h2>
-                <p>Interesado en colaborar? No dudes en contactarme.</p>
+                <p>Si quieres hablar sobre un proyecto o simplemente conectar, estaré encantada de escucharte.</p>
             </div>
         </section>
     </main>
@@ -92,6 +133,6 @@
         <p>&copy; 2026 Ana Manzanares. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=1.0.1"></script>
 </body>
 </html>
