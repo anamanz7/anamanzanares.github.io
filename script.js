@@ -498,25 +498,42 @@ const projectsData = {
         ]
     },
     'residencial': {
-        title: 'Villa - Proyecto Residencial',
+        title: 'Casa Mijas - Proyecto Residencial',
         year: '2024',
         category: 'Interiorismo Residencial',
-        heroImage: 'PORTFOLIO/RESIDENCIAL/renders/imagen-portada.jpg',
+        heroImage: 'PORTFOLIO/ECI/mijas/salon.png',
         description: `
-            <p>Diseño de interiores para villa de alto standing en la Costa del Sol. El proyecto combina elegancia contemporánea con el carácter cálido del estilo mediterráneo, creando espacios que fusionan funcionalidad y sofisticación.</p>
+            <p>Diseño de interiores para vivienda residencial en Mijas, Costa del Sol. El proyecto combina elegancia contemporánea con el carácter cálido del estilo mediterráneo, creando espacios que fusionan funcionalidad y sofisticación.</p>
             <p>El concepto se desarrolla entorno a la luz natural, materiales nobles y paletas neutras que dialogan con el entorno. Cada espacio ha sido cuidadosamente diseñado para ofrecer confort y distinción, manteniendo coherencia visual en toda la vivienda.</p>
-            <p>El proyecto incluye documentación técnica completa: renders fotorrealistas de los espacios principales, planos de distribución, detalles constructivos y especificaciones de acabados que muestran la propuesta integral de interiorismo.</p>
+            <p>El proyecto incluye visualizaciones fotorrealistas de los espacios principales: salón, comedor, dormitorios y entrada, mostrando la propuesta integral de interiorismo con acabados de alto nivel y diseño contemporáneo mediterráneo.</p>
         `,
         renderizados: [
             {
-                src: 'PORTFOLIO/RESIDENCIAL/renders/imagen-portada.jpg',
-                caption: 'Vista principal - Espacio de día'
+                src: 'PORTFOLIO/ECI/mijas/salon.png',
+                caption: 'Salón - Vista general con luz natural'
+            },
+            {
+                src: 'PORTFOLIO/ECI/mijas/comedor.png',
+                caption: 'Comedor - Espacio de reunión familiar'
+            },
+            {
+                src: 'PORTFOLIO/ECI/mijas/dormitorio-ppal.png',
+                caption: 'Dormitorio Principal - Suite con vestidor'
+            },
+            {
+                src: 'PORTFOLIO/ECI/mijas/dormitorio-2.png',
+                caption: 'Dormitorio Secundario - Diseño contemporáneo'
+            },
+            {
+                src: 'PORTFOLIO/ECI/mijas/dormitorio-3.jpeg',
+                caption: 'Dormitorio Infantil - Espacio acogedor'
+            },
+            {
+                src: 'PORTFOLIO/ECI/mijas/entrada.png',
+                caption: 'Entrada - Recibidor elegante'
             }
-            // Añadir más renders cuando subas las imágenes
         ],
-        planos: [
-            // Añadir planos cuando subas las imágenes
-        ]
+        planos: []
     }
 };
 

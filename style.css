@@ -576,9 +576,11 @@ section h2::after {
     right: 0;
     padding: 0;
     background: linear-gradient(to top,
-        rgba(42, 42, 42, 0.75) 0%,
-        rgba(42, 42, 42, 0.5) 20%,
+        rgba(42, 42, 42, 0.9) 0%,
+        rgba(42, 42, 42, 0.75) 20%,
         transparent 20%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     color: var(--white);
     z-index: 10;
     height: 20%;
@@ -589,8 +591,10 @@ section h2::after {
     height: 100%;
     background: linear-gradient(to top,
         rgba(42, 42, 42, 0.95) 0%,
-        rgba(42, 42, 42, 0.85) 50%,
+        rgba(42, 42, 42, 0.9) 50%,
         transparent 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 3.5rem 3rem;
 }
 
@@ -1140,8 +1144,10 @@ footer {
         height: 100%;
         background: linear-gradient(to top,
             rgba(42, 42, 42, 0.95) 0%,
-            rgba(42, 42, 42, 0.85) 50%,
+            rgba(42, 42, 42, 0.9) 50%,
             transparent 100%);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         padding: 2.5rem 2rem;
     }
 
