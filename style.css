@@ -113,7 +113,7 @@ header h1 {
     background-clip: text;
     text-shadow: 0 2px 10px rgba(201, 169, 161, 0.2), 0 0 20px rgba(255, 255, 255, 0.15);
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
-    transition: font-size 0.4s ease, background 0.4s ease, text-shadow 0.4s ease, filter 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 /* Header sobre fondo claro - nombre oscuro */
@@ -1255,8 +1255,12 @@ footer {
     }
 
     header h1 {
-        font-size: 0.95rem;
+        font-size: 1.5rem;
         letter-spacing: 2px;
+    }
+
+    header.scrolled h1 {
+        font-size: 0.95rem;
     }
 
     .mobile-menu {
