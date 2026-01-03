@@ -365,60 +365,28 @@ const projectsData = {
         ],
         planos: [
             {
-                src: 'PORTFOLIO/bom_planos/01_portada.jpg',
-                caption: 'Portada del Proyecto'
+                src: 'PORTFOLIO/BOM/planos/logo.jpg',
+                caption: 'Logo y Branding del Proyecto'
             },
             {
-                src: 'PORTFOLIO/bom_planos/07_alzado_proyectado.jpg',
-                caption: 'Alzado Proyectado Acotado'
+                src: 'PORTFOLIO/BOM/planos/plano-planta.jpg',
+                caption: 'Planta General - Distribución del Espacio'
             },
             {
-                src: 'PORTFOLIO/bom_planos/08_planta_proyectada.jpg',
-                caption: 'Planta Proyectada - Distribución y Superficies'
+                src: 'PORTFOLIO/BOM/planos/secciones.jpg',
+                caption: 'Secciones del Proyecto'
             },
             {
-                src: 'PORTFOLIO/bom_planos/09_secciones_longitudinales.jpg',
-                caption: 'Secciones Longitudinales A y C'
+                src: 'PORTFOLIO/BOM/planos/seccion-2.jpg',
+                caption: 'Sección Detallada'
             },
             {
-                src: 'PORTFOLIO/bom_planos/10_seccion_transversal.jpg',
-                caption: 'Sección Transversal B'
+                src: 'PORTFOLIO/BOM/planos/plano-técnico-mostrador.jpg',
+                caption: 'Detalle Técnico del Mostrador'
             },
             {
-                src: 'PORTFOLIO/bom_planos/11_planta_mobiliario.jpg',
-                caption: 'Planta con Mobiliario'
-            },
-            {
-                src: 'PORTFOLIO/bom_planos/12_secciones_mobiliario_A_C.jpg',
-                caption: 'Secciones con Mobiliario A y C'
-            },
-            {
-                src: 'PORTFOLIO/bom_planos/13_seccion_mobiliario_B.jpg',
-                caption: 'Sección con Mobiliario B (Color)'
-            },
-            {
-                src: 'PORTFOLIO/bom_planos/18_detalle_taller.jpg',
-                caption: 'Detalle Taller Mostrador'
-            },
-            {
-                src: 'PORTFOLIO/bom_planos/19_detalle_constructivo.jpg',
-                caption: 'Detalle Constructivo Falsos Techos'
-            },
-            {
-                src: 'PORTFOLIO/bom_planos/20_planta_mobiliario_color.jpg',
-                caption: 'Planta Mobiliario a Color'
-            },
-            {
-                src: 'PORTFOLIO/bom_planos/23_pavimentos.jpg',
-                caption: 'Plano de Pavimentos'
-            },
-            {
-                src: 'PORTFOLIO/bom_planos/27_planta_mobiliario_equipamiento.jpg',
-                caption: 'Planta Mobiliario y Equipamiento'
-            },
-            {
-                src: 'PORTFOLIO/bom_planos/28_planta_iluminaria.jpg',
-                caption: 'Planta de Iluminación'
+                src: 'PORTFOLIO/BOM/planos/bocetos.jpg',
+                caption: 'Bocetos Conceptuales'
             }
         ]
     },
@@ -501,7 +469,7 @@ const projectsData = {
         title: 'Casa Mijas - Proyecto Residencial',
         year: '2024',
         category: 'Interiorismo Residencial',
-        heroImage: 'PORTFOLIO/ECI/mijas/salon.png',
+        heroImage: 'PORTFOLIO/ECI/mijas/comedor.png',
         description: `
             <p>Diseño de interiores para vivienda residencial en Mijas, Costa del Sol. El proyecto combina elegancia contemporánea con el carácter cálido del estilo mediterráneo, creando espacios que fusionan funcionalidad y sofisticación.</p>
             <p>El concepto se desarrolla entorno a la luz natural, materiales nobles y paletas neutras que dialogan con el entorno. Cada espacio ha sido cuidadosamente diseñado para ofrecer confort y distinción, manteniendo coherencia visual en toda la vivienda.</p>
@@ -509,12 +477,16 @@ const projectsData = {
         `,
         renderizados: [
             {
-                src: 'PORTFOLIO/ECI/mijas/salon.png',
-                caption: 'Salón - Vista general con luz natural'
+                src: 'PORTFOLIO/ECI/mijas/entrada.png',
+                caption: 'Entrada - Recibidor elegante'
             },
             {
                 src: 'PORTFOLIO/ECI/mijas/comedor.png',
                 caption: 'Comedor - Espacio de reunión familiar'
+            },
+            {
+                src: 'PORTFOLIO/ECI/mijas/salon.png',
+                caption: 'Salón - Vista general con luz natural'
             },
             {
                 src: 'PORTFOLIO/ECI/mijas/dormitorio-ppal.png',
@@ -527,10 +499,6 @@ const projectsData = {
             {
                 src: 'PORTFOLIO/ECI/mijas/dormitorio-3.jpeg',
                 caption: 'Dormitorio Infantil - Espacio acogedor'
-            },
-            {
-                src: 'PORTFOLIO/ECI/mijas/entrada.png',
-                caption: 'Entrada - Recibidor elegante'
             }
         ],
         planos: []

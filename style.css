@@ -576,15 +576,15 @@ section h2::after {
     right: 0;
     padding: 0;
     background: linear-gradient(to top,
-        rgba(42, 42, 42, 0.98) 0%,
-        rgba(42, 42, 42, 0.92) 50%,
-        rgba(42, 42, 42, 0.6) 85%,
+        rgba(0, 0, 0, 0.90) 0%,
+        rgba(0, 0, 0, 0.75) 40%,
+        rgba(0, 0, 0, 0.30) 70%,
         transparent 100%);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     color: var(--white);
     z-index: 10;
-    height: 35%;
+    height: 25%;
     transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1), background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -621,18 +621,18 @@ section h2::after {
 }
 
 .portfolio-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 400;
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 0.3rem;
     color: var(--white);
     text-transform: uppercase;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     position: absolute;
-    bottom: 2rem;
-    left: 3rem;
-    right: 3rem;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8), 0 4px 40px rgba(0, 0, 0, 0.6);
+    bottom: 2.8rem;
+    left: 2.5rem;
+    right: 2.5rem;
+    text-shadow: 0 3px 25px rgba(0, 0, 0, 0.9), 0 1px 8px rgba(0, 0, 0, 0.8);
     line-height: 1.3;
 }
 
@@ -642,6 +642,12 @@ section h2::after {
     left: auto;
     right: auto;
     margin-bottom: 1.2rem;
+}
+
+.portfolio-card:hover .portfolio-year {
+    position: relative;
+    bottom: auto;
+    left: auto;
 }
 
 .portfolio-description {
@@ -662,9 +668,13 @@ section h2::after {
 
 .portfolio-year {
     font-size: 0.9rem;
-    color: var(--metallic-rose);
+    color: rgba(255, 255, 255, 0.7);
     font-weight: 400;
     letter-spacing: 1.5px;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 2.5rem;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Animaciones de entrada */
