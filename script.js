@@ -4,6 +4,47 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // ======================
+    // INICIALIZAR SISTEMA DE IDIOMAS
+    // ======================
+    // Cargar idioma preferido del localStorage o usar español por defecto
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'es';
+    currentLanguage = savedLanguage;
+
+    // Aplicar idioma guardado al cargar la página
+    if (savedLanguage !== 'es') {
+        switchLanguage(savedLanguage);
+    } else {
+        updateLanguageButton('es');
+    }
+
+    // Event listener para el botón de cambio de idioma
+    const languageToggle = document.getElementById('language-toggle');
+    if (languageToggle) {
+        languageToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Alternar entre español e inglés
+            const newLang = currentLanguage === 'es' ? 'en' : 'es';
+            switchLanguage(newLang);
+        });
+    }
+
+    // Event listeners para las opciones de idioma individuales
+    const langOptions = document.querySelectorAll('.lang-option');
+    langOptions.forEach(option => {
+        option.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const selectedLang = this.dataset.lang;
+            if (selectedLang !== currentLanguage) {
+                switchLanguage(selectedLang);
+            }
+        });
+    });
+
+    // ======================
     // CARRUSEL DE IMÁGENES
     // ======================
     const slides = document.querySelectorAll('.carousel-slide');
@@ -845,43 +886,3 @@ function updateLanguageButton(lang) {
     });
 }
 
-// Inicializar el sistema de idiomas cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', function() {
-    // Cargar idioma preferido del localStorage o usar español por defecto
-    const savedLanguage = localStorage.getItem('preferredLanguage') || 'es';
-    currentLanguage = savedLanguage;
-
-    // Aplicar idioma guardado
-    if (savedLanguage !== 'es') {
-        switchLanguage(savedLanguage);
-    } else {
-        updateLanguageButton('es');
-    }
-
-    // Event listener para el botón de cambio de idioma
-    const languageToggle = document.getElementById('language-toggle');
-    if (languageToggle) {
-        languageToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            // Alternar entre español e inglés
-            const newLang = currentLanguage === 'es' ? 'en' : 'es';
-            switchLanguage(newLang);
-        });
-    }
-
-    // Event listeners para las opciones de idioma individuales
-    const langOptions = document.querySelectorAll('.lang-option');
-    langOptions.forEach(option => {
-        option.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const selectedLang = this.dataset.lang;
-            if (selectedLang !== currentLanguage) {
-                switchLanguage(selectedLang);
-            }
-        });
-    });
-});
