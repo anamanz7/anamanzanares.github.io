@@ -496,6 +496,27 @@ const projectsData = {
                 caption: 'Bocetos - Proceso creativo'
             }
         ]
+    },
+    'residencial': {
+        title: 'Villa - Proyecto Residencial',
+        year: '2024',
+        category: 'Interiorismo Residencial',
+        heroImage: 'PORTFOLIO/RESIDENCIAL/renders/imagen-portada.jpg',
+        description: `
+            <p>Diseño de interiores para villa de alto standing en la Costa del Sol. El proyecto combina elegancia contemporánea con el carácter cálido del estilo mediterráneo, creando espacios que fusionan funcionalidad y sofisticación.</p>
+            <p>El concepto se desarrolla entorno a la luz natural, materiales nobles y paletas neutras que dialogan con el entorno. Cada espacio ha sido cuidadosamente diseñado para ofrecer confort y distinción, manteniendo coherencia visual en toda la vivienda.</p>
+            <p>El proyecto incluye documentación técnica completa: renders fotorrealistas de los espacios principales, planos de distribución, detalles constructivos y especificaciones de acabados que muestran la propuesta integral de interiorismo.</p>
+        `,
+        renderizados: [
+            {
+                src: 'PORTFOLIO/RESIDENCIAL/renders/imagen-portada.jpg',
+                caption: 'Vista principal - Espacio de día'
+            }
+            // Añadir más renders cuando subas las imágenes
+        ],
+        planos: [
+            // Añadir planos cuando subas las imágenes
+        ]
     }
 };
 
