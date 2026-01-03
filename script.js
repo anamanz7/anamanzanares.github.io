@@ -347,14 +347,6 @@ const projectsData = {
         `,
         renderizados: [
             {
-                src: 'PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png',
-                caption: 'Vista escaparate - Perspectiva principal'
-            },
-            {
-                src: 'PORTFOLIO/BOM/imagenes/render-escaparate-2.png',
-                caption: 'Vista escaparate - Ambiente nocturno'
-            },
-            {
                 src: 'PORTFOLIO/BOM/imagenes/render-1.png',
                 caption: 'Interior - Vista general'
             },
@@ -363,28 +355,12 @@ const projectsData = {
                 caption: 'Interior - Detalle espacial'
             },
             {
-                src: 'PORTFOLIO/bom_planos/render_01.jpg',
-                caption: 'Render 3D - Zona de Degustación'
+                src: 'PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png',
+                caption: 'Vista escaparate - Perspectiva principal'
             },
             {
-                src: 'PORTFOLIO/bom_planos/render_02.jpg',
-                caption: 'Render 3D - Mostrador Central'
-            },
-            {
-                src: 'PORTFOLIO/bom_planos/render_03.jpg',
-                caption: 'Render 3D - Área de Asientos'
-            },
-            {
-                src: 'PORTFOLIO/bom_planos/render_04.jpg',
-                caption: 'Render 3D - Vista desde Espejo'
-            },
-            {
-                src: 'PORTFOLIO/bom_planos/render_05.jpg',
-                caption: 'Render 3D - Detalles Decorativos'
-            },
-            {
-                src: 'PORTFOLIO/bom_planos/render_06.jpg',
-                caption: 'Render 3D - Vista Exterior'
+                src: 'PORTFOLIO/BOM/imagenes/render-escaparate-2.png',
+                caption: 'Vista escaparate - Ambiente nocturno'
             }
         ],
         planos: [
