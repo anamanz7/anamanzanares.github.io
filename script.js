@@ -218,8 +218,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const headerTitle = document.querySelector('header h1');
     let lastScroll = 0;
 
-    window.addEventListener('scroll', function() {
+    // Función para detectar si el header está sobre un fondo claro
+    function updateHeaderStyle() {
         const currentScroll = window.pageYOffset;
+        const headerHeight = header.offsetHeight;
 
         // Reducir header al hacer scroll
         if (currentScroll > 200) {
@@ -228,8 +230,44 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('scrolled');
         }
 
+        // Detectar el color de fondo de la sección actual
+        const sections = document.querySelectorAll('section, #carousel-hero');
+        let isOverLightBackground = false;
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            // Si la sección está en el área del header (primeros 100px)
+            if (rect.top < headerHeight && rect.bottom > 0) {
+                const bgColor = window.getComputedStyle(section).backgroundColor;
+                const sectionId = section.id;
+
+                // Detectar si es una sección con fondo claro
+                // Secciones claras: #about, #cv, y secciones pares
+                if (sectionId === 'about' ||
+                    sectionId === 'cv' ||
+                    section.classList.contains('cv-section') ||
+                    bgColor.includes('248, 246, 244') || // --cream
+                    bgColor.includes('235, 230, 227')) { // --light-beige
+                    isOverLightBackground = true;
+                }
+            }
+        });
+
+        // Aplicar o remover clase según el fondo
+        if (isOverLightBackground) {
+            header.classList.add('light-bg');
+        } else {
+            header.classList.remove('light-bg');
+        }
+
         lastScroll = currentScroll;
-    });
+    }
+
+    // Ejecutar al hacer scroll
+    window.addEventListener('scroll', updateHeaderStyle);
+
+    // Ejecutar al cargar la página
+    updateHeaderStyle();
 
     // ====================
     // SMOOTH SCROLL
