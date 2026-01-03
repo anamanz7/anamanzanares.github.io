@@ -361,28 +361,88 @@ const projectsData = {
             {
                 src: 'PORTFOLIO/BOM/imagenes/render-2.png',
                 caption: 'Interior - Detalle espacial'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/render_01.jpg',
+                caption: 'Render 3D - Zona de Degustación'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/render_02.jpg',
+                caption: 'Render 3D - Mostrador Central'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/render_03.jpg',
+                caption: 'Render 3D - Área de Asientos'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/render_04.jpg',
+                caption: 'Render 3D - Vista desde Espejo'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/render_05.jpg',
+                caption: 'Render 3D - Detalles Decorativos'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/render_06.jpg',
+                caption: 'Render 3D - Vista Exterior'
             }
         ],
         planos: [
             {
-                src: 'PORTFOLIO/BOM/planos/plano-planta.pdf',
-                caption: 'Plano de Planta - Distribución general'
+                src: 'PORTFOLIO/bom_planos/01_portada.jpg',
+                caption: 'Portada del Proyecto'
             },
             {
-                src: 'PORTFOLIO/BOM/planos/plano-técnico-mostrador.pdf',
-                caption: 'Plano Técnico Mostrador - Detalles constructivos'
+                src: 'PORTFOLIO/bom_planos/07_alzado_proyectado.jpg',
+                caption: 'Alzado Proyectado Acotado'
             },
             {
-                src: 'PORTFOLIO/BOM/planos/secciones.pdf',
-                caption: 'Secciones - Cortes del espacio'
+                src: 'PORTFOLIO/bom_planos/08_planta_proyectada.jpg',
+                caption: 'Planta Proyectada - Distribución y Superficies'
             },
             {
-                src: 'PORTFOLIO/BOM/planos/seccion-2.pdf',
-                caption: 'Sección 2 - Detalle técnico'
+                src: 'PORTFOLIO/bom_planos/09_secciones_longitudinales.jpg',
+                caption: 'Secciones Longitudinales A y C'
             },
             {
-                src: 'PORTFOLIO/BOM/planos/bocetos.pdf',
-                caption: 'Bocetos - Proceso conceptual'
+                src: 'PORTFOLIO/bom_planos/10_seccion_transversal.jpg',
+                caption: 'Sección Transversal B'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/11_planta_mobiliario.jpg',
+                caption: 'Planta con Mobiliario'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/12_secciones_mobiliario_A_C.jpg',
+                caption: 'Secciones con Mobiliario A y C'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/13_seccion_mobiliario_B.jpg',
+                caption: 'Sección con Mobiliario B (Color)'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/18_detalle_taller.jpg',
+                caption: 'Detalle Taller Mostrador'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/19_detalle_constructivo.jpg',
+                caption: 'Detalle Constructivo Falsos Techos'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/20_planta_mobiliario_color.jpg',
+                caption: 'Planta Mobiliario a Color'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/23_pavimentos.jpg',
+                caption: 'Plano de Pavimentos'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/27_planta_mobiliario_equipamiento.jpg',
+                caption: 'Planta Mobiliario y Equipamiento'
+            },
+            {
+                src: 'PORTFOLIO/bom_planos/28_planta_iluminaria.jpg',
+                caption: 'Planta de Iluminación'
             }
         ]
     },
