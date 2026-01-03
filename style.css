@@ -220,6 +220,58 @@ header h1 {
     width: 100%;
 }
 
+/* Botón de Cambio de Idioma en el Menú */
+.mobile-menu .language-switcher {
+    margin-top: 20px;
+    padding: 0;
+}
+
+.language-btn {
+    background: transparent;
+    border: 2px solid var(--metallic-rose);
+    border-radius: 25px;
+    padding: 12px 24px;
+    color: var(--dark-text);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.language-btn:hover {
+    background: linear-gradient(135deg, var(--metallic-rose) 0%, var(--dark-mauve) 100%);
+    color: white;
+    border-color: var(--dark-mauve);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 112, 116, 0.3);
+}
+
+.lang-option {
+    opacity: 0.4;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.lang-option.active {
+    opacity: 1;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.lang-divider {
+    opacity: 0.3;
+    font-weight: 300;
+}
+
 main {
     margin-top: 0;
 }
