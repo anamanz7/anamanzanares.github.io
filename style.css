@@ -1407,14 +1407,14 @@ footer {
     .portfolio-info {
         padding: 0;
         bottom: 0;
-        height: 24%;
+        height: 28%;
     }
 
     .portfolio-card:hover .portfolio-info {
         height: 100%;
         background: linear-gradient(to top,
             rgba(60, 60, 60, 0.95) 0%,
-            rgba(70, 70, 70, 0.9) 50%,
+            rgba(70, 70, 60, 0.9) 50%,
             transparent 100%);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
@@ -1422,12 +1422,12 @@ footer {
     }
 
     .portfolio-title {
-        font-size: 0.95rem;
-        letter-spacing: 0.8px;
-        bottom: 1.6rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        bottom: 1.8rem;
         left: 1.5rem;
         right: 1.5rem;
-        line-height: 1.2;
+        line-height: 1.15;
     }
 
     .portfolio-card:hover .portfolio-title {
@@ -1444,17 +1444,17 @@ footer {
     }
 
     .portfolio-category {
-        font-size: 0.5rem;
-        padding: 0.35rem 0.9rem;
-        letter-spacing: 1.2px;
+        font-size: 0.48rem;
+        padding: 0.3rem 0.8rem;
+        letter-spacing: 1px;
         margin-left: 1.5rem;
         position: absolute;
-        bottom: 3.4rem;
+        bottom: 3.8rem;
         margin-bottom: 0;
     }
 
     .portfolio-year {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         bottom: 0.5rem;
         left: 1.5rem;
     }
