@@ -3252,3 +3252,5 @@ After doing this, you may fix the identity used for this commit with:
 [2026-01-04 13:17:07] ✅ Commit creado exitosamente
 [1;33m🔍 Verificando cambios pendientes...[0m
 [1;33m📝 Cambios detectados. Creando commit automático...[0m
+[2026-01-04 17:43:10] === Iniciando verificación automática ===
+[2026-01-04 17:43:10] Cambios detectados, creando commit...
