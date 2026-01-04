@@ -418,6 +418,127 @@ document.addEventListener('DOMContentLoaded', function() {
 let currentLanguage = 'es'; // Idioma por defecto: español
 
 const projectsData = {
+    'cv': {
+        title: 'Curriculum Vitae',
+        year: '2024',
+        category: {
+            es: 'Trayectoria Profesional',
+            en: 'Professional Background'
+        },
+        heroImage: 'PORTFOLIO/ECI/mijas/salon.png',
+        description: {
+            es: `
+                <div class="cv-content">
+                    <div class="cv-block">
+                        <h3>Perfil Profesional</h3>
+                        <p>Actualmente trabajo en un estudio de interiorismo, realizando proyectos integrales, desde la entrada del cliente hasta la entrega final del proyecto con llave en mano, trabajando con clientes de diferentes nacionalidades.</p>
+                        <p>Esta experiencia me ha permitido gestionar y coordinar una media de 30 proyectos al año, que van desde apartamentos vacacionales hasta villas de lujo, generando un volumen de ventas anual superior al 1.000.000€.</p>
+                        <p>Lidero un equipo y coordino las diferentes etapas del proceso de diseño, asegurando eficiencia y creatividad en cada proyecto.</p>
+                    </div>
+                    <div class="cv-block">
+                        <h3>Experiencia Profesional</h3>
+                        <div class="cv-entry">
+                            <div class="cv-entry-header">
+                                <h4>Diseñadora de Interiores</h4>
+                                <span class="cv-date">2022 - Actualidad</span>
+                            </div>
+                            <p class="cv-company">Decor Studio - El Corte Inglés Puerto Banús</p>
+                            <ul class="cv-list">
+                                <li>Gestión integral de proyectos de interiorismo</li>
+                                <li>Coordinación de 30 proyectos anuales</li>
+                                <li>Ventas anuales superiores a 1.000.000€</li>
+                                <li>Liderazgo de equipo multidisciplinar</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cv-block">
+                        <h3>Formación Académica</h3>
+                        <div class="cv-entry">
+                            <div class="cv-entry-header">
+                                <h4>Estudios Superiores - Diseño de Interiores</h4>
+                                <span class="cv-date">2018 - 2022</span>
+                            </div>
+                            <p class="cv-company">Escuela de Artes de Almería</p>
+                        </div>
+                        <div class="cv-entry">
+                            <div class="cv-entry-header">
+                                <h4>B2 Inglés Cambridge</h4>
+                                <span class="cv-date">En curso</span>
+                            </div>
+                            <p class="cv-company">III School / Marbella</p>
+                        </div>
+                    </div>
+                    <div class="cv-block">
+                        <h3>Herramientas</h3>
+                        <p class="tools-inline">AutoCAD • SketchUp • Vray • Enscape • Photoshop • InDesign • Illustrator • Dialux • Procreate</p>
+                    </div>
+                    <div class="cv-block">
+                        <h3>Idiomas</h3>
+                        <ul class="cv-list">
+                            <li><strong>Español:</strong> Nativo</li>
+                            <li><strong>Inglés:</strong> Intermedio/Alto (B2)</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+            en: `
+                <div class="cv-content">
+                    <div class="cv-block">
+                        <h3>Professional Profile</h3>
+                        <p>I currently work at an interior design studio, carrying out comprehensive projects from client onboarding to final turnkey delivery, working with clients of different nationalities.</p>
+                        <p>This experience has allowed me to manage and coordinate an average of 30 projects per year, ranging from vacation apartments to luxury villas, generating an annual sales volume exceeding €1,000,000.</p>
+                        <p>I lead a team and coordinate the different stages of the design process, ensuring efficiency and creativity in each project.</p>
+                    </div>
+                    <div class="cv-block">
+                        <h3>Professional Experience</h3>
+                        <div class="cv-entry">
+                            <div class="cv-entry-header">
+                                <h4>Interior Designer</h4>
+                                <span class="cv-date">2022 - Present</span>
+                            </div>
+                            <p class="cv-company">Decor Studio - El Corte Inglés Puerto Banús</p>
+                            <ul class="cv-list">
+                                <li>Comprehensive interior design project management</li>
+                                <li>Coordination of 30 annual projects</li>
+                                <li>Annual sales exceeding €1,000,000</li>
+                                <li>Multidisciplinary team leadership</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cv-block">
+                        <h3>Academic Background</h3>
+                        <div class="cv-entry">
+                            <div class="cv-entry-header">
+                                <h4>Higher Degree - Interior Design</h4>
+                                <span class="cv-date">2018 - 2022</span>
+                            </div>
+                            <p class="cv-company">School of Arts of Almería</p>
+                        </div>
+                        <div class="cv-entry">
+                            <div class="cv-entry-header">
+                                <h4>B2 English Cambridge</h4>
+                                <span class="cv-date">In progress</span>
+                            </div>
+                            <p class="cv-company">III School / Marbella</p>
+                        </div>
+                    </div>
+                    <div class="cv-block">
+                        <h3>Tools</h3>
+                        <p class="tools-inline">AutoCAD • SketchUp • Vray • Enscape • Photoshop • InDesign • Illustrator • Dialux • Procreate</p>
+                    </div>
+                    <div class="cv-block">
+                        <h3>Languages</h3>
+                        <ul class="cv-list">
+                            <li><strong>Spanish:</strong> Native</li>
+                            <li><strong>English:</strong> Upper Intermediate (B2)</li>
+                        </ul>
+                    </div>
+                </div>
+            `
+        },
+        renderizados: [],
+        planos: []
+    },
     'bom': {
         title: 'BOM',
         year: '2024',
