@@ -1424,7 +1424,7 @@ footer {
     .portfolio-title {
         font-size: 0.95rem;
         letter-spacing: 0.8px;
-        bottom: 2.2rem;
+        bottom: 1.6rem;
         left: 1.5rem;
         right: 1.5rem;
         line-height: 1.2;
@@ -1448,11 +1448,14 @@ footer {
         padding: 0.35rem 0.9rem;
         letter-spacing: 1.2px;
         margin-left: 1.5rem;
+        position: absolute;
+        bottom: 3.4rem;
+        margin-bottom: 0;
     }
 
     .portfolio-year {
         font-size: 0.7rem;
-        bottom: 0.6rem;
+        bottom: 0.5rem;
         left: 1.5rem;
     }
 
