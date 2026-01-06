@@ -4392,3 +4392,24 @@ After doing this, you may fix the identity used for this commit with:
 [2026-01-05 00:26:10] ✅ Commit creado exitosamente
 [1;33m🔍 Verificando cambios pendientes...[0m
 [1;33m📝 Cambios detectados. Creando commit automático...[0m
+[main b10024c] Auto-commit: Actualización automática del portfolio
+ Committer: Ana Manzanares <anamanzanares@MacBook-Pro-de-Ana.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 17 insertions(+)
+[0;32m✅ Commit automático creado exitosamente[0m
+To https://github.com/anamanz7/my-life.git
+ ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at b10024c11edefde103285cf85cf4569ba6643079 but expected b03a37b320f401ebcae661811040ad38896b7bfb)
+error: failed to push some refs to 'https://github.com/anamanz7/my-life.git'
+[2026-01-05 00:29:42] ❌ Error al hacer push
+[2026-01-06 13:07:55] === Iniciando verificación automática ===
+[2026-01-06 13:07:55] Cambios detectados, creando commit...
