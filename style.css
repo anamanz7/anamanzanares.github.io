@@ -1886,7 +1886,7 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 60% center; /* Centrar mejor los planos en las miniaturas */
+    object-position: 80% center; /* Desplazar planos hacia la derecha para centrarlos */
     display: block;
     transition: transform 0.3s ease;
 }
@@ -2008,7 +2008,7 @@ footer {
     max-width: 100%;
     max-height: 75vh;
     object-fit: contain;
-    object-position: 60% center; /* Desplazar el contenido hacia la derecha para centrar mejor los planos */
+    object-position: 80% center; /* Desplazar el contenido hacia la derecha para centrar mejor los planos */
     border-radius: 4px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
@@ -2149,7 +2149,7 @@ footer {
 
     .lightbox-content img {
         max-height: 65vh;
-        object-position: 60% center; /* Mantener centrado en móvil también */
+        object-position: 80% center; /* Mantener centrado en móvil también */
     }
 
     .lightbox-close {
