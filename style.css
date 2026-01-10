@@ -241,7 +241,7 @@ header.light-bg .mobile-menu-toggle span {
 }
 
 .lang-option {
-    color: var(--soft-gray);
+    color: #b8b8b8;
     transition: color 0.3s ease;
     cursor: pointer;
 }
