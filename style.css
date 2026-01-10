@@ -142,7 +142,7 @@ header.light-bg .mobile-menu-toggle span {
 }
 
 .mobile-menu-toggle.active span {
-    background: var(--dark-mauve);
+    background: var(--dark-text);
 }
 
 .mobile-menu-toggle.active span:nth-child(1) {
@@ -236,46 +236,22 @@ header.light-bg .mobile-menu-toggle span {
     letter-spacing: 2px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s ease;
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
-    position: relative;
-}
-
-.language-btn::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -8px;
-    left: 0;
-    background: linear-gradient(90deg, var(--metallic-rose) 0%, var(--dark-mauve) 100%);
-    transition: width 0.3s ease;
-}
-
-.language-btn:hover {
-    background: linear-gradient(135deg, var(--dark-mauve) 0%, var(--metallic-rose) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.language-btn:hover::after {
-    width: 100%;
 }
 
 .lang-option {
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
+    color: var(--soft-gray);
+    transition: color 0.3s ease;
     cursor: pointer;
 }
 
 .lang-option.active {
-    opacity: 1;
+    color: var(--dark-text);
 }
 
 .lang-divider {
-    opacity: 0.3;
+    color: var(--soft-gray);
     margin: 0 8px;
 }
 
