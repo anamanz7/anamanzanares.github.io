@@ -791,20 +791,20 @@ section h2::after {
 .cv-download-link {
     display: inline-block;
     padding: 1.5rem 4rem;
-    background: linear-gradient(135deg, rgba(196, 169, 160, 0.35) 0%, rgba(201, 169, 161, 0.25) 100%);
+    background: linear-gradient(135deg, rgba(139, 112, 116, 0.6) 0%, rgba(139, 112, 116, 0.4) 50%, rgba(179, 155, 154, 0.5) 100%);
     border-radius: 60px;
     text-decoration: none;
     color: var(--white);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
-    box-shadow: 0 4px 20px rgba(139, 112, 116, 0.15);
+    box-shadow: 0 4px 20px rgba(139, 112, 116, 0.2);
     text-align: center;
 }
 
 .cv-download-link:hover {
-    background: linear-gradient(135deg, rgba(196, 169, 160, 0.5) 0%, rgba(201, 169, 161, 0.4) 100%);
+    background: linear-gradient(135deg, rgba(139, 112, 116, 0.75) 0%, rgba(139, 112, 116, 0.6) 50%, rgba(179, 155, 154, 0.65) 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(139, 112, 116, 0.25);
+    box-shadow: 0 6px 25px rgba(139, 112, 116, 0.35);
 }
 
 .cv-download-link span {
