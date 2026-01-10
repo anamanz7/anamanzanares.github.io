@@ -789,68 +789,49 @@ section h2::after {
 }
 
 .cv-download-link {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    border-radius: 50px;
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    background: linear-gradient(135deg, rgba(196, 169, 160, 0.35) 0%, rgba(201, 169, 161, 0.25) 100%);
+    border-radius: 60px;
     text-decoration: none;
-    color: var(--dark-text);
+    color: var(--white);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid transparent;
-    min-width: 260px;
-    justify-content: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: none;
+    box-shadow: 0 4px 20px rgba(139, 112, 116, 0.15);
+    text-align: center;
 }
 
 .cv-download-link:hover {
-    background: linear-gradient(135deg, var(--metallic-rose) 0%, var(--beige-accent) 100%);
-    color: var(--white);
+    background: linear-gradient(135deg, rgba(196, 169, 160, 0.5) 0%, rgba(201, 169, 161, 0.4) 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(201, 169, 161, 0.4);
-    border-color: var(--metallic-rose);
-}
-
-.cv-download-link svg {
-    width: 24px;
-    height: 24px;
-    stroke-width: 2;
-    transition: transform 0.3s ease;
-}
-
-.cv-download-link:hover svg {
-    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(139, 112, 116, 0.25);
 }
 
 .cv-download-link span {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    color: var(--white);
 }
 
 /* Responsive CV Link */
 @media (max-width: 768px) {
     .cv-download-link {
-        min-width: 280px;
-        padding: 1rem 2rem;
+        padding: 1.2rem 3rem;
     }
 
     .cv-download-link span {
-        font-size: 0.95rem;
-    }
-
-    .cv-download-link svg {
-        width: 20px;
-        height: 20px;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .cv-download-link {
-        min-width: 100%;
-        padding: 1rem 1.5rem;
+        padding: 1rem 2.5rem;
+    }
+
+    .cv-download-link span {
+        font-size: 0.95rem;
     }
 }
 
