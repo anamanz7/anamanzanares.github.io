@@ -179,7 +179,7 @@
             <div class="container">
                 <h2 data-es="Curriculum" data-en="Resume">Curriculum</h2>
                 <div class="cv-link-container">
-                    <a href="PORTFOLIO/CURRICULUM ANA .pdf" target="_blank" rel="noopener noreferrer" class="cv-download-link">
+                    <a href="#cv-view" onclick="openCVView(event)" class="cv-download-link">
                         <div class="cv-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -187,7 +187,7 @@
                         </div>
                         <div class="cv-text">
                             <h3 data-es="Ver Curriculum Completo" data-en="View Full Resume">Ver Curriculum Completo</h3>
-                            <p data-es="Abre el PDF con mi experiencia, formación y habilidades" data-en="Open PDF with my experience, education and skills">Abre el PDF con mi experiencia, formación y habilidades</p>
+                            <p data-es="Mi experiencia, formación y habilidades" data-en="My experience, education and skills">Mi experiencia, formación y habilidades</p>
                         </div>
                         <div class="cv-arrow">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -223,6 +223,150 @@
             </div>
         </section>
     </main>
+
+    <!-- Vista de CV Completa -->
+    <div id="cv-view" class="cv-full-view">
+        <button class="cv-full-close" onclick="closeCVView()" aria-label="Cerrar CV">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="cv-full-content">
+            <div class="cv-full-header">
+                <h1 data-es="Curriculum Vitae" data-en="Resume">Curriculum Vitae</h1>
+                <p class="cv-full-subtitle" data-es="Ana Manzanares - Diseñadora de Interiores" data-en="Ana Manzanares - Interior Designer">Ana Manzanares - Diseñadora de Interiores</p>
+            </div>
+
+            <div class="cv-full-body">
+                <div class="cv-block">
+                    <h3 data-es="Perfil Profesional" data-en="Professional Profile">Perfil Profesional</h3>
+                    <p data-es="Actualmente trabajo en un estudio de interiorismo, realizando proyectos integrales, desde la entrada del cliente hasta la entrega final del proyecto con llave en mano, trabajando con clientes de diferentes nacionalidades." data-en="I currently work at an interior design studio, carrying out comprehensive projects from client onboarding to final turnkey delivery, working with clients of different nationalities.">Actualmente trabajo en un estudio de interiorismo, realizando proyectos integrales, desde la entrada del cliente hasta la entrega final del proyecto con llave en mano, trabajando con clientes de diferentes nacionalidades.</p>
+                    <p data-es="Gestiono una media de 30 proyectos al año, desde apartamentos vacacionales hasta villas de lujo, generando ventas anuales superiores a 1.000.000€." data-en="I manage an average of 30 projects per year, from vacation apartments to luxury villas, generating annual sales exceeding €1,000,000.">Gestiono una media de 30 proyectos al año, desde apartamentos vacacionales hasta villas de lujo, generando ventas anuales superiores a 1.000.000€.</p>
+                </div>
+
+                <div class="cv-block">
+                    <h3 data-es="Experiencia" data-en="Experience">Experiencia</h3>
+                    <div class="cv-entry">
+                        <div class="cv-entry-header">
+                            <h4 data-es="Diseñadora de Interiores" data-en="Interior Designer">Diseñadora de Interiores</h4>
+                            <span class="cv-date" data-es="2022 - Actualidad" data-en="2022 - Present">2022 - Actualidad</span>
+                        </div>
+                        <p class="cv-company">Decor Studio - El Corte Inglés Puerto Banús</p>
+                        <ul class="cv-list">
+                            <li data-es="Gestión integral de proyectos residenciales de lujo desde el concepto inicial hasta la entrega final" data-en="Comprehensive management of luxury residential projects from initial concept to final delivery">Gestión integral de proyectos residenciales de lujo desde el concepto inicial hasta la entrega final</li>
+                            <li data-es="Coordinación con clientes internacionales y equipos multidisciplinares" data-en="Coordination with international clients and multidisciplinary teams">Coordinación con clientes internacionales y equipos multidisciplinares</li>
+                            <li data-es="Media de 30 proyectos anuales con ventas superiores a 1.000.000€" data-en="Average of 30 annual projects with sales exceeding €1,000,000">Media de 30 proyectos anuales con ventas superiores a 1.000.000€</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <h3 data-es="Formación" data-en="Education">Formación</h3>
+                    <div class="cv-entry">
+                        <div class="cv-entry-header">
+                            <h4 data-es="Estudios Superiores - Diseño de Interiores" data-en="Higher Degree - Interior Design">Estudios Superiores - Diseño de Interiores</h4>
+                            <span class="cv-date">2018 - 2022</span>
+                        </div>
+                        <p class="cv-company" data-es="Escuela de Artes de Almería" data-en="School of Arts of Almería">Escuela de Artes de Almería</p>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <h3 data-es="Herramientas y Software" data-en="Tools & Software">Herramientas y Software</h3>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <div class="skill-circle">
+                                <svg viewBox="0 0 120 120">
+                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 33.9292"></circle>
+                                </svg>
+                            </div>
+                            <p class="tool-name">AutoCAD</p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="skill-circle">
+                                <svg viewBox="0 0 120 120">
+                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 33.9292"></circle>
+                                </svg>
+                            </div>
+                            <p class="tool-name">SketchUp</p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="skill-circle">
+                                <svg viewBox="0 0 120 120">
+                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 67.8584"></circle>
+                                </svg>
+                            </div>
+                            <p class="tool-name">Vray</p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="skill-circle">
+                                <svg viewBox="0 0 120 120">
+                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 67.8584"></circle>
+                                </svg>
+                            </div>
+                            <p class="tool-name">Enscape</p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="skill-circle">
+                                <svg viewBox="0 0 120 120">
+                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 67.8584"></circle>
+                                </svg>
+                            </div>
+                            <p class="tool-name">Photoshop</p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="skill-circle">
+                                <svg viewBox="0 0 120 120">
+                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 101.7876"></circle>
+                                </svg>
+                            </div>
+                            <p class="tool-name">InDesign</p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="skill-circle">
+                                <svg viewBox="0 0 120 120">
+                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 101.7876"></circle>
+                                </svg>
+                            </div>
+                            <p class="tool-name">Illustrator</p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="skill-circle">
+                                <svg viewBox="0 0 120 120">
+                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 135.7168"></circle>
+                                </svg>
+                            </div>
+                            <p class="tool-name">Procreate</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-full-footer">
+                    <a href="PORTFOLIO/CURRICULUM ANA .pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; margin-right: 8px;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span data-es="Descargar PDF" data-en="Download PDF">Descargar PDF</span>
+                    </a>
+                    <button class="btn btn-secondary" onclick="closeCVView()" data-es="← Volver" data-en="← Back">
+                        ← Volver
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Vista de Proyecto Individual -->
     <div id="project-view" class="project-view">

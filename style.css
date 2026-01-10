@@ -954,6 +954,160 @@ section h2::after {
     }
 }
 
+/* ====================================
+   VISTA DE CV COMPLETA
+   ==================================== */
+.cv-full-view {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--cream);
+    z-index: 10000;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cv-full-view.show {
+    display: block;
+    opacity: 1;
+}
+
+.cv-full-close {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    background: rgba(139, 112, 116, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--metallic-rose);
+    color: var(--dark-mauve);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cv-full-close:hover {
+    background: var(--metallic-rose);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.cv-full-close svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--dark-mauve);
+    transition: stroke 0.3s ease;
+}
+
+.cv-full-close:hover svg {
+    stroke: var(--white);
+}
+
+.cv-full-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 40px;
+}
+
+.cv-full-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid var(--beige-accent);
+}
+
+.cv-full-header h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--dark-mauve) 0%, var(--metallic-rose) 50%, var(--sand) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cv-full-subtitle {
+    font-size: 1.3rem;
+    color: var(--soft-gray);
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.cv-full-body {
+    margin-bottom: 60px;
+}
+
+.cv-full-footer {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    border-top: 1px solid var(--beige-accent);
+    flex-wrap: wrap;
+}
+
+.cv-full-footer .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive CV Full View */
+@media (max-width: 768px) {
+    .cv-full-close {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .cv-full-close svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cv-full-content {
+        padding: 60px 20px;
+    }
+
+    .cv-full-header {
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+    }
+
+    .cv-full-header h1 {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+
+    .cv-full-subtitle {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .cv-full-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cv-full-footer .btn {
+        width: 100%;
+    }
+}
+
 #contact {
     text-align: center;
 }

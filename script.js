@@ -926,3 +926,77 @@ function updateLanguageButton(lang) {
     });
 }
 
+// ======================
+// VISTA DE CV COMPLETA
+// ======================
+
+// Función para abrir la vista del CV
+function openCVView(event) {
+    event.preventDefault();
+
+    const cvView = document.getElementById('cv-view');
+    const body = document.body;
+
+    // Mostrar vista del CV
+    cvView.style.display = 'block';
+
+    // Forzar reflow antes de agregar la clase 'show' para que la transición funcione
+    setTimeout(() => {
+        cvView.classList.add('show');
+    }, 10);
+
+    // Prevenir scroll en el body
+    body.style.overflow = 'hidden';
+
+    // Actualizar URL hash
+    window.location.hash = 'cv-view';
+
+    // Scroll al inicio de la vista del CV
+    cvView.scrollTop = 0;
+}
+
+// Función para cerrar la vista del CV
+function closeCVView() {
+    const cvView = document.getElementById('cv-view');
+    const body = document.body;
+
+    // Remover clase show para hacer fade out
+    cvView.classList.remove('show');
+
+    // Esperar a que termine la transición antes de ocultar
+    setTimeout(() => {
+        cvView.style.display = 'none';
+    }, 500);
+
+    // Restaurar scroll en el body
+    body.style.overflow = '';
+
+    // Limpiar hash de la URL
+    history.pushState("", document.title, window.location.pathname + window.location.search);
+
+    // Scroll a la sección de CV original
+    const cvSection = document.getElementById('cv');
+    if (cvSection) {
+        cvSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Event listener para detectar hash al cargar la página
+window.addEventListener('load', function() {
+    const hash = window.location.hash;
+    if (hash === '#cv-view') {
+        const fakeEvent = { preventDefault: () => {} };
+        setTimeout(() => openCVView(fakeEvent), 100);
+    }
+});
+
+// Event listener para cerrar con tecla ESC
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const cvView = document.getElementById('cv-view');
+        if (cvView && cvView.classList.contains('show')) {
+            closeCVView();
+        }
+    }
+});
+
