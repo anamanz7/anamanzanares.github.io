@@ -741,21 +741,29 @@ function closeProject() {
     history.pushState(null, '', '#portfolio');
 }
 
-// Cerrar proyecto con tecla ESC
+// Cerrar proyecto o CV con tecla ESC
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         const projectView = document.getElementById('project-view');
+        const cvView = document.getElementById('cv-view');
+
         if (projectView && projectView.classList.contains('show')) {
             closeProject();
+        } else if (cvView && cvView.classList.contains('show')) {
+            closeCVView();
         }
     }
 });
 
 // Manejar botón atrás del navegador
-window.addEventListener('popstate', function(event) {
+window.addEventListener('popstate', function() {
     const projectView = document.getElementById('project-view');
+    const cvView = document.getElementById('cv-view');
+
     if (projectView && projectView.classList.contains('show')) {
         closeProject();
+    } else if (cvView && cvView.classList.contains('show')) {
+        closeCVView();
     }
 });
 
@@ -948,11 +956,11 @@ function openCVView(event) {
     // Prevenir scroll en el body
     body.style.overflow = 'hidden';
 
-    // Actualizar URL hash
-    window.location.hash = 'cv-view';
-
     // Scroll al inicio de la vista del CV
     cvView.scrollTop = 0;
+
+    // Actualizar URL sin causar scroll
+    history.pushState({ cvView: true }, '', '#cv-view');
 }
 
 // Función para cerrar la vista del CV
