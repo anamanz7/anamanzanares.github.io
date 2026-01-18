@@ -640,16 +640,17 @@ section h2::after {
 
 .portfolio-info {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 2rem;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: auto;
+    padding: 0;
     background: transparent;
     color: var(--white);
     z-index: 10;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    max-width: 80%;
 }
 
 .portfolio-category {
@@ -657,12 +658,13 @@ section h2::after {
 }
 
 .portfolio-title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 2px;
     color: var(--white);
     text-transform: uppercase;
     line-height: 1.3;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .portfolio-description {
@@ -674,6 +676,7 @@ section h2::after {
     color: rgba(255, 255, 255, 0.8);
     font-weight: 300;
     letter-spacing: 1px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 /* Animaciones de entrada */
@@ -1342,11 +1345,15 @@ footer {
     }
 
     .portfolio-info {
-        padding: 2.5rem 2rem;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        right: auto;
+        padding: 0;
+        max-width: 75%;
     }
 
     .portfolio-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -1501,36 +1508,33 @@ footer {
 
     .portfolio-info {
         padding: 0;
-        bottom: 0;
-        height: 28%;
+        bottom: 1rem;
+        left: 1rem;
+        right: auto;
+        height: auto;
+        max-width: 80%;
     }
 
     .portfolio-card:hover .portfolio-info {
-        height: 100%;
-        background: linear-gradient(to top,
-            rgba(60, 60, 60, 0.95) 0%,
-            rgba(70, 70, 60, 0.9) 50%,
-            transparent 100%);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        padding: 2.5rem 2rem;
+        height: auto;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        padding: 0;
+        bottom: 1rem;
+        left: 1rem;
     }
 
     .portfolio-title {
-        font-size: 0.9rem;
-        letter-spacing: 0.5px;
-        bottom: 1.8rem;
-        left: 1.5rem;
-        right: 1.5rem;
-        line-height: 1.15;
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        position: relative;
     }
 
     .portfolio-card:hover .portfolio-title {
         position: relative;
-        bottom: auto;
-        left: auto;
-        right: auto;
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .portfolio-description {
@@ -1549,9 +1553,8 @@ footer {
     }
 
     .portfolio-year {
-        font-size: 0.65rem;
-        bottom: 0.5rem;
-        left: 1.5rem;
+        font-size: 0.75rem;
+        position: relative;
     }
 
     /* Mostrar siempre la categoría en móvil */
