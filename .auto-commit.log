@@ -5306,3 +5306,20 @@ fatal: unable to access 'https://github.com/anamanz7/my-life.git/': Could not re
 [2026-01-14 18:09:43] ❌ Error al hacer push
 [2026-01-18 17:57:22] === Iniciando verificación automática ===
 [2026-01-18 17:57:22] Cambios detectados, creando commit...
+[main 719a8cd] Auto-commit: 1 modificado(s)
+ Committer: Ana Manzanares <anamanzanares@MacBook-Pro-de-Ana.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 23 insertions(+)
+[2026-01-18 17:57:22] ✅ Commit creado exitosamente
+[1;33m🔍 Verificando cambios pendientes...[0m
+[1;33m📝 Cambios detectados. Creando commit automático...[0m
