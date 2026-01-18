@@ -614,12 +614,12 @@ section h2::after {
 .portfolio-image-wrapper {
     position: relative;
     width: 100%;
-    height: 75vh;
+    height: 55vh;
     overflow: hidden;
 }
 
 .portfolio-card-wide .portfolio-image-wrapper {
-    height: 65vh;
+    height: 50vh;
 }
 
 .portfolio-image {
@@ -1334,11 +1334,11 @@ footer {
     }
 
     .portfolio-image-wrapper {
-        height: 60vh;
+        height: 45vh;
     }
 
     .portfolio-card-wide .portfolio-image-wrapper {
-        height: 50vh;
+        height: 40vh;
     }
 
     .portfolio-info {
@@ -1492,11 +1492,11 @@ footer {
     }
 
     .portfolio-image-wrapper {
-        height: 55vh;
+        height: 35vh;
     }
 
     .portfolio-card-wide .portfolio-image-wrapper {
-        height: 50vh;
+        height: 35vh;
     }
 
     .portfolio-info {
