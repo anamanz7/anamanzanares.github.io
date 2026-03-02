@@ -1,226 +1,225 @@
-# My Life - Portfolio Personal de Ana Manzanares
+# Portfolio Web de Ana Manzanares — Contexto Global para Claude Code
 
-Este es un repositorio personal que almacena contenido de portfolio profesional, CV y proyectos creativos.
+## 🌐 Qué es este sitio
 
-## 🎯 Propósito del Proyecto
+Portfolio profesional de Ana Manzanares, diseñadora de interiores con base en la Costa del Sol.
+- **URL producción**: https://anamanzanares.github.io/my-life/
+- **Repositorio**: https://github.com/anamanzanares/my-life
+- **Hosting**: GitHub Pages (rama `main`, raíz del repositorio)
+- **Stack**: HTML5 + CSS3 + Vanilla JS — sin frameworks, sin build tools, sin dependencias
+- **Idiomas**: Español (principal) + Inglés (switchable en runtime)
 
-Repositorio profesional para mantener y gestionar:
-- Portfolio de proyectos creativos y profesionales
-- CV/Curriculum actualizado
-- GitHub Pages site con diseño elegante y minimalista
-- Documentación personal y profesional
-- Scripts de optimización para recursos (PDFs, imágenes)
+---
 
-## 📁 Estructura del Proyecto
+## 📐 Arquitectura del sitio — SPA manual
+
+El sitio es una única página `index.html` con secciones verticales. Las "vistas" secundarias son overlays CSS/JS que se superponen con `position: fixed` y clase `.show`.
 
 ```
-my-life/
-├── index.html                # GitHub Pages - Página principal del portfolio
-├── style.css                 # Estilos del sitio web
-├── README.md                 # Descripción del repositorio
-├── auto-commit.sh            # Script manual de commit/push
-├── auto-commit-daemon.sh     # Daemon para commits automáticos
-├── manage-autocommit.sh      # Script de gestión del servicio
-├── .auto-commit.log          # Log de actividad automática
-├── PORTFOLIO/                # Directorio con proyectos y documentos
-│   ├── BOM PROJECT.pdf
-│   ├── CURRICULUM ANA.pdf
-│   ├── MAS CREATION RED.pdf
-│   ├── optimize_*.sh         # Scripts de optimización de PDFs
-│   ├── optimize_images.sh    # Script de optimización de imágenes
-│   └── optimized/            # Directorio para archivos optimizados
-├── .claude/                  # Configuración de Claude Code
-└── .git/hooks/pre-push       # Hook automático para commits antes de push
+index.html       ← Toda la estructura HTML
+style.css        ← Todos los estilos (con variables CSS en :root)
+script.js        ← Toda la lógica: carrusel, proyectos, idioma, lightbox, CV
+fonts/           ← Fuente custom Fabada (para el nombre del header)
+emojis/          ← Assets de emojis (no usados actualmente)
+PORTFOLIO/       ← Imágenes y PDFs de proyectos (ver PORTFOLIO/CLAUDE.md)
+paleta-colores.png ← Referencia visual de la paleta
 ```
 
-## 🛠️ Tecnologías y Herramientas
+### Flujo de vistas (3 estados)
+1. **Página principal** → secciones: Carrusel → Sobre mí → Portfolio → CV → Contacto
+2. **Vista de proyecto** (`#project/[id]`) → overlay fullscreen con renders + planos + descripción
+3. **Vista de CV** (`#cv-view`) → overlay fullscreen con CV detallado
 
-- **Frontend**: HTML5, CSS3
-- **Fuentes**: Google Fonts (Montserrat)
-- **Hosting**: GitHub Pages
-- **Optimización**: Shell scripts, Python, Ghostscript, ImageMagick
-- **Control de versiones**: Git
+### Sistema de URL/hash
+```js
+history.pushState({ projectId }, '', `#project/mas-creation`);  // abre proyecto
+history.pushState({ cvView: true }, '', '#cv-view');             // abre CV
+// Al cargar: detecta hash → restaura vista
+// popstate: cierra vistas al navegar atrás
+```
 
-## 🎨 Estilo y Diseño
+---
 
-- **Diseño**: Minimalista, elegante, profesional
-- **Paleta**: Tonos neutros con acentos sutiles
-- **Tipografía**: Montserrat (sans-serif moderna)
-- **Responsive**: Adaptable a todos los dispositivos
-- **Idioma**: Español
+## 🎨 Sistema de Diseño
+
+### Variables CSS — paleta metálica neutra
+```css
+--cream: #f8f6f4          /* Fondo principal muy claro */
+--light-beige: #ebe6e3    /* Fondo secciones alternas */
+--beige-accent: #d4c4ba   /* Acentos beige */
+--sand: #c4a9a0           /* Arena rosácea */
+--metallic-rose: #c9a9a1  /* Rosa metálico — COLOR DE MARCA */
+--metallic-mauve: #b39b9a /* Malva metálico */
+--dark-mauve: #8b7074     /* Malva oscuro — acentos/textos */
+--dark-text: #2a2a2a      /* Texto principal */
+--soft-gray: #666         /* Texto secundario */
+--white: #ffffff
+```
+
+### Tipografía
+- **Nombre "Ana Manzanares" en header**: `Fabada` (custom, `fonts/Fabada-regular.ttf`) — elegante, única
+- **Todo el resto**: `Montserrat` (Google Fonts, pesos 300/400/500/600)
+- Fallbacks: `'Segoe UI', Tahoma, Geneva, Verdana, sans-serif`
+
+### Comportamiento del header
+- **Sobre fondo oscuro** (carrusel/hero): texto color `--light-beige`, hamburger claro
+- **Sobre fondo claro** (secciones): clase `.light-bg` → texto `--dark-mauve`, hamburger oscuro
+- **Al hacer scroll >200px**: clase `.scrolled` → header compacto, fuente más pequeña
+- **Menú lateral** (hamburger): aparece desde la izquierda, fondo crema degradado
+
+### Filosofía visual
+- Minimalista, mucho espacio en blanco, sin colores saturados
+- Animaciones sutiles (fade-in con IntersectionObserver, transiciones 0.4s ease)
+- Grid del portfolio: irregular (asimétrico), no cuadrícula perfecta
+
+---
+
+## 📋 Secciones del sitio
+
+| ID | Nombre | Contenido |
+|---|---|---|
+| `#carousel-hero` | Carrusel | 3 slides fullscreen, caption clickable → abre proyecto |
+| `#about` | Sobre mí | Bio profesional, 2-3 párrafos |
+| `#portfolio` | Portfolio | Grid irregular, 3 tarjetas con hover overlay |
+| `#cv` | Curriculum | Enlace para abrir overlay del CV |
+| `#contact` | Contacto | Instagram + email |
+| `#project-view` | Vista Proyecto | Overlay: hero + grid renders + grid planos + descripción |
+| `#cv-view` | Vista CV | Overlay: experiencia, formación, herramientas (círculos SVG), idiomas |
+
+---
+
+## 📁 Proyectos del Portfolio
+
+Los datos completos viven en `script.js` → objeto `projectsData`. Ver rutas exactas en `PORTFOLIO/CLAUDE.md`.
+
+### BOM (2024) — `projectsData['bom']`
+Bombonería boutique art déco en Almería, edificio protegido patrimonio.
+- 4 renders + 6 planos/docs técnicos
+
+### MAS Creation (2018) — `projectsData['mas-creation']`
+Flagship store en container marítimo 12m para Masquespacio. Inspirado en la "Too Much Chair".
+- 8 renders (día/noche) + 7 planos/docs
+
+### Casa Mijas (2024) — `projectsData['residencial']`
+Vivienda residencial en Mijas, estilo contemporáneo mediterráneo.
+- 6 renders de estancias + planos: vacío [] (pendiente añadir)
+
+### Para añadir un nuevo proyecto
+1. Añadir imágenes en `PORTFOLIO/[NOMBRE]/`
+2. Añadir objeto en `projectsData` en `script.js` con: `title`, `year`, `category {es, en}`, `heroImage`, `description {es, en}`, `renderizados[]`, `planos[]`
+3. Añadir `<article class="portfolio-card">` en `#portfolio` en `index.html`
+4. Añadir slide en `#carousel-hero` si se desea destacar
+
+---
+
+## 🔄 Sistema de Traducción ES/EN
+
+```html
+<!-- Patrón en HTML — SIEMPRE usar en textos visibles nuevos: -->
+<p data-es="Texto en español" data-en="English text">Texto en español</p>
+```
+
+```js
+// En script.js:
+// - switchLanguage(lang) actualiza TODOS los [data-es][data-en]
+// - Se persiste en localStorage('preferredLanguage')
+// - Si hay proyecto abierto al cambiar idioma → se recarga automáticamente
+// - Las descripciones en projectsData también son billingüe: { es: '...', en: '...' }
+```
+
+---
+
+## ⚙️ Funciones JavaScript clave
+
+| Función | Descripción |
+|---|---|
+| `openProject(event, id)` | Rellena y muestra overlay de proyecto desde `projectsData` |
+| `closeProject()` | Cierra overlay de proyecto |
+| `openCVView(event)` | Abre overlay del CV completo |
+| `closeCVView()` | Cierra overlay del CV |
+| `openLightbox(images, idx)` | Lightbox de imágenes con navegación (teclado, click) |
+| `switchLanguage(lang)` | Cambia idioma global, guarda en localStorage |
+
+**Variables globales** (necesarias porque `onclick` en HTML las llama directamente):
+- `currentLanguage` — idioma actual ('es' o 'en')
+- `projectsData` — objeto con todos los datos de proyectos
+
+---
+
+## 🖼️ Carrusel Hero
+
+```
+Slide 1 → MAS-CREATION/images/1 NOCHE.jpg   → openProject('mas-creation')
+Slide 2 → BOM/imagenes/render-escaparate-1-ok.png → openProject('bom')
+Slide 3 → ECI/mijas/dormitorio-ppal.png     → openProject('residencial')
+```
+- Autoplay: 5 segundos
+- Pausa: hover del mouse
+- Navegación: flechas, dots, teclado (←/→), swipe táctil
+
+---
+
+## 👩‍💼 Identidad Profesional de Ana
+
+- **Profesión**: Diseñadora de Interiores
+- **Empresa**: Decor Studio, El Corte Inglés Puerto Banús (2022-actualidad)
+- **Escala**: ~30 proyectos/año, >1.000.000€ ventas anuales
+- **Formación**: Estudios Superiores Diseño de Interiores, Escuela de Artes Almería (2018-2022)
+- **Idiomas**: Español nativo, Inglés B2 en progreso (III School, Marbella)
+- **Software**: AutoCAD, SketchUp, Vray, Enscape, Photoshop, InDesign, Illustrator, Procreate, Dialux, MS Office
+- **Contacto web**: @anamanz_ (Instagram), anamanzanaresg@gmail.com
+- **CV PDF**: `PORTFOLIO/CURRICULUM ANA .pdf` (tiene espacio en el nombre — no renombrar sin actualizar HTML)
+
+---
+
+## 🤖 Infraestructura Automática
+
+### Auto-commit (Launchd macOS)
+- Commits cada 10 minutos → push → GitHub Pages actualizado
+- Logs: `.auto-commit.log`, `.auto-commit-stderr.log`
+- Control: `./manage-autocommit.sh [status|logs|now|stop|start]`
+- Manual: `./auto-commit.sh "mensaje"`
+
+### Scripts en PORTFOLIO/
+- `OPTIMIZAR_PDFS.sh` — Ghostscript para PDFs
+- `optimize_images.sh` — optimiza imágenes para web
+- `convert_bom_pdf.py` — convierte PDF a imágenes
+
+### Desarrollo local
+```bash
+python3 -m http.server 8000  # luego abrir http://localhost:8000
+```
+
+---
 
 ## 📝 Convenciones de Código
 
-### HTML
-- Usar HTML5 semántico
-- Estructura clara con secciones bien definidas
-- Accesibilidad: usar atributos alt, roles ARIA cuando sea necesario
-- Indentación: 4 espacios
+- **Indentación**: 4 espacios (HTML, CSS, JS)
+- **HTML**: semántico, `alt` en todas las imágenes, `aria-label` en botones
+- **CSS**: variables CSS para colores, comentarios de sección, mobile-first
+- **JS**: funciones globales para `onclick` HTML, secciones con `// ====` comentarios
+- **Versioning de assets**: `style.css?v=X.X.X` y `script.js?v=X.X.X` — incrementar al hacer cambios importantes para invalidar caché
+- **Commits**: descriptivos en español
 
-### CSS
-- Usar clases descriptivas en español o inglés
-- Mobile-first approach
-- Variables CSS para colores y espaciado cuando sea posible
-- Comentarios para secciones importantes
-- Indentación: 4 espacios
+---
 
-### Scripts (Bash/Python)
-- Siempre incluir shebang (#!/bin/bash, #!/usr/bin/env python3)
-- Comentarios descriptivos
-- Manejo de errores robusto
-- Mensajes informativos para el usuario
-- Permisos de ejecución (+x) para scripts bash
+## 📋 TODOs / Mejoras Pendientes
 
-## 🔄 Flujos de Trabajo Comunes
+- [ ] Meta tags SEO (description, og:image, twitter:card)
+- [ ] Favicon personalizado
+- [ ] Añadir 4º proyecto (villa-1 de ECI u otro trabajo reciente)
+- [ ] Planos técnicos para "Casa Mijas" (actualmente `planos: []`)
+- [ ] Optimizar imágenes del carrusel (son las más pesadas en carga inicial)
+- [ ] Sección "Proceso / Servicios" o "Sobre mi trabajo"
+- [ ] Formulario de contacto funcional (actualmente solo son links)
+- [ ] Analytics (Google Analytics o Plausible.io)
 
-### 🤖 Auto-Commit AUTOMÁTICO (NUEVO)
-El repositorio tiene un sistema **completamente automático** de commits cada 10 minutos:
+---
 
-**🎯 Sistema Principal: Servicio Automático Launchd**
-- ✅ **Activo 24/7** - Hace commits automáticamente cada 10 minutos
-- ✅ **Cero intervención** - Solo edita archivos y el resto es automático
-- ✅ **Auto-push** - Publica a GitHub Pages automáticamente
-- ✅ **Logs detallados** - Registra toda la actividad
+## 🚫 Reglas Importantes
 
-**Gestión del Servicio** - `./manage-autocommit.sh`
-```bash
-./manage-autocommit.sh status   # Ver estado del servicio
-./manage-autocommit.sh logs     # Ver actividad reciente
-./manage-autocommit.sh now      # Ejecutar commit inmediato
-./manage-autocommit.sh stop     # Pausar servicio
-./manage-autocommit.sh start    # Reactivar servicio
-```
-
-**Script Manual (Opcional)** - `./auto-commit.sh`
-```bash
-# Para commits inmediatos sin esperar los 10 minutos
-./auto-commit.sh "Tu mensaje aquí"
-```
-
-**Git Hook Pre-Push** - `.git/hooks/pre-push`
-- Red de seguridad adicional si haces `git push` manual
-- Detecta cambios olvidados y los commitea automáticamente
-
-**Características del Sistema:**
-- ✅ 100% automático - commits cada 10 minutos
-- ✅ Se inicia automáticamente al iniciar sesión en macOS
-- ✅ Detecta archivos modificados, nuevos y eliminados
-- ✅ Genera mensajes de commit descriptivos
-- ✅ Push automático a GitHub
-- ✅ Logs detallados de toda la actividad
-- ✅ Gestión fácil con comandos simples
-
-### Optimización de PDFs
-Los scripts en PORTFOLIO/ permiten optimizar PDFs de diferentes maneras:
-- `optimize_pdfs.sh` - Optimización básica
-- `optimize_with_gs.sh` - Usando Ghostscript
-- `optimize_with_preview.sh` - Usando Preview de macOS
-- `optimize_native.sh` - Métodos nativos de macOS
-- `optimize_simple.sh` - Método simple y rápido
-- `optimize_pdfs.py` - Script Python para optimización
-
-### Optimización de Imágenes
-- `optimize_images.sh` - Optimiza imágenes para web
-
-### Actualizar Portfolio
-1. Agregar nuevos PDFs a PORTFOLIO/
-2. Optimizar si es necesario con los scripts disponibles
-3. Actualizar index.html con referencias a nuevos proyectos
-4. **¡Listo!** El sistema hace commit y push automáticamente en max. 10 minutos
-5. (Opcional) Usa `./manage-autocommit.sh now` para publicar inmediatamente
-6. GitHub Pages se actualiza automáticamente
-
-### Git Workflow
-- Branch principal: `main`
-- **AUTOMÁTICO**: Commits cada 10 minutos sin intervención manual
-- Push automático a GitHub actualiza GitHub Pages
-- Logs disponibles en `.auto-commit.log`
-- Control del servicio con `./manage-autocommit.sh`
-
-## 🎯 Comandos Útiles
-
-### Desarrollo Local
-```bash
-# Servidor local para probar el sitio
-python3 -m http.server 8000
-# o
-open index.html
-```
-
-### Optimización
-```bash
-# Optimizar todos los PDFs
-cd PORTFOLIO && ./optimize_pdfs.sh
-
-# Optimizar imágenes
-cd PORTFOLIO && ./optimize_images.sh
-```
-
-### Auto-Commit (Sistema Automático)
-```bash
-# Ver estado del servicio automático
-./manage-autocommit.sh status
-
-# Ver logs de actividad
-./manage-autocommit.sh logs
-
-# Ejecutar commit/push inmediato (sin esperar 10 min)
-./manage-autocommit.sh now
-
-# Pausar/reactivar el servicio
-./manage-autocommit.sh stop
-./manage-autocommit.sh start
-
-# Método manual tradicional (opcional)
-./auto-commit.sh "Descripción del cambio"
-```
-
-### Git (Comandos tradicionales - Ya no necesarios)
-```bash
-# El sistema automático hace esto por ti cada 10 minutos:
-git add .
-git commit -m "mensaje"
-git push origin main
-
-# Pero si quieres hacerlo manualmente, sigue funcionando
-```
-
-## 🚫 Archivos a Ignorar
-
-- `.DS_Store` - Archivos de macOS
-- `*.log` - Logs
-- `node_modules/` - Si se agregan dependencias Node
-- `.env*` - Variables de entorno (nunca commitear)
-- Archivos temporales de optimización
-
-## 🎓 Contexto del Negocio
-
-Este es un portfolio profesional personal que debe:
-- Proyectar imagen profesional y creativa
-- Ser fácil de navegar
-- Cargar rápidamente (optimización importante)
-- Mostrar trabajos de calidad
-- Ser fácil de mantener y actualizar
-
-## 💡 Notas para Claude Code
-
-- **Idioma preferido**: Español para documentación y commits
-- **Estilo de código**: Limpio, comentado, profesional
-- **Optimización**: Priorizar rendimiento web (PDFs e imágenes optimizados)
-- **Git**: Commits descriptivos, evitar commits con archivos grandes sin optimizar
-- **Seguridad**: Nunca commitear información personal sensible
-- **Calidad**: Mantener diseño coherente y profesional en todo el sitio
-
-## 🔗 Enlaces Importantes
-
-- GitHub Pages: https://anamanzanares.github.io/my-life/
-- Repositorio: https://github.com/anamanzanares/my-life
-
-## 📋 TODOs Potenciales
-
-- Considerar añadir meta tags para SEO
-- Añadir favicon personalizado
-- Considerar analytics (Google Analytics o similar)
-- Backup automático de archivos importantes
-- ✅ ~~Script de deployment automatizado~~ (Implementado: auto-commit.sh)
-- Compresión automática de assets al hacer commit
+- NUNCA commitear `.DS_Store`, `.env*`, archivos de log grandes
+- El nombre del PDF tiene espacio: `CURRICULUM ANA .pdf` — no renombrar sin actualizar `index.html`
+- Las imágenes con espacios en nombre (ej. `1 DIA HORIZ.jpg`) funcionan directamente en `src=`
+- Las variables `projectsData` y `currentLanguage` deben permanecer globales en `script.js`
+- Mantener coherencia visual: NO añadir colores fuera de la paleta de variables CSS
