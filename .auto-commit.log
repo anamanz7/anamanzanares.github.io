@@ -10835,3 +10835,22 @@ To https://github.com/anamanz7/anamanzanares.github.io.git
 [2026-03-01 23:44:38] === Verificación completada ===
 [2026-03-02 15:58:27] === Iniciando verificación automática ===
 [2026-03-02 15:58:31] Cambios detectados, creando commit...
+[main 5a8185b] Auto-commit: 1 modificado(s)
+ Committer: Ana Manzanares <anamanzanares@MacBook-Pro-de-Ana.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 25 insertions(+)
+[2026-03-02 15:58:33] ✅ Commit creado exitosamente
+fatal: unable to access 'https://github.com/anamanz7/anamanzanares.github.io.git/': Could not resolve host: github.com
+[2026-03-02 15:58:44] ❌ Error al hacer push
+[2026-03-02 16:08:44] === Iniciando verificación automática ===
+[2026-03-02 16:08:44] Cambios detectados, creando commit...
