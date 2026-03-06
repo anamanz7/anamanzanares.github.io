@@ -14370,3 +14370,20 @@ To https://github.com/anamanz7/anamanzanares.github.io.git
 [2026-03-06 23:37:00] === Verificación completada ===
 [2026-03-06 23:47:00] === Iniciando verificación automática ===
 [2026-03-06 23:47:00] Cambios detectados, creando commit...
+[main 4f36132] Auto-commit: 1 modificado(s)
+ Committer: Ana Manzanares <anamanzanares@MacBook-Pro-de-Ana.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 25 insertions(+)
+[2026-03-06 23:47:01] ✅ Commit creado exitosamente
+[1;33m🔍 Verificando cambios pendientes...[0m
+[1;33m📝 Cambios detectados. Creando commit automático...[0m
