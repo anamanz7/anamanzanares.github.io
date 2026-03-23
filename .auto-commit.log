@@ -24780,3 +24780,24 @@ After doing this, you may fix the identity used for this commit with:
 [2026-03-23 23:45:34] ✅ Commit creado exitosamente
 [1;33m🔍 Verificando cambios pendientes...[0m
 [1;33m📝 Cambios detectados. Creando commit automático...[0m
+[main 12670a1] Auto-commit: Actualización automática del portfolio
+ Committer: Ana Manzanares <anamanzanares@MacBook-Pro-de-Ana.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 17 insertions(+)
+[0;32m✅ Commit automático creado exitosamente[0m
+To https://github.com/anamanz7/anamanzanares.github.io.git
+   d08c2c8..abc94d1  main -> main
+[2026-03-23 23:45:35] ✅ Push realizado exitosamente a GitHub
+[2026-03-23 23:45:35] === Verificación completada ===
+[2026-03-23 23:55:35] === Iniciando verificación automática ===
+[2026-03-23 23:55:36] Cambios detectados, creando commit...
