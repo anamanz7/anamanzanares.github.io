@@ -1844,10 +1844,11 @@ footer {
     gap: 20px;
 }
 
-/* Grid pequeño para planos técnicos - 3 columnas */
+/* Grid de planos técnicos - 2 columnas, imagen completa visible sin clicar */
 .project-images-grid-small {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: start; /* cada tarjeta respeta su altura natural, sin letterbox interno */
 }
 
 /* Grid responsive para tablets */
@@ -1859,7 +1860,7 @@ footer {
 
     .project-images-grid-small {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        gap: 20px;
     }
 }
 
@@ -1876,9 +1877,15 @@ footer {
     aspect-ratio: 4 / 3;
 }
 
-/* Planos técnicos pequeños - aspecto cuadrado */
+/* Planos técnicos - aspecto natural de cada imagen (sin recorte) */
 .project-images-grid-small .project-image-item {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: auto;
+    background: var(--cream);
+    padding: 20px;
+    border: 1px solid var(--beige-accent);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-image-item:hover {
@@ -1895,12 +1902,43 @@ footer {
     transition: transform 0.3s ease;
 }
 
+/* Imágenes de planos: a tamaño completo, sin recortar, visibles sin clic */
+.project-images-grid-small .project-image-item img {
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    cursor: default;
+}
+
 .project-image-item:hover img {
     transform: scale(1.02);
 }
 
+/* Desactivar el zoom hover en planos: ya están a su tamaño real */
+.project-images-grid-small .project-image-item:hover {
+    transform: none;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.project-images-grid-small .project-image-item:hover img {
+    transform: none;
+}
+
 .project-image-caption {
     display: none;
+}
+
+/* Caption visible bajo cada plano para que se identifique sin abrir lightbox */
+.project-images-grid-small .project-image-caption {
+    display: block;
+    text-align: center;
+    margin-top: 18px;
+    padding: 0 10px;
+    color: var(--dark-mauve);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Footer del Proyecto */
@@ -1963,9 +2001,18 @@ footer {
         margin-bottom: 50px;
     }
 
-    .project-image-caption {
-        padding: 15px 20px;
-        font-size: 0.9rem;
+    .project-images-grid-small {
+        gap: 25px;
+    }
+
+    .project-images-grid-small .project-image-item {
+        padding: 15px;
+    }
+
+    .project-images-grid-small .project-image-caption {
+        margin-top: 12px;
+        font-size: 0.78rem;
+        letter-spacing: 0.5px;
     }
 
     .project-footer {
@@ -2196,113 +2243,3 @@ footer {
     }
 }
 
-/* ============================================
-   SECCIÓN SERVICIOS
-   ============================================ */
-
-#servicios {
-    padding: 100px 0;
-    background-color: var(--cream);
-}
-
-#servicios h2 {
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: var(--dark-mauve);
-    margin-bottom: 20px;
-}
-
-.servicios-intro {
-    text-align: center;
-    max-width: 620px;
-    margin: 0 auto 60px;
-    color: var(--soft-gray);
-    font-size: 0.95rem;
-    font-weight: 300;
-    line-height: 1.8;
-}
-
-.servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    margin-bottom: 60px;
-}
-
-.servicio-card {
-    background: var(--white);
-    padding: 40px 36px;
-    border: 1px solid var(--light-beige);
-    transition: border-color 0.3s ease, transform 0.3s ease;
-}
-
-.servicio-card:hover {
-    border-color: var(--metallic-rose);
-    transform: translateY(-4px);
-}
-
-.servicio-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 20px;
-    color: var(--dark-mauve);
-}
-
-.servicio-icon svg {
-    width: 100%;
-    height: 100%;
-}
-
-.servicio-card h3 {
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--dark-text);
-    margin-bottom: 14px;
-}
-
-.servicio-card p {
-    font-size: 0.9rem;
-    color: var(--soft-gray);
-    font-weight: 300;
-    line-height: 1.8;
-}
-
-.servicios-cta {
-    text-align: center;
-    padding-top: 20px;
-}
-
-.servicios-cta p {
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--dark-text);
-    letter-spacing: 1px;
-    margin-bottom: 28px;
-}
-
-.servicios-cta-buttons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-    .servicios-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .servicio-card {
-        padding: 28px 24px;
-    }
-
-    #servicios {
-        padding: 70px 0;
-    }
-}
