@@ -712,6 +712,55 @@ section h2::after {
     gap: 12px;
 }
 
+/* Marquee — banda de texto rotativo con palabras clave */
+.marquee {
+    border-top: 1px solid var(--beige-accent);
+    border-bottom: 1px solid var(--beige-accent);
+    background: linear-gradient(135deg, var(--cream) 0%, var(--light-beige) 100%);
+    padding: 2.2rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin: 0;
+}
+
+.marquee-track {
+    display: inline-block;
+    animation: marquee 45s linear infinite;
+    padding-right: 2rem;
+    font-size: clamp(1.3rem, 3.2vw, 2.4rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--dark-mauve);
+    letter-spacing: 1px;
+    will-change: transform;
+}
+
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-text {
+    margin: 0 1.2rem;
+}
+
+.marquee-dot {
+    color: var(--metallic-rose);
+    margin: 0 0.4rem;
+    font-weight: 400;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+    .marquee { padding: 1.6rem 0; }
+    .marquee-text { margin: 0 0.8rem; }
+    .marquee-dot { margin: 0 0.3rem; }
+}
+
 /* Animaciones de entrada */
 .fade-in {
     opacity: 0;
