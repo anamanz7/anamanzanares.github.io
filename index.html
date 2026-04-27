@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.0.11">
+    <link rel="stylesheet" href="style.css?v=1.1.0">
 </head>
 <body>
     <!-- SVG Definitions for Metallic Gradients -->
@@ -126,48 +126,59 @@
         <section id="portfolio">
             <div class="container">
                 <h2>Portfolio</h2>
-                <div class="portfolio-grid-irregular">
-                    <article class="portfolio-card" data-category="diseño">
-                        <a href="#project/mas-creation" class="portfolio-link" onclick="openProject(event, 'mas-creation')">
-                            <div class="portfolio-image-wrapper">
-                                <img src="PORTFOLIO/MAS-CREATION/images/moodboard.jpg" alt="MAS Creation - Moodboard" class="portfolio-image">
-                                <div class="portfolio-overlay"></div>
+                <p class="section-subtitle" data-es="Una selección de proyectos recientes — residenciales, comerciales y efímeros." data-en="A selection of recent work — residential, commercial and ephemeral.">Una selección de proyectos recientes — residenciales, comerciales y efímeros.</p>
+
+                <div class="portfolio-grid-editorial">
+                    <article class="feat-card" data-category="diseño">
+                        <a href="#project/mas-creation" class="feat-link" onclick="openProject(event, 'mas-creation')">
+                            <div class="feat-media">
+                                <img src="PORTFOLIO/MAS-CREATION/images/moodboard.jpg" alt="MAS Creation - Flagship Store" loading="lazy">
                             </div>
-                            <div class="portfolio-info">
-                                <span class="portfolio-category" data-es="Espacios Efímeros" data-en="Ephemeral Spaces">Espacios Efímeros</span>
-                                <h3 class="portfolio-title">MAS Creation - Flagship Store</h3>
-                                <p class="portfolio-description" data-es="Flagship store en container marítimo que fusiona formas orgánicas y vidrios coloreados con la identidad de Masquespacio." data-en="Flagship store in a maritime container that merges organic forms and colored glass with Masquespacio's identity.">Flagship store en container marítimo que fusiona formas orgánicas y vidrios coloreados con la identidad de Masquespacio.</p>
-                                <span class="portfolio-year">2018</span>
+                            <div class="feat-info">
+                                <span class="feat-num">N° 01 — 2018</span>
+                                <h3 class="feat-title">MAS Creation</h3>
+                                <div class="feat-meta">
+                                    <span data-es="Espacios Efímeros" data-en="Ephemeral Spaces">Espacios Efímeros</span>
+                                    <span data-es="Valencia, España" data-en="Valencia, Spain">Valencia, España</span>
+                                </div>
+                                <p class="feat-desc" data-es="Flagship store en container marítimo que fusiona formas orgánicas y vidrios coloreados con la identidad de Masquespacio." data-en="Flagship store in a maritime container that merges organic forms and colored glass with Masquespacio's identity.">Flagship store en container marítimo que fusiona formas orgánicas y vidrios coloreados con la identidad de Masquespacio.</p>
+                                <span class="feat-link-cta" data-es="Ver proyecto →" data-en="View project →">Ver proyecto →</span>
                             </div>
                         </a>
                     </article>
 
-                    <article class="portfolio-card" data-category="interiorismo">
-                        <a href="#project/bom" class="portfolio-link" onclick="openProject(event, 'bom')">
-                            <div class="portfolio-image-wrapper">
-                                <img src="PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png" alt="BOM - Espacio Comercial" class="portfolio-image">
-                                <div class="portfolio-overlay"></div>
+                    <article class="feat-card" data-category="interiorismo">
+                        <a href="#project/bom" class="feat-link" onclick="openProject(event, 'bom')">
+                            <div class="feat-media">
+                                <img src="PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png" alt="BOM - Bombonería Boutique" loading="lazy">
                             </div>
-                            <div class="portfolio-info">
-                                <span class="portfolio-category" data-es="Espacios Comerciales" data-en="Commercial Spaces">Espacios Comerciales</span>
-                                <h3 class="portfolio-title" data-es="BOM - Bombonería Boutique" data-en="BOM - Boutique Chocolate Shop">BOM - Bombonería Boutique</h3>
-                                <p class="portfolio-description" data-es="Bombonería boutique en edificio protegido que fusiona tradición y contemporaneidad con influencias Art Déco." data-en="Boutique chocolate shop in a protected building that merges tradition and contemporary design with Art Déco influences.">Bombonería boutique en edificio protegido que fusiona tradición y contemporaneidad con influencias Art Déco.</p>
-                                <span class="portfolio-year">2024</span>
+                            <div class="feat-info">
+                                <span class="feat-num">N° 02 — 2024</span>
+                                <h3 class="feat-title" data-es="BOM" data-en="BOM">BOM</h3>
+                                <div class="feat-meta">
+                                    <span data-es="Espacios Comerciales" data-en="Commercial Spaces">Espacios Comerciales</span>
+                                    <span data-es="Almería, España" data-en="Almería, Spain">Almería, España</span>
+                                </div>
+                                <p class="feat-desc" data-es="Bombonería boutique en edificio protegido que fusiona tradición y contemporaneidad con influencias Art Déco." data-en="Boutique chocolate shop in a protected building that merges tradition and contemporary design with Art Déco influences.">Bombonería boutique en edificio protegido que fusiona tradición y contemporaneidad con influencias Art Déco.</p>
+                                <span class="feat-link-cta" data-es="Ver proyecto →" data-en="View project →">Ver proyecto →</span>
                             </div>
                         </a>
                     </article>
 
-                    <article class="portfolio-card" data-category="residencial">
-                        <a href="#project/residencial" class="portfolio-link" onclick="openProject(event, 'residencial')">
-                            <div class="portfolio-image-wrapper">
-                                <img src="PORTFOLIO/ECI/mijas/dormitorio-ppal.png" alt="Casa Mijas - Proyecto Residencial" class="portfolio-image">
-                                <div class="portfolio-overlay"></div>
+                    <article class="feat-card" data-category="residencial">
+                        <a href="#project/residencial" class="feat-link" onclick="openProject(event, 'residencial')">
+                            <div class="feat-media">
+                                <img src="PORTFOLIO/ECI/mijas/dormitorio-ppal.png" alt="Casa Mijas - Proyecto Residencial" loading="lazy">
                             </div>
-                            <div class="portfolio-info">
-                                <span class="portfolio-category" data-es="Interiorismo Residencial" data-en="Residential Interior Design">Interiorismo Residencial</span>
-                                <h3 class="portfolio-title" data-es="Casa Mijas - Proyecto Residencial" data-en="Casa Mijas - Residential Project">Casa Mijas - Proyecto Residencial</h3>
-                                <p class="portfolio-description" data-es="Diseño de interiores para vivienda residencial en Mijas, fusionando elegancia contemporánea con comodidad mediterránea." data-en="Interior design for a residential home in Mijas, merging contemporary elegance with Mediterranean comfort.">Diseño de interiores para vivienda residencial en Mijas, fusionando elegancia contemporánea con comodidad mediterránea.</p>
-                                <span class="portfolio-year">2024</span>
+                            <div class="feat-info">
+                                <span class="feat-num">N° 03 — 2024</span>
+                                <h3 class="feat-title" data-es="Casa Mijas" data-en="Casa Mijas">Casa Mijas</h3>
+                                <div class="feat-meta">
+                                    <span data-es="Interiorismo Residencial" data-en="Residential Interiors">Interiorismo Residencial</span>
+                                    <span data-es="Mijas, Málaga" data-en="Mijas, Málaga">Mijas, Málaga</span>
+                                </div>
+                                <p class="feat-desc" data-es="Diseño de interiores para vivienda residencial en Mijas, fusionando elegancia contemporánea con comodidad mediterránea." data-en="Interior design for a residential home in Mijas, merging contemporary elegance with Mediterranean comfort.">Diseño de interiores para vivienda residencial en Mijas, fusionando elegancia contemporánea con comodidad mediterránea.</p>
+                                <span class="feat-link-cta" data-es="Ver proyecto →" data-en="View project →">Ver proyecto →</span>
                             </div>
                         </a>
                     </article>
