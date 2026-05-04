@@ -1,4 +1,9 @@
 {
+  "env": {
+    "LANG": "es_ES.UTF-8",
+    "PROJECT_NAME": "my-life",
+    "PORTFOLIO_DIR": "PORTFOLIO"
+  },
   "permissions": {
     "allow": [
       "Bash(git status:*)",
@@ -45,16 +50,25 @@
       "Write(**/*.sh)",
       "Write(**/*.py)",
       "Write(**/*.json)",
-      "Write(**/*.txt)"
-    ],
-    "ask": [
-      "Bash(rm:*)",
-      "Bash(rmdir:*)",
-      "Bash(git reset:*)",
-      "Bash(git rebase:*)",
-      "Bash(git push:* --force*)",
-      "Write(**/*.pdf)",
-      "Edit(**/*.pdf)"
+      "Write(**/*.txt)",
+      "Bash(git remote *)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/anamanzanaresgonzalez/anamanzanares.github.io/PORTFOLIO/MAS-CREATION/images/1 NOCHE.jpg\" \"/Users/anamanzanaresgonzalez/anamanzanares.github.io/PORTFOLIO/ECI/mijas/dormitorio-ppal.png\" \"/Users/anamanzanaresgonzalez/anamanzanares.github.io/PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png\")",
+      "Bash(sips -Z 1920 --setProperty formatOptions 80 \"/Users/anamanzanaresgonzalez/anamanzanares.github.io/PORTFOLIO/MAS-CREATION/images/1 NOCHE.jpg\")",
+      "Bash(sips --setProperty format jpeg --setProperty formatOptions 82 \"/Users/anamanzanaresgonzalez/anamanzanares.github.io/PORTFOLIO/ECI/mijas/dormitorio-ppal.png\" --out \"/Users/anamanzanaresgonzalez/anamanzanares.github.io/PORTFOLIO/ECI/mijas/dormitorio-ppal.jpg\")",
+      "Bash(sips -Z 1400 --setProperty formatOptions 72 \"/Users/anamanzanaresgonzalez/anamanzanares.github.io/PORTFOLIO/ECI/mijas/dormitorio-ppal.jpg\")",
+      "Bash(sips --setProperty formatOptions 68 \"/Users/anamanzanaresgonzalez/anamanzanares.github.io/PORTFOLIO/ECI/mijas/dormitorio-ppal.jpg\")",
+      "Bash(git rm *)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(GIT_ASKPASS=echo git push origin main)",
+      "Bash(security dump-keychain *)",
+      "Bash(ssh-add -l)",
+      "Bash(git fetch *)",
+      "Bash(GIT_TRACE=1 GIT_CURL_VERBOSE=1 git push origin main)",
+      "Bash(security show-keychain-info *)",
+      "Bash(git-credential-osxkeychain)",
+      "Bash(/Library/Developer/CommandLineTools/usr/libexec/git-core/git-credential-osxkeychain)",
+      "Bash(/Library/Developer/CommandLineTools/usr/libexec/git-core/git-credential-osxkeychain get *)",
+      "Bash(echo \"exit: $?\")"
     ],
     "deny": [
       "Read(.env)",
@@ -67,15 +81,16 @@
       "Write(.env.*)",
       "Edit(.env)",
       "Edit(.env.*)",
-      "Bash(sudo:*)",
-      "Bash(curl:* | bash)",
-      "Bash(wget:* | bash)"
+      "Bash(sudo:*)"
+    ],
+    "ask": [
+      "Bash(rm:*)",
+      "Bash(rmdir:*)",
+      "Bash(git reset:*)",
+      "Bash(git rebase:*)",
+      "Write(**/*.pdf)",
+      "Edit(**/*.pdf)"
     ]
-  },
-  "env": {
-    "LANG": "es_ES.UTF-8",
-    "PROJECT_NAME": "my-life",
-    "PORTFOLIO_DIR": "PORTFOLIO"
   },
   "outputStyle": "Explanatory"
 }
