@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Proyecto — Ana Manzanares</title>
+    <meta name="description" content="Portfolio de Ana Manzanares, diseñadora de interiores en la Costa del Sol.">
+    <meta name="author" content="Ana Manzanares">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1.8.0">
+</head>
+<body>
+    <header>
+        <nav>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="index.html" class="header-home-link">Ana Manzanares</a></h1>
+        </nav>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <ul>
+                <li><a href="about.html" data-es="Sobre mí" data-en="About Me">Sobre mí</a></li>
+                <li><a href="index.html#portfolio" data-es="Portfolio" data-en="Portfolio">Portfolio</a></li>
+                <li><a href="cv.html" data-es="CV" data-en="CV">CV</a></li>
+                <li><a href="index.html#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                <li class="language-switcher">
+                    <button id="language-toggle" class="language-btn" aria-label="Cambiar idioma">
+                        <span class="lang-option active" data-lang="es">ES</span>
+                        <span class="lang-divider">|</span>
+                        <span class="lang-option" data-lang="en">EN</span>
+                    </button>
+                    <button id="theme-toggle" class="theme-btn" onclick="toggleDarkMode()" aria-label="Cambiar tema">
+                        <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="display:none">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero imagen del proyecto -->
+        <div class="project-hero">
+            <img id="project-hero-image" src="" alt="" class="project-hero-img">
+            <div class="project-breadcrumb">
+                <a href="index.html#portfolio" data-es="Portfolio" data-en="Portfolio">Portfolio</a>
+                <span>/</span>
+                <span id="project-breadcrumb-title"></span>
+            </div>
+        </div>
+
+        <!-- Contenido del proyecto -->
+        <div class="project-content">
+            <div class="project-header">
+                <h1 id="project-title"></h1>
+                <div class="project-metadata">
+                    <span class="project-meta-item">
+                        <strong data-es="Año:" data-en="Year:">Año:</strong> <span id="project-year"></span>
+                    </span>
+                    <span class="project-meta-item">
+                        <strong data-es="Categoría:" data-en="Category:">Categoría:</strong> <span id="project-category"></span>
+                    </span>
+                    <span class="project-meta-item" id="project-location-item" style="display:none">
+                        <strong data-es="Ubicación:" data-en="Location:">Ubicación:</strong> <span id="project-location"></span>
+                    </span>
+                    <span class="project-meta-item" id="project-client-item" style="display:none">
+                        <strong data-es="Cliente:" data-en="Client:">Cliente:</strong> <span id="project-client"></span>
+                    </span>
+                    <span class="project-meta-item" id="project-role-item" style="display:none">
+                        <strong data-es="Rol:" data-en="Role:">Rol:</strong> <span id="project-role"></span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="project-images-grid project-images-grid-large" id="project-renderizados-grid"></div>
+            <div class="project-images-grid project-images-grid-small" id="project-planos-grid"></div>
+            <div class="project-description" id="project-description"></div>
+            <div class="project-story" id="project-story"></div>
+            <div class="project-materials" id="project-materials"></div>
+
+            <div class="project-footer">
+                <a href="index.html#portfolio" class="btn btn-secondary" data-es="← Volver al Portfolio" data-en="← Back to Portfolio">← Volver al Portfolio</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col footer-cta">
+                <span class="footer-eyebrow" data-es="¿Trabajamos juntos?" data-en="Let's work together?">¿Trabajamos juntos?</span>
+                <h3 class="footer-headline">
+                    <span data-es="Cuéntame tu" data-en="Tell me about your">Cuéntame tu</span>
+                    <em data-es="proyecto" data-en="project">proyecto</em>.
+                </h3>
+                <a href="mailto:anamanzanaresg@gmail.com" class="btn btn-footer">
+                    <span>anamanzanaresg@gmail.com</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <span class="footer-eyebrow" data-es="Navegación" data-en="Sitemap">Navegación</span>
+                <ul class="footer-list">
+                    <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
+                    <li><a href="about.html" data-es="Sobre mí" data-en="About">Sobre mí</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="index.html#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <span class="footer-eyebrow" data-es="Sígueme" data-en="Follow">Sígueme</span>
+                <ul class="footer-list">
+                    <li><a href="https://instagram.com/anamanz_" target="_blank" rel="noopener noreferrer">Instagram <span class="footer-link-arrow">↗</span></a></li>
+                    <li><a href="mailto:anamanzanaresg@gmail.com">Email <span class="footer-link-arrow">↗</span></a></li>
+                    <li class="footer-location" data-es="Marbella, España" data-en="Marbella, Spain">Marbella, España</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span data-es="© 2026 Ana Manzanares" data-en="© 2026 Ana Manzanares">© 2026 Ana Manzanares</span>
+            <span data-es="Diseñado con cuidado · Marbella" data-en="Crafted with care · Marbella">Diseñado con cuidado · Marbella</span>
+        </div>
+    </footer>
+
+    <script src="script.js?v=1.5.0"></script>
+</body>
+</html>

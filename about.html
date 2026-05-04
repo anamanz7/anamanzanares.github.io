@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Sobre mí — Ana Manzanares</title>
+    <meta name="description" content="Ana Manzanares, diseñadora de interiores en la Costa del Sol. Proyectos residenciales, comerciales y efímeros desde 2022.">
+    <meta name="author" content="Ana Manzanares">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1.8.0">
+</head>
+<body class="page-inner">
+    <header>
+        <nav>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="index.html" class="header-home-link">Ana Manzanares</a></h1>
+        </nav>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <ul>
+                <li><a href="about.html" data-es="Sobre mí" data-en="About Me">Sobre mí</a></li>
+                <li><a href="index.html#portfolio" data-es="Portfolio" data-en="Portfolio">Portfolio</a></li>
+                <li><a href="cv.html" data-es="CV" data-en="CV">CV</a></li>
+                <li><a href="index.html#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                <li class="language-switcher">
+                    <button id="language-toggle" class="language-btn" aria-label="Cambiar idioma">
+                        <span class="lang-option active" data-lang="es">ES</span>
+                        <span class="lang-divider">|</span>
+                        <span class="lang-option" data-lang="en">EN</span>
+                    </button>
+                    <button id="theme-toggle" class="theme-btn" onclick="toggleDarkMode()" aria-label="Cambiar tema">
+                        <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="display:none">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <div class="page-content">
+
+            <!-- Hero: titular grande + 2 párrafos de bio -->
+            <section class="about-hero">
+                <h1 class="about-hero-title">
+                    <span data-es="Diseño" data-en="Design">Diseño</span>
+                    <em data-es="desde la" data-en="from the">desde la</em>
+                    <span data-es="Costa del Sol." data-en="Costa del Sol.">Costa del Sol.</span>
+                </h1>
+                <div class="about-hero-body">
+                    <p data-es="Trabajo en diseño de interiores desde 2022, especializándome en proyectos residenciales de alto nivel en la Costa del Sol. Gestiono proyectos completos desde el concepto inicial hasta la entrega final, coordinando equipos y trabajando directamente con clientes de diferentes culturas." data-en="I've been working in interior design since 2022, specialising in high-end residential projects on the Costa del Sol. I manage complete projects from initial concept to final delivery, coordinating teams and working directly with clients from different cultures.">Trabajo en diseño de interiores desde 2022, especializándome en proyectos residenciales de alto nivel en la Costa del Sol. Gestiono proyectos completos desde el concepto inicial hasta la entrega final, coordinando equipos y trabajando directamente con clientes de diferentes culturas.</p>
+                    <p data-es="Me gradué en Estudios Superiores de Diseño de Interiores en la Escuela de Artes de Almería. Actualmente formo parte del equipo de Decor Studio en El Corte Inglés Puerto Banús, donde coordino una media de 30 proyectos al año con un volumen de ventas superior al millón de euros." data-en="I graduated in Higher Studies in Interior Design at the School of Arts of Almería. I am currently part of the Decor Studio team at El Corte Inglés Puerto Banús, where I coordinate an average of 30 projects per year with annual sales exceeding one million euros.">Me gradué en Estudios Superiores de Diseño de Interiores en la Escuela de Artes de Almería. Actualmente formo parte del equipo de Decor Studio en El Corte Inglés Puerto Banús, donde coordino una media de 30 proyectos al año con un volumen de ventas superior al millón de euros.</p>
+                </div>
+            </section>
+
+            <!-- Retrato + párrafo final + CTA -->
+            <section class="about-portrait">
+                <div class="about-photo">
+                    <span class="about-photo-placeholder" data-es="[ Retrato profesional ]" data-en="[ Professional portrait ]">[ Retrato profesional ]</span>
+                </div>
+                <div class="about-portrait-body">
+                    <p data-es="Me interesa el diseño que respeta los materiales, la luz natural y los rituales de quien habita el espacio. Trabajo con clientes nacionales e internacionales y siempre con una mirada clara: la arquitectura debe servir a la vida, no a la inversa." data-en="I am interested in design that respects materials, natural light and the rituals of those who inhabit the space. I work with national and international clients with one clear belief: architecture should serve life, not the other way around.">Me interesa el diseño que respeta los materiales, la luz natural y los rituales de quien habita el espacio. Trabajo con clientes nacionales e internacionales y siempre con una mirada clara: la arquitectura debe servir a la vida, no a la inversa.</p>
+                    <a href="index.html#contact" class="btn">
+                        <span data-es="Hablemos" data-en="Get in touch">Hablemos</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Capacidades -->
+            <section class="about-capabilities">
+                <div class="about-cap-header">
+                    <span class="about-eyebrow" data-es="Capacidades · Para estudios" data-en="Capabilities · For studios">Capacidades · Para estudios</span>
+                    <h2 class="about-cap-headline">
+                        <span data-es="Lo que" data-en="What">Lo que</span>
+                        <em data-es="aporto" data-en="I bring">aporto</em>
+                        <span data-es="al equipo." data-en="to the team.">al equipo.</span>
+                    </h2>
+                </div>
+
+                <div class="about-cap-list">
+                    <div class="cap-row">
+                        <span class="cap-num">01 / 04</span>
+                        <h3 class="cap-title" data-es="Gestión integral" data-en="Integral project management">Gestión integral</h3>
+                        <p class="cap-desc" data-es="Llevo proyectos de principio a fin: brief con cliente, concepto, planimetría, materiales, mobiliario, iluminación y dirección de obra hasta la entrega llave en mano." data-en="I run projects end-to-end: client brief, concept, plans, materials, furniture, lighting and on-site direction through to turnkey delivery.">Llevo proyectos de principio a fin: brief con cliente, concepto, planimetría, materiales, mobiliario, iluminación y dirección de obra hasta la entrega llave en mano.</p>
+                    </div>
+                    <div class="cap-row">
+                        <span class="cap-num">02 / 04</span>
+                        <h3 class="cap-title" data-es="Documentación técnica" data-en="Technical documentation">Documentación técnica</h3>
+                        <p class="cap-desc" data-es="Plantas, alzados y secciones en AutoCAD. Memorias de calidades, mediciones y documentación de obra con la precisión que un estudio necesita." data-en="Plans, elevations and sections in AutoCAD. Specifications, measurements and on-site documentation with the precision a studio needs.">Plantas, alzados y secciones en AutoCAD. Memorias de calidades, mediciones y documentación de obra con la precisión que un estudio necesita.</p>
+                    </div>
+                    <div class="cap-row">
+                        <span class="cap-num">03 / 04</span>
+                        <h3 class="cap-title" data-es="Visualización 3D" data-en="3D Visualisation">Visualización 3D</h3>
+                        <p class="cap-desc" data-es="Modelado en SketchUp y renders fotorrealistas con Vray y Enscape. Imágenes y vídeos para presentaciones de cliente y propuestas de proyecto." data-en="SketchUp modelling and photorealistic renders with Vray and Enscape. Images and walkthroughs for client presentations and project proposals.">Modelado en SketchUp y renders fotorrealistas con Vray y Enscape. Imágenes y vídeos para presentaciones de cliente y propuestas de proyecto.</p>
+                    </div>
+                    <div class="cap-row">
+                        <span class="cap-num">04 / 04</span>
+                        <h3 class="cap-title" data-es="Cliente internacional" data-en="International clients">Cliente internacional</h3>
+                        <p class="cap-desc" data-es="Experiencia coordinando con clientes de distintas nacionalidades en la Costa del Sol. Trabajo en español e inglés, con sensibilidad para distintos contextos culturales." data-en="Experience coordinating with clients of different nationalities on the Costa del Sol. I work in Spanish and English, with sensitivity to different cultural contexts.">Experiencia coordinando con clientes de distintas nacionalidades en la Costa del Sol. Trabajo en español e inglés, con sensibilidad para distintos contextos culturales.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats -->
+            <section class="about-stats">
+                <div class="stat">
+                    <div class="stat-n">30+</div>
+                    <span class="stat-l" data-es="Proyectos al año" data-en="Projects per year">Proyectos al año</span>
+                </div>
+                <div class="stat">
+                    <div class="stat-n">1M€+</div>
+                    <span class="stat-l" data-es="Ventas anuales" data-en="Annual sales">Ventas anuales</span>
+                </div>
+                <div class="stat">
+                    <div class="stat-n">2022</div>
+                    <span class="stat-l" data-es="En la práctica" data-en="In practice">En la práctica</span>
+                </div>
+                <div class="stat">
+                    <div class="stat-n">ES · EN</div>
+                    <span class="stat-l" data-es="Idiomas de trabajo" data-en="Working languages">Idiomas de trabajo</span>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col footer-cta">
+                <span class="footer-eyebrow" data-es="¿Trabajamos juntos?" data-en="Let's work together?">¿Trabajamos juntos?</span>
+                <h3 class="footer-headline">
+                    <span data-es="Cuéntame tu" data-en="Tell me about your">Cuéntame tu</span>
+                    <em data-es="proyecto" data-en="project">proyecto</em>.
+                </h3>
+                <a href="mailto:anamanzanaresg@gmail.com" class="btn btn-footer">
+                    <span>anamanzanaresg@gmail.com</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <span class="footer-eyebrow" data-es="Navegación" data-en="Sitemap">Navegación</span>
+                <ul class="footer-list">
+                    <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
+                    <li><a href="about.html" data-es="Sobre mí" data-en="About">Sobre mí</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="index.html#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <span class="footer-eyebrow" data-es="Sígueme" data-en="Follow">Sígueme</span>
+                <ul class="footer-list">
+                    <li><a href="https://instagram.com/anamanz_" target="_blank" rel="noopener noreferrer">Instagram <span class="footer-link-arrow">↗</span></a></li>
+                    <li><a href="mailto:anamanzanaresg@gmail.com">Email <span class="footer-link-arrow">↗</span></a></li>
+                    <li class="footer-location" data-es="Marbella, España" data-en="Marbella, Spain">Marbella, España</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span data-es="© 2026 Ana Manzanares" data-en="© 2026 Ana Manzanares">© 2026 Ana Manzanares</span>
+            <span data-es="Diseñado con cuidado · Marbella" data-en="Crafted with care · Marbella">Diseñado con cuidado · Marbella</span>
+        </div>
+    </footer>
+
+    <script src="script.js?v=1.5.0"></script>
+</body>
+</html>

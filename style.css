@@ -127,6 +127,25 @@ header.light-bg h1 {
     color: var(--dark-mauve);
 }
 
+/* Link del nombre en páginas secundarias */
+.header-home-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* En páginas interiores (about, cv) el header arranca ya sobre fondo claro */
+body.page-inner header {
+    background: var(--cream);
+}
+
+body.page-inner header h1 {
+    color: var(--dark-mauve);
+}
+
+body.page-inner header .mobile-menu-toggle span {
+    background: var(--dark-mauve);
+}
+
 /* Menú Hamburguesa - Visible en todas las resoluciones */
 .mobile-menu-toggle {
     display: flex;
@@ -1031,69 +1050,25 @@ section h2::after {
 }
 
 /* ====================================
-   VISTA DE SOBRE MÍ COMPLETA (overlay)
+   PÁGINAS INDEPENDIENTES (about, cv, project)
    ==================================== */
-.about-full-view {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
+.page-main {
+    padding-top: 80px;
+    min-height: 100vh;
     background: var(--cream);
-    z-index: 10000;
-    overflow-y: auto;
-    opacity: 0;
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.about-full-view.show {
-    display: block;
-    opacity: 1;
+.page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(40px, 6vw, 80px) 40px clamp(60px, 8vw, 100px);
 }
 
-.about-full-close {
-    position: fixed;
-    top: 30px;
-    right: 40px;
-    background: rgba(139, 112, 116, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--metallic-rose);
-    color: var(--dark-mauve);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10001;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.about-full-close:hover {
-    background: var(--metallic-rose);
-    transform: rotate(90deg) scale(1.1);
-}
-
-.about-full-close svg {
-    width: 24px;
-    height: 24px;
-    stroke: var(--dark-mauve);
-    transition: stroke 0.3s ease;
-}
-
-.about-full-close:hover svg {
-    stroke: var(--white);
-}
-
+/* Hereda los estilos de about — mismo max-width y padding */
 .about-full-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: clamp(80px, 12vw, 140px) 40px clamp(60px, 8vw, 100px);
+    padding: clamp(40px, 6vw, 80px) 40px clamp(60px, 8vw, 100px);
 }
 
 /* About Hero - titular grande + 2 párrafos en grid */
@@ -1198,6 +1173,9 @@ section h2::after {
 .about-cap-header {
     margin-bottom: clamp(40px, 6vw, 80px);
     max-width: 900px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-eyebrow {
@@ -1216,20 +1194,13 @@ section h2::after {
     line-height: 1.05;
     letter-spacing: -0.5px;
     color: var(--dark-text);
-    margin: 0 0 2rem;
+    margin: 0;
+    text-align: center;
 }
 
 .about-cap-headline em {
     font-style: italic;
     color: var(--metallic-rose);
-}
-
-.about-cap-intro {
-    font-size: clamp(1rem, 1.3vw, 1.1rem);
-    line-height: 1.75;
-    color: var(--soft-gray);
-    font-weight: 300;
-    max-width: 640px;
 }
 
 .about-cap-list {
@@ -1357,77 +1328,15 @@ section h2::after {
         border-bottom: 0;
     }
 
-    .about-full-close {
-        top: 20px;
-        right: 20px;
-        width: 44px;
-        height: 44px;
-    }
 }
 
 /* ====================================
-   VISTA DE CV COMPLETA
+   CV — PÁGINA INDEPENDIENTE (cv.html)
    ==================================== */
-.cv-full-view {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--cream);
-    z-index: 10000;
-    overflow-y: auto;
-    opacity: 0;
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.cv-full-view.show {
-    display: block;
-    opacity: 1;
-}
-
-.cv-full-close {
-    position: fixed;
-    top: 30px;
-    right: 40px;
-    background: rgba(139, 112, 116, 0.2);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--metallic-rose);
-    color: var(--dark-mauve);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10001;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.cv-full-close:hover {
-    background: var(--metallic-rose);
-    transform: rotate(90deg) scale(1.1);
-}
-
-.cv-full-close svg {
-    width: 24px;
-    height: 24px;
-    stroke: var(--dark-mauve);
-    transition: stroke 0.3s ease;
-}
-
-.cv-full-close:hover svg {
-    stroke: var(--white);
-}
-
 .cv-full-content {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 100px 40px;
+    padding: 60px 40px 80px;
 }
 
 .cv-full-header {
@@ -1476,22 +1385,10 @@ section h2::after {
     justify-content: center;
 }
 
-/* Responsive CV Full View */
+/* Responsive CV */
 @media (max-width: 768px) {
-    .cv-full-close {
-        top: 15px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-    }
-
-    .cv-full-close svg {
-        width: 20px;
-        height: 20px;
-    }
-
     .cv-full-content {
-        padding: 60px 20px;
+        padding: 40px 20px;
     }
 
     .cv-full-header {
@@ -2331,26 +2228,8 @@ footer {
 }
 
 /* ====================================
-   VISTA DE PROYECTO INDIVIDUAL
+   PROYECTO — PÁGINA INDEPENDIENTE (project.html)
    ==================================== */
-.project-view {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--cream);
-    z-index: 10000;
-    overflow-y: auto;
-    opacity: 0;
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-view.show {
-    display: block;
-    opacity: 1;
-}
 
 /* Hero del Proyecto */
 .project-hero {
@@ -2367,38 +2246,6 @@ footer {
     display: block;
 }
 
-.project-close {
-    position: fixed;
-    top: 30px;
-    right: 40px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: var(--white);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10001;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.project-close:hover {
-    background: rgba(201, 169, 161, 0.5);
-    border-color: var(--metallic-rose);
-    transform: rotate(90deg) scale(1.1);
-}
-
-.project-close svg {
-    width: 24px;
-    height: 24px;
-}
 
 /* Breadcrumb */
 .project-breadcrumb {
@@ -2626,18 +2473,6 @@ footer {
 @media (max-width: 768px) {
     .project-hero {
         height: 70vh;
-    }
-
-    .project-close {
-        top: 15px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-    }
-
-    .project-close svg {
-        width: 20px;
-        height: 20px;
     }
 
     .project-breadcrumb {

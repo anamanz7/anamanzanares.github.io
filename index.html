@@ -51,10 +51,9 @@
         <!-- Menú Lateral -->
         <div id="mobile-menu" class="mobile-menu">
             <ul>
-                <li><a href="#about-view" onclick="openAboutView(event)" data-es="Sobre mí" data-en="About Me">Sobre mí</a></li>
+                <li><a href="about.html" data-es="Sobre mí" data-en="About Me">Sobre mí</a></li>
                 <li><a href="#portfolio" data-es="Portfolio" data-en="Portfolio">Portfolio</a></li>
-                <li><a href="#capacidades" data-es="Capacidades" data-en="Capabilities">Capacidades</a></li>
-                <li><a href="#cv-view" onclick="openCVView(event)" data-es="CV" data-en="CV">CV</a></li>
+                <li><a href="cv.html" data-es="CV" data-en="CV">CV</a></li>
                 <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
                 <li class="language-switcher">
                     <button id="language-toggle" class="language-btn" aria-label="Cambiar idioma">
@@ -92,7 +91,7 @@
                     <div class="carousel-slide active">
                         <img src="PORTFOLIO/MAS-CREATION/images/1 NOCHE.jpg" alt="MAS Creation - Flagship Store">
                         <div class="carousel-caption">
-                            <a href="#project/mas-creation" onclick="openProject(event, 'mas-creation')" class="carousel-caption-link">
+                            <a href="project.html?id=mas-creation" class="carousel-caption-link">
                                 <span class="carousel-eyebrow" data-es="Estudio independiente · Costa del Sol" data-en="Independent practice · Costa del Sol">Estudio independiente · Costa del Sol</span>
                                 <h2>MAS Creation</h2>
                                 <p data-es="Flagship Store - Espacios Efímeros" data-en="Flagship Store - Ephemeral Spaces">Flagship Store - Espacios Efímeros</p>
@@ -104,7 +103,7 @@
                     <div class="carousel-slide">
                         <img src="PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png" alt="BOM - Bombonería Boutique">
                         <div class="carousel-caption">
-                            <a href="#project/bom" onclick="openProject(event, 'bom')" class="carousel-caption-link">
+                            <a href="project.html?id=bom" class="carousel-caption-link">
                                 <span class="carousel-eyebrow" data-es="Estudio independiente · Costa del Sol" data-en="Independent practice · Costa del Sol">Estudio independiente · Costa del Sol</span>
                                 <h2>BOM</h2>
                                 <p data-es="Bombonería Boutique - Espacios Comerciales" data-en="Boutique Chocolate Shop - Commercial Spaces">Bombonería Boutique - Espacios Comerciales</p>
@@ -116,7 +115,7 @@
                     <div class="carousel-slide">
                         <img src="PORTFOLIO/ECI/mijas/dormitorio-ppal.jpg" alt="Casa Mijas - Proyecto Residencial">
                         <div class="carousel-caption">
-                            <a href="#project/residencial" onclick="openProject(event, 'residencial')" class="carousel-caption-link">
+                            <a href="project.html?id=residencial" class="carousel-caption-link">
                                 <span class="carousel-eyebrow" data-es="Estudio independiente · Costa del Sol" data-en="Independent practice · Costa del Sol">Estudio independiente · Costa del Sol</span>
                                 <h2>Casa Mijas</h2>
                                 <p data-es="Proyecto Residencial - Interiorismo" data-en="Residential Project - Interior Design">Proyecto Residencial - Interiorismo</p>
@@ -153,7 +152,7 @@
 
                 <div class="portfolio-grid-editorial">
                     <article class="feat-card" data-category="diseño">
-                        <a href="#project/mas-creation" class="feat-link" onclick="openProject(event, 'mas-creation')">
+                        <a href="project.html?id=mas-creation" class="feat-link">
                             <div class="feat-media">
                                 <img src="PORTFOLIO/MAS-CREATION/images/moodboard.jpg" alt="MAS Creation - Flagship Store" loading="lazy">
                             </div>
@@ -171,7 +170,7 @@
                     </article>
 
                     <article class="feat-card" data-category="interiorismo">
-                        <a href="#project/bom" class="feat-link" onclick="openProject(event, 'bom')">
+                        <a href="project.html?id=bom" class="feat-link">
                             <div class="feat-media">
                                 <img src="PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png" alt="BOM - Bombonería Boutique" loading="lazy">
                             </div>
@@ -189,7 +188,7 @@
                     </article>
 
                     <article class="feat-card" data-category="residencial">
-                        <a href="#project/residencial" class="feat-link" onclick="openProject(event, 'residencial')">
+                        <a href="project.html?id=residencial" class="feat-link">
                             <div class="feat-media">
                                 <img src="PORTFOLIO/ECI/mijas/dormitorio-ppal.jpg" alt="Casa Mijas - Proyecto Residencial" loading="lazy">
                             </div>
@@ -239,41 +238,11 @@
             </div>
         </div>
 
-        <section id="capacidades">
-            <div class="container">
-                <h2 data-es="Capacidades" data-en="Capabilities">Capacidades</h2>
-                <p class="section-subtitle" data-es="Lo que aporto a un estudio: gestión integral de proyectos, dominio técnico y mirada de diseño." data-en="What I bring to a studio: integral project management, technical command and a designer's eye.">Lo que aporto a un estudio: gestión integral de proyectos, dominio técnico y mirada de diseño.</p>
-
-                <div class="capacidades-grid">
-                    <div class="capacidad-card">
-                        <span class="capacidad-num">01</span>
-                        <h3 data-es="Gestión integral" data-en="Integral project management">Gestión integral</h3>
-                        <p data-es="Llevo proyectos de principio a fin: brief con cliente, concepto, planimetría, materiales, mobiliario, iluminación y dirección de obra hasta la entrega llave en mano." data-en="I run projects end-to-end: client brief, concept, plans, materials, furniture, lighting and on-site direction through to turnkey delivery.">Llevo proyectos de principio a fin: brief con cliente, concepto, planimetría, materiales, mobiliario, iluminación y dirección de obra hasta la entrega llave en mano.</p>
-                    </div>
-                    <div class="capacidad-card">
-                        <span class="capacidad-num">02</span>
-                        <h3 data-es="Documentación técnica" data-en="Technical documentation">Documentación técnica</h3>
-                        <p data-es="Plantas, alzados y secciones en AutoCAD. Memorias de calidades, mediciones y documentación de obra con la precisión que un estudio necesita." data-en="Plans, elevations and sections in AutoCAD. Specifications, measurements and on-site documentation with the precision a studio needs.">Plantas, alzados y secciones en AutoCAD. Memorias de calidades, mediciones y documentación de obra con la precisión que un estudio necesita.</p>
-                    </div>
-                    <div class="capacidad-card">
-                        <span class="capacidad-num">03</span>
-                        <h3 data-es="Visualización 3D" data-en="3D Visualisation">Visualización 3D</h3>
-                        <p data-es="Modelado en SketchUp y renders fotorrealistas con Vray y Enscape. Imágenes y vídeos para presentaciones de cliente y propuestas de proyecto." data-en="SketchUp modelling and photorealistic renders with Vray and Enscape. Images and walkthroughs for client presentations and project proposals.">Modelado en SketchUp y renders fotorrealistas con Vray y Enscape. Imágenes y vídeos para presentaciones de cliente y propuestas de proyecto.</p>
-                    </div>
-                    <div class="capacidad-card">
-                        <span class="capacidad-num">04</span>
-                        <h3 data-es="Cliente internacional" data-en="International clients">Cliente internacional</h3>
-                        <p data-es="Experiencia coordinando con clientes de distintas nacionalidades en la Costa del Sol. Trabajo en español e inglés, con sensibilidad para distintos contextos culturales." data-en="Experience coordinating with clients of different nationalities on the Costa del Sol. I work in Spanish and English, with sensitivity to different cultural contexts.">Experiencia coordinando con clientes de distintas nacionalidades en la Costa del Sol. Trabajo en español e inglés, con sensibilidad para distintos contextos culturales.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="cv">
             <div class="container">
                 <h2 data-es="Curriculum" data-en="Resume">Curriculum</h2>
                 <div class="cv-link-container">
-                    <a href="#cv-view" onclick="openCVView(event)" class="cv-download-link">
+                    <a href="cv.html" class="cv-download-link">
                         <span data-es="Ver Curriculum Completo" data-en="View Full Resume">Ver Curriculum Completo</span>
                     </a>
                 </div>
@@ -305,381 +274,7 @@
         </section>
     </main>
 
-    <!-- Vista de Sobre Mí Completa -->
-    <div id="about-view" class="about-full-view">
-        <button class="about-full-close" onclick="closeAboutView()" aria-label="Cerrar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-
-        <div class="about-full-content">
-            <!-- Hero: titular grande + 2 párrafos de bio -->
-            <section class="about-hero">
-                <h1 class="about-hero-title">
-                    <span data-es="Diseño" data-en="Design">Diseño</span>
-                    <em data-es="desde la" data-en="from the">desde la</em>
-                    <span data-es="Costa del Sol." data-en="Costa del Sol.">Costa del Sol.</span>
-                </h1>
-                <div class="about-hero-body">
-                    <p data-es="Trabajo en diseño de interiores desde 2022, especializándome en proyectos residenciales de alto nivel en la Costa del Sol. Gestiono proyectos completos desde el concepto inicial hasta la entrega final, coordinando equipos y trabajando directamente con clientes de diferentes culturas." data-en="I've been working in interior design since 2022, specialising in high-end residential projects on the Costa del Sol. I manage complete projects from initial concept to final delivery, coordinating teams and working directly with clients from different cultures.">Trabajo en diseño de interiores desde 2022, especializándome en proyectos residenciales de alto nivel en la Costa del Sol. Gestiono proyectos completos desde el concepto inicial hasta la entrega final, coordinando equipos y trabajando directamente con clientes de diferentes culturas.</p>
-                    <p data-es="Me gradué en Estudios Superiores de Diseño de Interiores en la Escuela de Artes de Almería. Actualmente formo parte del equipo de Decor Studio en El Corte Inglés Puerto Banús, donde coordino una media de 30 proyectos al año con un volumen de ventas superior al millón de euros." data-en="I graduated in Higher Studies in Interior Design at the School of Arts of Almería. I am currently part of the Decor Studio team at El Corte Inglés Puerto Banús, where I coordinate an average of 30 projects per year with annual sales exceeding one million euros.">Me gradué en Estudios Superiores de Diseño de Interiores en la Escuela de Artes de Almería. Actualmente formo parte del equipo de Decor Studio en El Corte Inglés Puerto Banús, donde coordino una media de 30 proyectos al año con un volumen de ventas superior al millón de euros.</p>
-                </div>
-            </section>
-
-            <!-- Retrato + párrafo final + CTA Hablemos -->
-            <section class="about-portrait">
-                <div class="about-photo">
-                    <!-- Reemplazar el placeholder por <img src="PORTFOLIO/retrato.jpg" alt="Ana Manzanares"> cuando tengamos foto -->
-                    <span class="about-photo-placeholder" data-es="[ Retrato profesional ]" data-en="[ Professional portrait ]">[ Retrato profesional ]</span>
-                </div>
-                <div class="about-portrait-body">
-                    <p data-es="Me interesa el diseño que respeta los materiales, la luz natural y los rituales de quien habita el espacio. Trabajo con clientes nacionales e internacionales y siempre con una mirada clara: la arquitectura debe servir a la vida, no a la inversa." data-en="I am interested in design that respects materials, natural light and the rituals of those who inhabit the space. I work with national and international clients with one clear belief: architecture should serve life, not the other way around.">Me interesa el diseño que respeta los materiales, la luz natural y los rituales de quien habita el espacio. Trabajo con clientes nacionales e internacionales y siempre con una mirada clara: la arquitectura debe servir a la vida, no a la inversa.</p>
-                    <a href="#contact" onclick="closeAboutView(); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior:'smooth'}), 550); return false;" class="btn">
-                        <span data-es="Hablemos" data-en="Get in touch">Hablemos</span>
-                        <span class="btn-arrow">→</span>
-                    </a>
-                </div>
-            </section>
-
-            <!-- Capacidades: 4 cosas que aporto a un estudio -->
-            <section class="about-capabilities">
-                <div class="about-cap-header">
-                    <span class="about-eyebrow" data-es="Capacidades · Para estudios" data-en="Capabilities · For studios">Capacidades · Para estudios</span>
-                    <h2 class="about-cap-headline">
-                        <span data-es="Lo que" data-en="What">Lo que</span>
-                        <em data-es="aporto" data-en="I bring">aporto</em>
-                        <span data-es="al equipo." data-en="to the team.">al equipo.</span>
-                    </h2>
-                    <p class="about-cap-intro" data-es="Lo que aporto a un estudio: gestión integral de proyectos, dominio técnico y mirada de diseño. Trabajo con clientes nacionales e internacionales y coordino equipos en todas las fases del proyecto." data-en="What I bring to a studio: integral project management, technical command and a designer's eye. I work with national and international clients and coordinate teams across every project phase.">Lo que aporto a un estudio: gestión integral de proyectos, dominio técnico y mirada de diseño. Trabajo con clientes nacionales e internacionales y coordino equipos en todas las fases del proyecto.</p>
-                </div>
-
-                <div class="about-cap-list">
-                    <div class="cap-row">
-                        <span class="cap-num">01 / 04</span>
-                        <h3 class="cap-title" data-es="Gestión integral" data-en="Integral project management">Gestión integral</h3>
-                        <p class="cap-desc" data-es="Llevo proyectos de principio a fin: brief con cliente, concepto, planimetría, materiales, mobiliario, iluminación y dirección de obra hasta la entrega llave en mano." data-en="I run projects end-to-end: client brief, concept, plans, materials, furniture, lighting and on-site direction through to turnkey delivery.">Llevo proyectos de principio a fin: brief con cliente, concepto, planimetría, materiales, mobiliario, iluminación y dirección de obra hasta la entrega llave en mano.</p>
-                    </div>
-                    <div class="cap-row">
-                        <span class="cap-num">02 / 04</span>
-                        <h3 class="cap-title" data-es="Documentación técnica" data-en="Technical documentation">Documentación técnica</h3>
-                        <p class="cap-desc" data-es="Plantas, alzados y secciones en AutoCAD. Memorias de calidades, mediciones y documentación de obra con la precisión que un estudio necesita." data-en="Plans, elevations and sections in AutoCAD. Specifications, measurements and on-site documentation with the precision a studio needs.">Plantas, alzados y secciones en AutoCAD. Memorias de calidades, mediciones y documentación de obra con la precisión que un estudio necesita.</p>
-                    </div>
-                    <div class="cap-row">
-                        <span class="cap-num">03 / 04</span>
-                        <h3 class="cap-title" data-es="Visualización 3D" data-en="3D Visualisation">Visualización 3D</h3>
-                        <p class="cap-desc" data-es="Modelado en SketchUp y renders fotorrealistas con Vray y Enscape. Imágenes y vídeos para presentaciones de cliente y propuestas de proyecto." data-en="SketchUp modelling and photorealistic renders with Vray and Enscape. Images and walkthroughs for client presentations and project proposals.">Modelado en SketchUp y renders fotorrealistas con Vray y Enscape. Imágenes y vídeos para presentaciones de cliente y propuestas de proyecto.</p>
-                    </div>
-                    <div class="cap-row">
-                        <span class="cap-num">04 / 04</span>
-                        <h3 class="cap-title" data-es="Cliente internacional" data-en="International clients">Cliente internacional</h3>
-                        <p class="cap-desc" data-es="Experiencia coordinando con clientes de distintas nacionalidades en la Costa del Sol. Trabajo en español e inglés, con sensibilidad para distintos contextos culturales." data-en="Experience coordinating with clients of different nationalities on the Costa del Sol. I work in Spanish and English, with sensitivity to different cultural contexts.">Experiencia coordinando con clientes de distintas nacionalidades en la Costa del Sol. Trabajo en español e inglés, con sensibilidad para distintos contextos culturales.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Stats: cifras destacadas -->
-            <section class="about-stats">
-                <div class="stat">
-                    <div class="stat-n">30+</div>
-                    <span class="stat-l" data-es="Proyectos al año" data-en="Projects per year">Proyectos al año</span>
-                </div>
-                <div class="stat">
-                    <div class="stat-n">1M€+</div>
-                    <span class="stat-l" data-es="Ventas anuales" data-en="Annual sales">Ventas anuales</span>
-                </div>
-                <div class="stat">
-                    <div class="stat-n">2022</div>
-                    <span class="stat-l" data-es="En la práctica" data-en="In practice">En la práctica</span>
-                </div>
-                <div class="stat">
-                    <div class="stat-n">ES · EN</div>
-                    <span class="stat-l" data-es="Idiomas de trabajo" data-en="Working languages">Idiomas de trabajo</span>
-                </div>
-            </section>
-        </div>
-    </div>
-
-    <!-- Vista de CV Completa -->
-    <div id="cv-view" class="cv-full-view">
-        <button class="cv-full-close" onclick="closeCVView()" aria-label="Cerrar CV">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-
-        <div class="cv-full-content">
-            <div class="cv-full-header">
-                <h1 data-es="Curriculum Vitae" data-en="Resume">Curriculum Vitae</h1>
-                <p class="cv-full-subtitle" data-es="Ana Manzanares - Diseñadora de Interiores" data-en="Ana Manzanares - Interior Designer">Ana Manzanares - Diseñadora de Interiores</p>
-            </div>
-
-            <div class="cv-full-body">
-                <div class="cv-block">
-                    <h3 data-es="Perfil Profesional" data-en="Professional Profile">Perfil Profesional</h3>
-                    <p data-es="Actualmente trabajo en un estudio de interiorismo, realizando proyectos integrales, desde la entrada del cliente hasta la entrega final del proyecto con llave en mano, trabajando con clientes de diferentes nacionalidades." data-en="I currently work at an interior design studio, carrying out comprehensive projects from client onboarding to final turnkey delivery, working with clients of different nationalities.">Actualmente trabajo en un estudio de interiorismo, realizando proyectos integrales, desde la entrada del cliente hasta la entrega final del proyecto con llave en mano, trabajando con clientes de diferentes nacionalidades.</p>
-                    <p data-es="Esta experiencia me ha permitido gestionar y coordinar una media de 30 proyectos al año, que van desde apartamentos vacacionales hasta villas de lujo, generando un volumen de ventas anual superior a 1.000.000€. Lidero un equipo y coordino las diferentes etapas del proceso de diseño, asegurando eficiencia y creatividad en cada proyecto." data-en="This experience has allowed me to manage and coordinate an average of 30 projects per year, ranging from vacation apartments to luxury villas, generating annual sales exceeding €1,000,000. I lead a team and coordinate the different stages of the design process, ensuring efficiency and creativity in each project.">Esta experiencia me ha permitido gestionar y coordinar una media de 30 proyectos al año, que van desde apartamentos vacacionales hasta villas de lujo, generando un volumen de ventas anual superior a 1.000.000€. Lidero un equipo y coordino las diferentes etapas del proceso de diseño, asegurando eficiencia y creatividad en cada proyecto.</p>
-                    <p data-es="Considero que uno de mis puntos fuertes es mi habilidad para adaptarme a los cambios y afrontar nuevos retos con flexibilidad y creatividad. Además, siempre me he mostrado abierta a seguir aprendiendo, escuchar diferentes perspectivas y aplicar nuevas técnicas para continuar mi crecimiento profesional." data-en="I consider one of my strengths to be my ability to adapt to changes and face new challenges with flexibility and creativity. Additionally, I have always been open to continuous learning, listening to different perspectives, and applying new techniques to continue my professional growth.">Considero que uno de mis puntos fuertes es mi habilidad para adaptarme a los cambios y afrontar nuevos retos con flexibilidad y creatividad. Además, siempre me he mostrado abierta a seguir aprendiendo, escuchar diferentes perspectivas y aplicar nuevas técnicas para continuar mi crecimiento profesional.</p>
-                </div>
-
-                <div class="cv-block">
-                    <h3 data-es="Experiencia" data-en="Experience">Experiencia</h3>
-                    <div class="cv-entry">
-                        <div class="cv-entry-header">
-                            <h4 data-es="Diseñadora de Interiores" data-en="Interior Designer">Diseñadora de Interiores</h4>
-                            <span class="cv-date" data-es="2022 - Actualidad" data-en="2022 - Present">2022 - Actualidad</span>
-                        </div>
-                        <p class="cv-company">Decor Studio - El Corte Inglés Puerto Banús</p>
-                        <ul class="cv-list">
-                            <li data-es="Gestión integral de proyectos residenciales de lujo desde el concepto inicial hasta la entrega final con llave en mano" data-en="Comprehensive management of luxury residential projects from initial concept to final turnkey delivery">Gestión integral de proyectos residenciales de lujo desde el concepto inicial hasta la entrega final con llave en mano</li>
-                            <li data-es="Liderazgo de equipo y coordinación de las diferentes etapas del proceso de diseño" data-en="Team leadership and coordination of different stages of the design process">Liderazgo de equipo y coordinación de las diferentes etapas del proceso de diseño</li>
-                            <li data-es="Coordinación con clientes internacionales de diferentes nacionalidades y equipos multidisciplinares" data-en="Coordination with international clients from different nationalities and multidisciplinary teams">Coordinación con clientes internacionales de diferentes nacionalidades y equipos multidisciplinares</li>
-                            <li data-es="Media de 30 proyectos anuales (apartamentos vacacionales hasta villas de lujo) con ventas superiores a 1.000.000€" data-en="Average of 30 annual projects (from vacation apartments to luxury villas) with sales exceeding €1,000,000">Media de 30 proyectos anuales (apartamentos vacacionales hasta villas de lujo) con ventas superiores a 1.000.000€</li>
-                        </ul>
-                    </div>
-                    <div class="cv-entry">
-                        <div class="cv-entry-header">
-                            <h4 data-es="Vendedora" data-en="Sales Associate">Vendedora</h4>
-                            <span class="cv-date" data-es="Verano 2021" data-en="Summer 2021">Verano 2021</span>
-                        </div>
-                        <p class="cv-company">El Corte Inglés Puerto Banús</p>
-                    </div>
-                </div>
-
-                <div class="cv-block">
-                    <h3 data-es="Formación" data-en="Education">Formación</h3>
-                    <div class="cv-entry">
-                        <div class="cv-entry-header">
-                            <h4 data-es="Estudios Superiores - Diseño de Interiores" data-en="Higher Degree - Interior Design">Estudios Superiores - Diseño de Interiores</h4>
-                            <span class="cv-date">2018 - 2022</span>
-                        </div>
-                        <p class="cv-company" data-es="Escuela de Artes de Almería" data-en="School of Arts of Almería">Escuela de Artes de Almería</p>
-                    </div>
-                    <div class="cv-entry">
-                        <div class="cv-entry-header">
-                            <h4 data-es="B2 Inglés Cambridge" data-en="B2 Cambridge English">B2 Inglés Cambridge</h4>
-                            <span class="cv-date" data-es="Actualidad" data-en="Currently studying">Actualidad</span>
-                        </div>
-                        <p class="cv-company">III School - Marbella</p>
-                    </div>
-                    <div class="cv-entry">
-                        <div class="cv-entry-header">
-                            <h4 data-es="B1 Inglés Cambridge" data-en="B1 Cambridge English">B1 Inglés Cambridge</h4>
-                            <span class="cv-date">2017 - 2018</span>
-                        </div>
-                        <p class="cv-company">III School - Marbella</p>
-                    </div>
-                    <div class="cv-entry">
-                        <div class="cv-entry-header">
-                            <h4 data-es="Bachillerato - Ciencias y Tecnología" data-en="High School - Science & Technology">Bachillerato - Ciencias y Tecnología</h4>
-                            <span class="cv-date">2015 - 2017</span>
-                        </div>
-                        <p class="cv-company">IES Río Verde - Marbella</p>
-                    </div>
-                </div>
-
-                <div class="cv-block">
-                    <h3 data-es="Herramientas y Software" data-en="Tools & Software">Herramientas y Software</h3>
-                    <div class="tools-grid">
-                        <div class="tool-item">
-                            <div class="skill-circle">
-                                <svg viewBox="0 0 120 120">
-                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
-                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 33.9292"></circle>
-                                </svg>
-                            </div>
-                            <p class="tool-name">AutoCAD</p>
-                        </div>
-                        <div class="tool-item">
-                            <div class="skill-circle">
-                                <svg viewBox="0 0 120 120">
-                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
-                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 33.9292"></circle>
-                                </svg>
-                            </div>
-                            <p class="tool-name">SketchUp</p>
-                        </div>
-                        <div class="tool-item">
-                            <div class="skill-circle">
-                                <svg viewBox="0 0 120 120">
-                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
-                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 67.8584"></circle>
-                                </svg>
-                            </div>
-                            <p class="tool-name">Vray</p>
-                        </div>
-                        <div class="tool-item">
-                            <div class="skill-circle">
-                                <svg viewBox="0 0 120 120">
-                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
-                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 67.8584"></circle>
-                                </svg>
-                            </div>
-                            <p class="tool-name">Enscape</p>
-                        </div>
-                        <div class="tool-item">
-                            <div class="skill-circle">
-                                <svg viewBox="0 0 120 120">
-                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
-                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 67.8584"></circle>
-                                </svg>
-                            </div>
-                            <p class="tool-name">Photoshop</p>
-                        </div>
-                        <div class="tool-item">
-                            <div class="skill-circle">
-                                <svg viewBox="0 0 120 120">
-                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
-                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 101.7876"></circle>
-                                </svg>
-                            </div>
-                            <p class="tool-name">InDesign</p>
-                        </div>
-                        <div class="tool-item">
-                            <div class="skill-circle">
-                                <svg viewBox="0 0 120 120">
-                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
-                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 101.7876"></circle>
-                                </svg>
-                            </div>
-                            <p class="tool-name">Illustrator</p>
-                        </div>
-                        <div class="tool-item">
-                            <div class="skill-circle">
-                                <svg viewBox="0 0 120 120">
-                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
-                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 135.7168"></circle>
-                                </svg>
-                            </div>
-                            <p class="tool-name">Procreate</p>
-                        </div>
-                        <div class="tool-item">
-                            <div class="skill-circle">
-                                <svg viewBox="0 0 120 120">
-                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
-                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 67.8584"></circle>
-                                </svg>
-                            </div>
-                            <p class="tool-name">Dialux</p>
-                        </div>
-                        <div class="tool-item">
-                            <div class="skill-circle">
-                                <svg viewBox="0 0 120 120">
-                                    <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
-                                    <circle class="circle-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 0"></circle>
-                                </svg>
-                            </div>
-                            <p class="tool-name" data-es="Microsoft Office" data-en="Microsoft Office">Microsoft Office</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cv-block">
-                    <h3 data-es="Idiomas" data-en="Languages">Idiomas</h3>
-                    <div class="cv-skills-row">
-                        <div class="cv-skill-item">
-                            <strong data-es="Español" data-en="Spanish">Español</strong>
-                            <span data-es="Nativo" data-en="Native">Nativo</span>
-                        </div>
-                        <div class="cv-skill-item">
-                            <strong data-es="Inglés" data-en="English">Inglés</strong>
-                            <span data-es="Intermedio/Alto (B2 en curso)" data-en="Upper Intermediate (B2 in progress)">Intermedio/Alto (B2 en curso)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cv-block">
-                    <h3 data-es="Información Adicional" data-en="Additional Information">Información Adicional</h3>
-                    <ul class="cv-list">
-                        <li data-es="Carné de conducir: A1 y B" data-en="Driver's license: A1 and B">Carné de conducir: A1 y B</li>
-                        <li data-es="Vehículo propio" data-en="Own vehicle">Vehículo propio</li>
-                        <li data-es="Disponibilidad para viajar" data-en="Available to travel">Disponibilidad para viajar</li>
-                    </ul>
-                </div>
-
-                <div class="cv-full-footer">
-                    <a href="PORTFOLIO/CURRICULUM ANA .pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; margin-right: 8px;">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        <span data-es="Descargar PDF" data-en="Download PDF">Descargar PDF</span>
-                    </a>
-                    <button class="btn btn-secondary" onclick="closeCVView()" data-es="← Volver" data-en="← Back">
-                        ← Volver
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Vista de Proyecto Individual -->
-    <div id="project-view" class="project-view">
-        <!-- Header del Proyecto con Imagen Hero -->
-        <div class="project-hero">
-            <img id="project-hero-image" src="" alt="" class="project-hero-img">
-            <button class="project-close" onclick="closeProject()" aria-label="Cerrar proyecto">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <div class="project-breadcrumb">
-                <a href="#portfolio" onclick="closeProject()" data-es="Portfolio" data-en="Portfolio">Portfolio</a>
-                <span>/</span>
-                <span id="project-breadcrumb-title"></span>
-            </div>
-        </div>
-
-        <!-- Contenido del Proyecto -->
-        <div class="project-content">
-            <div class="project-header">
-                <h1 id="project-title"></h1>
-                <div class="project-metadata">
-                    <span class="project-meta-item">
-                        <strong data-es="Año:" data-en="Year:">Año:</strong> <span id="project-year"></span>
-                    </span>
-                    <span class="project-meta-item">
-                        <strong data-es="Categoría:" data-en="Category:">Categoría:</strong> <span id="project-category"></span>
-                    </span>
-                    <span class="project-meta-item" id="project-location-item" style="display:none">
-                        <strong data-es="Ubicación:" data-en="Location:">Ubicación:</strong> <span id="project-location"></span>
-                    </span>
-                    <span class="project-meta-item" id="project-client-item" style="display:none">
-                        <strong data-es="Cliente:" data-en="Client:">Cliente:</strong> <span id="project-client"></span>
-                    </span>
-                    <span class="project-meta-item" id="project-role-item" style="display:none">
-                        <strong data-es="Rol:" data-en="Role:">Rol:</strong> <span id="project-role"></span>
-                    </span>
-                </div>
-            </div>
-
-            <!-- Grid de Renderizados (2 columnas, grande) -->
-            <div class="project-images-grid project-images-grid-large" id="project-renderizados-grid"></div>
-
-            <!-- Grid de Planos Técnicos (3 columnas, pequeño) -->
-            <div class="project-images-grid project-images-grid-small" id="project-planos-grid"></div>
-
-            <!-- Descripción del Proyecto (ahora después de las imágenes) -->
-            <div class="project-description" id="project-description"></div>
-
-            <!-- Historia del proyecto -->
-            <div class="project-story" id="project-story"></div>
-
-            <!-- Materiales -->
-            <div class="project-materials" id="project-materials"></div>
-
-            <!-- Botón para volver -->
-            <div class="project-footer">
-                <button class="btn btn-secondary" onclick="closeProject()" data-es="← Volver al Portfolio" data-en="← Back to Portfolio">
-                    ← Volver al Portfolio
-                </button>
-            </div>
-        </div>
-    </div>
+    <!-- [overlays eliminados: about, cv y project son ahora páginas independientes] -->
 
     <footer>
         <div class="footer-inner">
@@ -699,9 +294,9 @@
                 <span class="footer-eyebrow" data-es="Navegación" data-en="Sitemap">Navegación</span>
                 <ul class="footer-list">
                     <li><a href="#carousel-hero" data-es="Inicio" data-en="Home">Inicio</a></li>
-                    <li><a href="#about-view" onclick="openAboutView(event)" data-es="Sobre mí" data-en="About">Sobre mí</a></li>
+                    <li><a href="about.html" data-es="Sobre mí" data-en="About">Sobre mí</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#cv-view" onclick="openCVView(event)">CV</a></li>
+                    <li><a href="cv.html">CV</a></li>
                     <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
                 </ul>
             </div>

@@ -637,19 +637,23 @@ const projectsData = {
 };
 
 // ====================================
-// VISTA DE PROYECTO INDIVIDUAL
+// PÁGINA DE PROYECTO INDIVIDUAL (project.html)
 // ====================================
-function openProject(event, projectId) {
-    event.preventDefault();
+function initProjectPage() {
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get('id');
 
-    const project = projectsData[projectId];
-    if (!project) {
-        console.error('Proyecto no encontrado:', projectId);
+    if (!projectId || !projectsData[projectId]) {
+        document.getElementById('project-title').textContent = 'Proyecto no encontrado';
         return;
     }
 
+    const project = projectsData[projectId];
+
+    // Actualizar título de la pestaña
+    document.title = `${project.title} — Ana Manzanares`;
+
     // Obtener elementos del DOM
-    const projectView = document.getElementById('project-view');
     const projectTitle = document.getElementById('project-title');
     const projectYear = document.getElementById('project-year');
     const projectCategory = document.getElementById('project-category');
@@ -781,72 +785,9 @@ function openProject(event, projectId) {
         thumbnail.style.cursor = 'pointer';
     });
 
-    // Mostrar vista del proyecto
-    projectView.classList.add('show');
-    document.body.style.overflow = 'hidden';
-
-    // Scroll al inicio de la vista del proyecto
-    projectView.scrollTop = 0;
-
-    // Actualizar URL sin recargar la página
-    history.pushState({ projectId: projectId }, '', `#project/${projectId}`);
+    // Scroll al inicio
+    window.scrollTo(0, 0);
 }
-
-function closeProject() {
-    const projectView = document.getElementById('project-view');
-    projectView.classList.remove('show');
-    document.body.style.overflow = '';
-
-    // Actualizar URL
-    history.pushState(null, '', '#portfolio');
-}
-
-// Cerrar proyecto, CV o Sobre mí con tecla ESC
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        const projectView = document.getElementById('project-view');
-        const cvView = document.getElementById('cv-view');
-        const aboutView = document.getElementById('about-view');
-
-        if (projectView && projectView.classList.contains('show')) {
-            closeProject();
-        } else if (aboutView && aboutView.classList.contains('show')) {
-            closeAboutView();
-        } else if (cvView && cvView.classList.contains('show')) {
-            closeCVView();
-        }
-    }
-});
-
-// Manejar botón atrás del navegador
-window.addEventListener('popstate', function() {
-    const projectView = document.getElementById('project-view');
-    const cvView = document.getElementById('cv-view');
-    const aboutView = document.getElementById('about-view');
-
-    if (projectView && projectView.classList.contains('show')) {
-        closeProject();
-    } else if (aboutView && aboutView.classList.contains('show')) {
-        closeAboutView();
-    } else if (cvView && cvView.classList.contains('show')) {
-        closeCVView();
-    }
-});
-
-// Cargar proyecto si la URL tiene hash #project/
-window.addEventListener('load', function() {
-    const hash = window.location.hash;
-    if (hash.startsWith('#project/')) {
-        const projectId = hash.replace('#project/', '');
-        if (projectsData[projectId]) {
-            // Esperar a que el DOM esté completamente cargado
-            setTimeout(() => {
-                const fakeEvent = { preventDefault: () => {} };
-                openProject(fakeEvent, projectId);
-            }, 100);
-        }
-    }
-});
 
 // ====================================
 // LIGHTBOX PARA IMÁGENES
@@ -974,17 +915,9 @@ function switchLanguage(lang) {
     // Actualizar botón de idioma
     updateLanguageButton(lang);
 
-    // Si hay un proyecto abierto, recargarlo con el nuevo idioma
-    const projectView = document.getElementById('project-view');
-    if (projectView && projectView.classList.contains('show')) {
-        const hash = window.location.hash;
-        if (hash.startsWith('#project/')) {
-            const projectId = hash.replace('#project/', '');
-            if (projectsData[projectId]) {
-                const fakeEvent = { preventDefault: () => {} };
-                openProject(fakeEvent, projectId);
-            }
-        }
+    // Si estamos en una página de proyecto, refrescar contenido con el nuevo idioma
+    if (document.getElementById('project-title')) {
+        initProjectPage();
     }
 }
 
@@ -1001,121 +934,11 @@ function updateLanguageButton(lang) {
 }
 
 // ======================
-// VISTA DE CV COMPLETA
+// AUTO-INICIALIZACIÓN DE PÁGINAS INDEPENDIENTES
 // ======================
-
-// Función para abrir la vista del CV
-function openCVView(event) {
-    event.preventDefault();
-
-    const cvView = document.getElementById('cv-view');
-    const body = document.body;
-
-    // Mostrar vista del CV
-    cvView.style.display = 'block';
-
-    // Forzar reflow antes de agregar la clase 'show' para que la transición funcione
-    setTimeout(() => {
-        cvView.classList.add('show');
-    }, 10);
-
-    // Prevenir scroll en el body
-    body.style.overflow = 'hidden';
-
-    // Scroll al inicio de la vista del CV
-    cvView.scrollTop = 0;
-
-    // Actualizar URL sin causar scroll
-    history.pushState({ cvView: true }, '', '#cv-view');
-}
-
-// Función para cerrar la vista del CV
-function closeCVView() {
-    const cvView = document.getElementById('cv-view');
-    const body = document.body;
-
-    // Remover clase show para hacer fade out
-    cvView.classList.remove('show');
-
-    // Esperar a que termine la transición antes de ocultar
-    setTimeout(() => {
-        cvView.style.display = 'none';
-    }, 500);
-
-    // Restaurar scroll en el body
-    body.style.overflow = '';
-
-    // Limpiar hash de la URL
-    history.pushState("", document.title, window.location.pathname + window.location.search);
-
-    // Scroll a la sección de CV original
-    const cvSection = document.getElementById('cv');
-    if (cvSection) {
-        cvSection.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-// ======================
-// VISTA DE SOBRE MÍ COMPLETA (overlay)
-// ======================
-
-function openAboutView(event) {
-    if (event && event.preventDefault) event.preventDefault();
-
-    const aboutView = document.getElementById('about-view');
-    if (!aboutView) return;
-    const body = document.body;
-
-    // Cerrar menú lateral si está abierto
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu && mobileMenu.classList.contains('show-menu')) {
-        mobileMenu.classList.remove('show-menu');
-        body.classList.remove('menu-open');
-    }
-
-    aboutView.style.display = 'block';
-    setTimeout(() => aboutView.classList.add('show'), 10);
-
-    body.style.overflow = 'hidden';
-    aboutView.scrollTop = 0;
-
-    history.pushState({ aboutView: true }, '', '#about-view');
-}
-
-function closeAboutView() {
-    const aboutView = document.getElementById('about-view');
-    if (!aboutView) return;
-    const body = document.body;
-
-    aboutView.classList.remove('show');
-    setTimeout(() => { aboutView.style.display = 'none'; }, 500);
-
-    body.style.overflow = '';
-    history.pushState('', document.title, window.location.pathname + window.location.search);
-}
-
-// Event listener para detectar hash al cargar la página
-window.addEventListener('load', function() {
-    const hash = window.location.hash;
-    if (hash === '#cv-view') {
-        const fakeEvent = { preventDefault: () => {} };
-        setTimeout(() => openCVView(fakeEvent), 100);
-    } else if (hash === '#about-view') {
-        const fakeEvent = { preventDefault: () => {} };
-        setTimeout(() => openAboutView(fakeEvent), 100);
-    }
-});
-
-// Event listener para cerrar con tecla ESC
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        const cvView = document.getElementById('cv-view');
-        const aboutView = document.getElementById('about-view');
-        if (aboutView && aboutView.classList.contains('show')) {
-            closeAboutView();
-        } else if (cvView && cvView.classList.contains('show')) {
-            closeCVView();
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.getElementById('project-title')) {
+        initProjectPage();
     }
 });
 
