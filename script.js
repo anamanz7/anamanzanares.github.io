@@ -324,66 +324,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ====================================
-    // EFECTO PARALLAX SUAVE EN HERO
-    // ====================================
-    const hero = document.getElementById('hero');
-    if (hero) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallaxSpeed = 0.5;
-            hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-        });
-    }
-
-    // ====================================
-    // CONTADOR ANIMADO (si hay números)
-    // ====================================
-    function animateCounter(element, target, duration = 2000) {
-        let start = 0;
-        const increment = target / (duration / 16);
-
-        const timer = setInterval(() => {
-            start += increment;
-            if (start >= target) {
-                element.textContent = target;
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(start);
-            }
-        }, 16);
-    }
-
-    // ====================================
-    // LAZY LOADING DE IMÁGENES
-    // ====================================
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add('loaded');
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    images.forEach(img => imageObserver.observe(img));
-
-    // ====================================
-    // DETECCIÓN DE MÓVIL
-    // ====================================
-    const isMobile = window.innerWidth <= 768;
-
-    // Ajustar comportamiento según dispositivo
-    if (isMobile) {
-        // Deshabilitar parallax en móvil
-        if (hero) {
-            hero.style.transform = 'none';
-        }
-    }
-
-    // ====================================
     // RESIZE HANDLER
     // ====================================
     let resizeTimer;

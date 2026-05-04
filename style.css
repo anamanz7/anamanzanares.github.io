@@ -235,9 +235,12 @@ header.light-bg .mobile-menu-toggle span {
     width: 100%;
 }
 
-/* Botón de Cambio de Idioma en el Menú */
+/* Botón de Cambio de Idioma y Tema en el Menú */
 .mobile-menu .language-switcher {
     margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .language-btn {
@@ -267,13 +270,6 @@ header.light-bg .mobile-menu-toggle span {
 .lang-divider {
     color: var(--soft-gray);
     margin: 0 8px;
-}
-
-/* Botón de tema oscuro/claro */
-.mobile-menu .language-switcher {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
 }
 
 .theme-btn {
