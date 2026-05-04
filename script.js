@@ -620,7 +620,7 @@ const projectsData = {
                 caption: { es: 'Salón - Vista general con luz natural', en: 'Living Room - General view with natural light' }
             },
             {
-                src: 'PORTFOLIO/ECI/mijas/dormitorio-ppal.png',
+                src: 'PORTFOLIO/ECI/mijas/dormitorio-ppal.jpg',
                 caption: { es: 'Dormitorio Principal - Suite con vestidor', en: 'Master Bedroom - Suite with walk-in closet' }
             },
             {
