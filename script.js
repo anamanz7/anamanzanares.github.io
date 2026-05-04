@@ -425,6 +425,22 @@ const projectsData = {
             es: 'Espacios Comerciales',
             en: 'Commercial Spaces'
         },
+        location: { es: 'Almería, España', en: 'Almería, Spain' },
+        client: { es: 'Proyecto académico — Edificio protegido', en: 'Academic project — Listed building' },
+        role: { es: 'Diseño integral y dirección de arte', en: 'Integral design & art direction' },
+        materials: ['Mármol Calacatta', 'Latón pulido', 'Madera de nogal', 'Terrazo a medida', 'Vidrio curvado'],
+        story: {
+            es: [
+                'El edificio, catalogado como protegido, condicionaba todas las decisiones de proyecto. Trabajar dentro de esos límites se convirtió en una oportunidad: la arquitectura existente dictó el ritmo del espacio y el diseño se acomodó a ella, no al revés.',
+                'Las referencias Art Déco aparecen filtradas — geometrías suaves, latón pulido, mármoles veteados — sin caer en la nostalgia. El bombón, como objeto, ocupa el centro de la composición: vitrinas a media altura, iluminación puntual y mobiliario que enmarca cada pieza como si fuera una joya.',
+                'El escaparate funciona como pieza independiente: un diorama urbano que cambia con las colecciones de temporada y dialoga con la fachada original del edificio.'
+            ],
+            en: [
+                'The building, listed as a protected heritage site, shaped every project decision. Working within those limits became an opportunity: the existing architecture set the rhythm of the space and the design adapted to it, not the other way around.',
+                'Art Deco references appear filtered — soft geometries, polished brass, veined marble — without falling into nostalgia. The chocolate, as an object, takes centre stage: mid-height display cases, accent lighting and furniture that frame each piece like a jewel.',
+                'The shopfront works as a standalone piece: an urban diorama that changes with seasonal collections and dialogues with the building\'s original façade.'
+            ]
+        },
         heroImage: 'PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png',
         description: {
             es: `
@@ -489,6 +505,22 @@ const projectsData = {
         category: {
             es: 'Espacios Efímeros',
             en: 'Ephemeral Spaces'
+        },
+        location: { es: 'Valencia, España', en: 'Valencia, Spain' },
+        client: 'Masquespacio',
+        role: { es: 'Diseño conceptual y desarrollo', en: 'Concept design & development' },
+        materials: ['Acero corten', 'Vidrio coloreado', 'Microcemento', 'Latón cepillado', 'Madera tintada'],
+        story: {
+            es: [
+                'El proyecto nace de un encargo poco habitual: convertir un container marítimo en una tienda insignia capaz de viajar y montarse en cualquier ubicación. La premisa era clara — el espacio debía sentirse permanente, aunque su naturaleza fuera efímera.',
+                'Trabajamos sobre el lenguaje visual de Masquespacio: curvas blandas, vidrios tintados, materiales nobles y una iluminación teatral que convierte el container en un objeto luminoso al caer la noche. La fachada exterior funciona como instalación urbana; el interior, como una pequeña galería comercial.',
+                'El reto técnico fue resolver toda la instalación dentro de las dimensiones de un 40 pies, garantizando que el montaje y desmontaje pudieran realizarse en menos de 48 horas en cualquier ciudad.'
+            ],
+            en: [
+                'The project began with an unusual brief: turn a shipping container into a flagship store capable of travelling and being installed anywhere. The premise was clear — the space had to feel permanent, even if its nature was ephemeral.',
+                'We worked from Masquespacio\'s visual language: soft curves, tinted glass, noble materials and theatrical lighting that turns the container into a glowing object after dark. The façade works as an urban installation; the interior, as a small commercial gallery.',
+                'The technical challenge was fitting the entire installation within a 40ft container, ensuring that setup and breakdown could happen in under 48 hours in any city.'
+            ]
         },
         heroImage: 'PORTFOLIO/MAS-CREATION/images/moodboard.jpg',
         description: {
@@ -575,6 +607,22 @@ const projectsData = {
             es: 'Interiorismo Residencial',
             en: 'Residential Interior Design'
         },
+        location: { es: 'Mijas, Málaga', en: 'Mijas, Málaga' },
+        client: { es: 'Cliente privado internacional', en: 'International private client' },
+        role: { es: 'Proyecto integral llave en mano', en: 'Integral turnkey project' },
+        materials: ['Roble natural', 'Travertino', 'Lino y lana', 'Microcemento beige', 'Latón mate'],
+        story: {
+            es: [
+                'Una vivienda en la Costa del Sol con uso mixto — residencia habitual y casa de invitados — que necesitaba sentirse cálida sin renunciar a un acabado de lujo. La luz natural de Mijas, intensa y horizontal, fue el primer material del proyecto.',
+                'La paleta combina tonos arena y cremas con maderas claras y textiles naturales. El mobiliario se eligió mezclando piezas de autor con artesanía local, generando una atmósfera personal que evita el catálogo.',
+                'Coordiné el proyecto desde la primera reunión con el cliente hasta la entrega con llave en mano: planimetría, renders, selección de materiales, mobiliario, iluminación y dirección de obra.'
+            ],
+            en: [
+                'A home on the Costa del Sol with mixed use — primary residence and guest house — that needed to feel warm without giving up a luxury finish. The natural light of Mijas, intense and horizontal, was the first material in the project.',
+                'The palette combines sand tones and creams with light woods and natural textiles. Furniture was chosen mixing designer pieces with local craftsmanship, generating a personal atmosphere that avoids feeling catalogue-like.',
+                'I led the project from the first client meeting through to turnkey handover: plans, renders, material selection, furniture, lighting and on-site direction.'
+            ]
+        },
         heroImage: 'PORTFOLIO/ECI/mijas/comedor.png',
         description: {
             es: `
@@ -640,8 +688,10 @@ function openProject(event, projectId) {
     const projectBreadcrumbTitle = document.getElementById('project-breadcrumb-title');
     const projectRenderizadosGrid = document.getElementById('project-renderizados-grid');
     const projectPlanosGrid = document.getElementById('project-planos-grid');
+    const projectStory = document.getElementById('project-story');
+    const projectMaterials = document.getElementById('project-materials');
 
-    // Rellenar información del proyecto
+    // Rellenar información básica del proyecto
     projectTitle.textContent = project.title;
     projectYear.textContent = project.year;
     projectCategory.textContent = typeof project.category === 'object' ? project.category[currentLanguage] : project.category;
@@ -649,6 +699,46 @@ function openProject(event, projectId) {
     projectHeroImage.src = project.heroImage;
     projectHeroImage.alt = project.title;
     projectBreadcrumbTitle.textContent = project.title;
+
+    // Rellenar metadatos opcionales (ubicación, cliente, rol)
+    const locationItem = document.getElementById('project-location-item');
+    const clientItem = document.getElementById('project-client-item');
+    const roleItem = document.getElementById('project-role-item');
+    if (project.location && locationItem) {
+        document.getElementById('project-location').textContent = typeof project.location === 'object' ? project.location[currentLanguage] : project.location;
+        locationItem.style.display = '';
+    } else if (locationItem) { locationItem.style.display = 'none'; }
+    if (project.client && clientItem) {
+        document.getElementById('project-client').textContent = typeof project.client === 'object' ? project.client[currentLanguage] : project.client;
+        clientItem.style.display = '';
+    } else if (clientItem) { clientItem.style.display = 'none'; }
+    if (project.role && roleItem) {
+        document.getElementById('project-role').textContent = typeof project.role === 'object' ? project.role[currentLanguage] : project.role;
+        roleItem.style.display = '';
+    } else if (roleItem) { roleItem.style.display = 'none'; }
+
+    // Rellenar historia del proyecto
+    if (projectStory) {
+        if (project.story) {
+            const storyParagraphs = (typeof project.story === 'object' ? project.story[currentLanguage] : project.story) || [];
+            const storyLabel = currentLanguage === 'es' ? 'Historia del proyecto' : 'Project story';
+            projectStory.innerHTML = `<h3 class="project-section-title">${storyLabel}</h3>` +
+                storyParagraphs.map(p => `<p>${p}</p>`).join('');
+        } else {
+            projectStory.innerHTML = '';
+        }
+    }
+
+    // Rellenar materiales
+    if (projectMaterials) {
+        if (project.materials && project.materials.length > 0) {
+            const materialsLabel = currentLanguage === 'es' ? 'Materiales' : 'Materials';
+            projectMaterials.innerHTML = `<h3 class="project-section-title">${materialsLabel}</h3>` +
+                `<ul class="project-materials-list">${project.materials.map(m => `<li>${m}</li>`).join('')}</ul>`;
+        } else {
+            projectMaterials.innerHTML = '';
+        }
+    }
 
     // Limpiar y rellenar grid de renderizados
     projectRenderizadosGrid.innerHTML = '';
@@ -741,14 +831,17 @@ function closeProject() {
     history.pushState(null, '', '#portfolio');
 }
 
-// Cerrar proyecto o CV con tecla ESC
+// Cerrar proyecto, CV o Sobre mí con tecla ESC
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         const projectView = document.getElementById('project-view');
         const cvView = document.getElementById('cv-view');
+        const aboutView = document.getElementById('about-view');
 
         if (projectView && projectView.classList.contains('show')) {
             closeProject();
+        } else if (aboutView && aboutView.classList.contains('show')) {
+            closeAboutView();
         } else if (cvView && cvView.classList.contains('show')) {
             closeCVView();
         }
@@ -759,9 +852,12 @@ document.addEventListener('keydown', function(e) {
 window.addEventListener('popstate', function() {
     const projectView = document.getElementById('project-view');
     const cvView = document.getElementById('cv-view');
+    const aboutView = document.getElementById('about-view');
 
     if (projectView && projectView.classList.contains('show')) {
         closeProject();
+    } else if (aboutView && aboutView.classList.contains('show')) {
+        closeAboutView();
     } else if (cvView && cvView.classList.contains('show')) {
         closeCVView();
     }
@@ -989,12 +1085,54 @@ function closeCVView() {
     }
 }
 
+// ======================
+// VISTA DE SOBRE MÍ COMPLETA (overlay)
+// ======================
+
+function openAboutView(event) {
+    if (event && event.preventDefault) event.preventDefault();
+
+    const aboutView = document.getElementById('about-view');
+    if (!aboutView) return;
+    const body = document.body;
+
+    // Cerrar menú lateral si está abierto
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu && mobileMenu.classList.contains('show-menu')) {
+        mobileMenu.classList.remove('show-menu');
+        body.classList.remove('menu-open');
+    }
+
+    aboutView.style.display = 'block';
+    setTimeout(() => aboutView.classList.add('show'), 10);
+
+    body.style.overflow = 'hidden';
+    aboutView.scrollTop = 0;
+
+    history.pushState({ aboutView: true }, '', '#about-view');
+}
+
+function closeAboutView() {
+    const aboutView = document.getElementById('about-view');
+    if (!aboutView) return;
+    const body = document.body;
+
+    aboutView.classList.remove('show');
+    setTimeout(() => { aboutView.style.display = 'none'; }, 500);
+
+    body.style.overflow = '';
+    history.pushState('', document.title, window.location.pathname + window.location.search);
+}
+
 // Event listener para detectar hash al cargar la página
 window.addEventListener('load', function() {
     const hash = window.location.hash;
     if (hash === '#cv-view') {
         const fakeEvent = { preventDefault: () => {} };
         setTimeout(() => openCVView(fakeEvent), 100);
+    } else if (hash === '#about-view') {
+        const fakeEvent = { preventDefault: () => {} };
+        setTimeout(() => openAboutView(fakeEvent), 100);
     }
 });
 
@@ -1002,7 +1140,10 @@ window.addEventListener('load', function() {
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         const cvView = document.getElementById('cv-view');
-        if (cvView && cvView.classList.contains('show')) {
+        const aboutView = document.getElementById('about-view');
+        if (aboutView && aboutView.classList.contains('show')) {
+            closeAboutView();
+        } else if (cvView && cvView.classList.contains('show')) {
             closeCVView();
         }
     }

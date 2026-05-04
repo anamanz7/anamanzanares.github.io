@@ -563,19 +563,6 @@ section h2::after {
     background: var(--metallic-rose);
 }
 
-#about p {
-    max-width: 850px;
-    margin: 0 auto 2rem;
-    line-height: 1.9;
-    color: var(--soft-gray);
-    text-align: justify;
-    font-size: 1.05rem;
-}
-
-#about p:last-child {
-    margin-bottom: 0;
-}
-
 /* Portfolio Editorial Grid - Layout alternado imagen/info */
 .section-subtitle {
     text-align: center;
@@ -827,6 +814,117 @@ section h2::after {
     box-shadow: 0 6px 25px rgba(201, 169, 161, 0.5);
 }
 
+/* ====================================
+   CAROUSEL EYEBROW
+   ==================================== */
+.carousel-eyebrow {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(248, 246, 244, 0.7);
+    margin-bottom: 0.6rem;
+}
+
+/* ====================================
+   SECCIÓN CAPACIDADES
+   ==================================== */
+#capacidades {
+    background: var(--cream);
+}
+
+.capacidades-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+    border: 1px solid var(--beige-accent);
+}
+
+.capacidad-card {
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--beige-accent);
+    transition: background 0.3s ease;
+}
+
+.capacidad-card:hover {
+    background: var(--light-beige);
+}
+
+.capacidad-num {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--metallic-rose);
+    margin-bottom: 1rem;
+}
+
+.capacidad-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 0.8rem;
+}
+
+.capacidad-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--soft-gray);
+}
+
+@media (max-width: 600px) {
+    .capacidades-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ====================================
+   PROYECTO: HISTORIA Y MATERIALES
+   ==================================== */
+.project-story,
+.project-materials {
+    max-width: 720px;
+    margin: 2.5rem auto 0;
+    padding: 0 1rem;
+}
+
+.project-section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--metallic-rose);
+    margin-bottom: 1.2rem;
+}
+
+.project-story p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--soft-gray);
+    margin-bottom: 1rem;
+}
+
+.project-materials-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-materials-list li {
+    background: var(--light-beige);
+    border: 1px solid var(--beige-accent);
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    color: var(--dark-mauve);
+}
+
 #cv {
     text-align: center;
     background: linear-gradient(135deg, var(--light-beige) 0%, var(--cream) 100%);
@@ -896,6 +994,341 @@ section h2::after {
 
     .cv-download-link span {
         font-size: 0.95rem;
+    }
+}
+
+/* ====================================
+   VISTA DE SOBRE MÍ COMPLETA (overlay)
+   ==================================== */
+.about-full-view {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--cream);
+    z-index: 10000;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-full-view.show {
+    display: block;
+    opacity: 1;
+}
+
+.about-full-close {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    background: rgba(139, 112, 116, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--metallic-rose);
+    color: var(--dark-mauve);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-full-close:hover {
+    background: var(--metallic-rose);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.about-full-close svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--dark-mauve);
+    transition: stroke 0.3s ease;
+}
+
+.about-full-close:hover svg {
+    stroke: var(--white);
+}
+
+.about-full-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(80px, 12vw, 140px) 40px clamp(60px, 8vw, 100px);
+}
+
+/* About Hero - titular grande + 2 párrafos en grid */
+.about-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 100px);
+    align-items: end;
+    padding-bottom: clamp(60px, 8vw, 120px);
+}
+
+.about-hero-title {
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    font-weight: 300;
+    line-height: 1.02;
+    color: var(--dark-text);
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.about-hero-title em {
+    font-style: italic;
+    color: var(--metallic-rose);
+    display: block;
+}
+
+.about-hero-body p {
+    font-size: clamp(1rem, 1.4vw, 1.1rem);
+    line-height: 1.75;
+    color: var(--soft-gray);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.about-hero-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* Retrato + texto + CTA */
+.about-portrait {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    padding: clamp(60px, 8vw, 100px) 0;
+    border-top: 1px solid var(--beige-accent);
+    align-items: stretch;
+}
+
+.about-photo {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: repeating-linear-gradient(135deg, var(--light-beige) 0 24px, var(--cream) 24px 48px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--beige-accent);
+}
+
+.about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-photo-placeholder {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dark-mauve);
+    opacity: 0.6;
+    text-align: center;
+    padding: 1rem;
+}
+
+.about-portrait-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+}
+
+.about-portrait-body p {
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    line-height: 1.75;
+    color: var(--soft-gray);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+
+.about-portrait-body .btn {
+    align-self: flex-start;
+}
+
+/* Capacidades — 4 cosas que aporto a un estudio */
+.about-capabilities {
+    padding: clamp(60px, 8vw, 100px) 0;
+    border-top: 1px solid var(--beige-accent);
+}
+
+.about-cap-header {
+    margin-bottom: clamp(40px, 6vw, 80px);
+    max-width: 900px;
+}
+
+.about-eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dark-mauve);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.about-cap-headline {
+    font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    color: var(--dark-text);
+    margin: 0 0 2rem;
+}
+
+.about-cap-headline em {
+    font-style: italic;
+    color: var(--metallic-rose);
+}
+
+.about-cap-intro {
+    font-size: clamp(1rem, 1.3vw, 1.1rem);
+    line-height: 1.75;
+    color: var(--soft-gray);
+    font-weight: 300;
+    max-width: 640px;
+}
+
+.about-cap-list {
+    border-top: 1px solid var(--beige-accent);
+}
+
+.cap-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 2fr;
+    gap: clamp(20px, 4vw, 60px);
+    padding: clamp(28px, 4vw, 48px) 0;
+    border-bottom: 1px solid var(--beige-accent);
+    align-items: start;
+    transition: background 0.4s ease, padding-left 0.4s ease;
+}
+
+.cap-row:hover {
+    background: linear-gradient(135deg, transparent, rgba(201, 169, 161, 0.06));
+    padding-left: 1.2rem;
+}
+
+.cap-num {
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    color: var(--metallic-rose);
+    font-weight: 500;
+    padding-top: 0.4rem;
+}
+
+.cap-title {
+    font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+    font-weight: 300;
+    color: var(--dark-text);
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+    margin: 0;
+    transition: color 0.4s ease;
+}
+
+.cap-row:hover .cap-title {
+    color: var(--metallic-rose);
+}
+
+.cap-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--soft-gray);
+    font-weight: 300;
+    margin: 0;
+    max-width: 560px;
+}
+
+/* Stats al fondo */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--beige-accent);
+    border-bottom: 1px solid var(--beige-accent);
+    margin-top: clamp(40px, 6vw, 80px);
+}
+
+.about-stats .stat {
+    padding: clamp(28px, 4vw, 48px) 1rem;
+    border-right: 1px solid var(--beige-accent);
+    text-align: left;
+}
+
+.about-stats .stat:last-child {
+    border-right: none;
+}
+
+.stat-n {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--metallic-rose);
+    line-height: 1;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+.stat-l {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--dark-mauve);
+    font-weight: 500;
+}
+
+@media (max-width: 820px) {
+    .about-hero,
+    .about-portrait {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-portrait-body {
+        padding-bottom: 0;
+    }
+
+    .cap-row {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+
+    .cap-num {
+        padding-top: 0;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-stats .stat {
+        border-right: 0;
+        border-bottom: 1px solid var(--beige-accent);
+    }
+
+    .about-stats .stat:nth-child(odd) {
+        border-right: 1px solid var(--beige-accent);
+    }
+
+    .about-stats .stat:nth-last-child(-n+2) {
+        border-bottom: 0;
+    }
+
+    .about-full-close {
+        top: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
     }
 }
 
