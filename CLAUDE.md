@@ -11,32 +11,31 @@ Portfolio profesional de Ana Manzanares, diseñadora de interiores con base en l
 
 ---
 
-## 📐 Arquitectura del sitio — SPA manual
+## 📐 Arquitectura del sitio — Multi-página estática
 
-El sitio es una única página `index.html` con secciones verticales. Las "vistas" secundarias son overlays CSS/JS que se superponen con `position: fixed` y clase `.show`.
+El sitio tiene una página principal (`index.html`) y páginas independientes por sección. **No hay overlays ni modales.** Cada vista es una página real con su propia URL.
 
 ```
-index.html       ← Toda la estructura HTML
-style.css        ← Todos los estilos (con variables CSS en :root)
-script.js        ← Toda la lógica: carrusel, proyectos, idioma, lightbox, CV
+index.html       ← Home: carrusel + portfolio + cv mini + contacto
+about.html       ← Página "Sobre mí" (bio + capacidades + stats)
+cv.html          ← Página "Curriculum Vitae" completo
+project.html     ← Plantilla de proyecto; lee ?id= de la URL
+style.css        ← Todos los estilos compartidos (variables CSS en :root)
+script.js        ← Lógica compartida: carrusel, idioma, lightbox, initProjectPage()
 fonts/           ← Fuente custom Fabada (para el nombre del header)
-emojis/          ← Assets de emojis (no usados actualmente)
 PORTFOLIO/       ← Imágenes y PDFs de proyectos (ver PORTFOLIO/CLAUDE.md)
 paleta-colores.png ← Referencia visual de la paleta
 ```
 
-### Flujo de vistas (3 estados)
-1. **Página principal** → secciones: Carrusel → Sobre mí → Portfolio → CV → Contacto
-2. **Vista de proyecto** (`#project/[id]`) → overlay fullscreen con renders + planos + descripción
-3. **Vista de CV** (`#cv-view`) → overlay fullscreen con CV detallado
+### Flujo de navegación
+- **Home** (`index.html`) → carrusel, portfolio, mini-CV, contacto
+- **Sobre mí** (`about.html`) → bio, capacidades, stats
+- **CV** (`cv.html`) → experiencia, formación, herramientas, idiomas
+- **Proyecto** (`project.html?id=bom`) → hero imagen + renders + planos + descripción
 
-### Sistema de URL/hash
-```js
-history.pushState({ projectId }, '', `#project/mas-creation`);  // abre proyecto
-history.pushState({ cvView: true }, '', '#cv-view');             // abre CV
-// Al cargar: detecta hash → restaura vista
-// popstate: cierra vistas al navegar atrás
-```
+### Comportamiento del header en páginas interiores
+- `about.html` y `cv.html` tienen `<body class="page-inner">` → header arranca con estilo claro (texto `--dark-mauve`) sin flash
+- `project.html` no tiene `page-inner` → header transparente sobre la imagen hero oscura del proyecto
 
 ---
 
@@ -62,8 +61,8 @@ history.pushState({ cvView: true }, '', '#cv-view');             // abre CV
 - Fallbacks: `'Segoe UI', Tahoma, Geneva, Verdana, sans-serif`
 
 ### Comportamiento del header
-- **Sobre fondo oscuro** (carrusel/hero): texto color `--light-beige`, hamburger claro
-- **Sobre fondo claro** (secciones): clase `.light-bg` → texto `--dark-mauve`, hamburger oscuro
+- **Sobre fondo oscuro** (carrusel/hero de proyecto): texto `--light-beige`, hamburger claro
+- **Sobre fondo claro** (secciones claras o páginas interiores): clase `.light-bg` → texto `--dark-mauve`
 - **Al hacer scroll >200px**: clase `.scrolled` → header compacto, fuente más pequeña
 - **Menú lateral** (hamburger): aparece desde la izquierda, fondo crema degradado
 
@@ -71,20 +70,23 @@ history.pushState({ cvView: true }, '', '#cv-view');             // abre CV
 - Minimalista, mucho espacio en blanco, sin colores saturados
 - Animaciones sutiles (fade-in con IntersectionObserver, transiciones 0.4s ease)
 - Grid del portfolio: irregular (asimétrico), no cuadrícula perfecta
+- **Sin overlays/modales** — toda navegación usa URLs reales
 
 ---
 
-## 📋 Secciones del sitio
+## 📋 Páginas del sitio
 
-| ID | Nombre | Contenido |
+| Archivo | URL | Contenido |
 |---|---|---|
-| `#carousel-hero` | Carrusel | 3 slides fullscreen, caption clickable → abre proyecto |
-| `#about` | Sobre mí | Bio profesional, 2-3 párrafos |
-| `#portfolio` | Portfolio | Grid irregular, 3 tarjetas con hover overlay |
-| `#cv` | Curriculum | Enlace para abrir overlay del CV |
-| `#contact` | Contacto | Instagram + email |
-| `#project-view` | Vista Proyecto | Overlay: hero + grid renders + grid planos + descripción |
-| `#cv-view` | Vista CV | Overlay: experiencia, formación, herramientas (círculos SVG), idiomas |
+| `index.html` | `/` | Carrusel hero + portfolio grid + mini-CV + contacto |
+| `about.html` | `/about.html` | Bio + capacidades (4 áreas) + stats numéricos |
+| `cv.html` | `/cv.html` | Perfil + experiencia + formación + software + idiomas |
+| `project.html?id=bom` | `/project.html?id=bom` | Proyecto BOM |
+| `project.html?id=mas-creation` | `/project.html?id=mas-creation` | Proyecto MAS Creation |
+| `project.html?id=residencial` | `/project.html?id=residencial` | Casa Mijas |
+
+### Estructura del header en las páginas secundarias
+El `<h1>` lleva un `<a href="index.html" class="header-home-link">` para que el nombre sea clickable y lleve al home.
 
 ---
 
@@ -107,8 +109,8 @@ Vivienda residencial en Mijas, estilo contemporáneo mediterráneo.
 ### Para añadir un nuevo proyecto
 1. Añadir imágenes en `PORTFOLIO/[NOMBRE]/`
 2. Añadir objeto en `projectsData` en `script.js` con: `title`, `year`, `category {es, en}`, `heroImage`, `description {es, en}`, `renderizados[]`, `planos[]`
-3. Añadir `<article class="portfolio-card">` en `#portfolio` en `index.html`
-4. Añadir slide en `#carousel-hero` si se desea destacar
+3. Añadir `<article class="feat-card">` en `#portfolio` en `index.html` con `href="project.html?id=[nuevo-id]"`
+4. Añadir slide en `#carousel-hero` si se desea destacar (también actualizar enlace a `project.html?id=...`)
 
 ---
 
@@ -123,35 +125,35 @@ Vivienda residencial en Mijas, estilo contemporáneo mediterráneo.
 // En script.js:
 // - switchLanguage(lang) actualiza TODOS los [data-es][data-en]
 // - Se persiste en localStorage('preferredLanguage')
-// - Si hay proyecto abierto al cambiar idioma → se recarga automáticamente
-// - Las descripciones en projectsData también son billingüe: { es: '...', en: '...' }
+// - En project.html, al cambiar idioma → llama initProjectPage() para refrescar contenido
+// - Las descripciones en projectsData también son bilingüe: { es: '...', en: '...' }
 ```
 
 ---
 
 ## ⚙️ Funciones JavaScript clave
 
-| Función | Descripción |
-|---|---|
-| `openProject(event, id)` | Rellena y muestra overlay de proyecto desde `projectsData` |
-| `closeProject()` | Cierra overlay de proyecto |
-| `openCVView(event)` | Abre overlay del CV completo |
-| `closeCVView()` | Cierra overlay del CV |
-| `openLightbox(images, idx)` | Lightbox de imágenes con navegación (teclado, click) |
-| `switchLanguage(lang)` | Cambia idioma global, guarda en localStorage |
+| Función | Dónde se usa | Descripción |
+|---|---|---|
+| `initProjectPage()` | `project.html` (auto) | Lee `?id=` de la URL, puebla el DOM con datos de `projectsData` |
+| `openLightbox(images, idx)` | `project.html` | Lightbox de imágenes con navegación (teclado, click) |
+| `switchLanguage(lang)` | Todas las páginas | Cambia idioma global, guarda en localStorage |
+| `toggleDarkMode()` | Todas las páginas | Alterna tema claro/oscuro |
 
-**Variables globales** (necesarias porque `onclick` en HTML las llama directamente):
+**Variables globales** (necesarias para que `initProjectPage()` y la traducción funcionen):
 - `currentLanguage` — idioma actual ('es' o 'en')
 - `projectsData` — objeto con todos los datos de proyectos
 
+**`initProjectPage()` se auto-invoca**: el `DOMContentLoaded` de `script.js` detecta si existe `#project-title` en el DOM y llama la función automáticamente — no hace falta `onclick`.
+
 ---
 
-## 🖼️ Carrusel Hero
+## 🖼️ Carrusel Hero (solo en index.html)
 
 ```
-Slide 1 → MAS-CREATION/images/1 NOCHE.jpg   → openProject('mas-creation')
-Slide 2 → BOM/imagenes/render-escaparate-1-ok.png → openProject('bom')
-Slide 3 → ECI/mijas/dormitorio-ppal.png     → openProject('residencial')
+Slide 1 → MAS-CREATION/images/1 NOCHE.jpg       → project.html?id=mas-creation
+Slide 2 → BOM/imagenes/render-escaparate-1-ok.png → project.html?id=bom
+Slide 3 → ECI/mijas/dormitorio-ppal.jpg          → project.html?id=residencial
 ```
 - Autoplay: 5 segundos
 - Pausa: hover del mouse
@@ -168,7 +170,7 @@ Slide 3 → ECI/mijas/dormitorio-ppal.png     → openProject('residencial')
 - **Idiomas**: Español nativo, Inglés B2 en progreso (III School, Marbella)
 - **Software**: AutoCAD, SketchUp, Vray, Enscape, Photoshop, InDesign, Illustrator, Procreate, Dialux, MS Office
 - **Contacto web**: @anamanz_ (Instagram), anamanzanaresg@gmail.com
-- **CV PDF**: `PORTFOLIO/CURRICULUM ANA .pdf` (tiene espacio en el nombre — no renombrar sin actualizar HTML)
+- **CV PDF**: `PORTFOLIO/CURRICULUM ANA .pdf` (tiene espacio en el nombre — no renombrar sin actualizar `cv.html`)
 
 ---
 
@@ -197,7 +199,7 @@ python3 -m http.server 8000  # luego abrir http://localhost:8000
 - **Indentación**: 4 espacios (HTML, CSS, JS)
 - **HTML**: semántico, `alt` en todas las imágenes, `aria-label` en botones
 - **CSS**: variables CSS para colores, comentarios de sección, mobile-first
-- **JS**: funciones globales para `onclick` HTML, secciones con `// ====` comentarios
+- **JS**: funciones globales para detección automática de página, secciones con `// ====` comentarios
 - **Versioning de assets**: `style.css?v=X.X.X` y `script.js?v=X.X.X` — incrementar al hacer cambios importantes para invalidar caché
 - **Commits**: descriptivos en español
 
@@ -205,21 +207,22 @@ python3 -m http.server 8000  # luego abrir http://localhost:8000
 
 ## 📋 TODOs / Mejoras Pendientes
 
-- [ ] Meta tags SEO (description, og:image, twitter:card)
-- [ ] Favicon personalizado
 - [ ] Añadir 4º proyecto (villa-1 de ECI u otro trabajo reciente)
 - [ ] Planos técnicos para "Casa Mijas" (actualmente `planos: []`)
+- [ ] Foto/retrato profesional de Ana en `about.html` (actualmente placeholder)
+- [ ] Formulario de contacto funcional (actualmente solo links a email/Instagram)
 - [ ] Optimizar imágenes del carrusel (son las más pesadas en carga inicial)
-- [ ] Sección "Proceso / Servicios" o "Sobre mi trabajo"
-- [ ] Formulario de contacto funcional (actualmente solo son links)
 - [ ] Analytics (Google Analytics o Plausible.io)
+- [ ] Meta tags OG específicos por página (og:image, og:url diferente por proyecto)
 
 ---
 
 ## 🚫 Reglas Importantes
 
 - NUNCA commitear `.DS_Store`, `.env*`, archivos de log grandes
-- El nombre del PDF tiene espacio: `CURRICULUM ANA .pdf` — no renombrar sin actualizar `index.html`
+- El nombre del PDF tiene espacio: `CURRICULUM ANA .pdf` — no renombrar sin actualizar `cv.html`
 - Las imágenes con espacios en nombre (ej. `1 DIA HORIZ.jpg`) funcionan directamente en `src=`
 - Las variables `projectsData` y `currentLanguage` deben permanecer globales en `script.js`
 - Mantener coherencia visual: NO añadir colores fuera de la paleta de variables CSS
+- **NO volver a overlays/modales** — la arquitectura es de páginas independientes
+- Los enlaces entre páginas usan rutas relativas simples (`about.html`, `cv.html`, `project.html?id=X`)
