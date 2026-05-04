@@ -413,6 +413,36 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ====================================
+// MODO OSCURO
+// ====================================
+function toggleDarkMode() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const newTheme = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('preferredTheme', newTheme);
+    const moonIcon = document.getElementById('theme-icon-moon');
+    const sunIcon = document.getElementById('theme-icon-sun');
+    if (moonIcon && sunIcon) {
+        moonIcon.style.display = newTheme === 'dark' ? 'none' : '';
+        sunIcon.style.display = newTheme === 'dark' ? '' : 'none';
+    }
+}
+
+// Aplicar tema guardado al cargar
+(function() {
+    const savedTheme = localStorage.getItem('preferredTheme');
+    if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        const moonIcon = document.getElementById('theme-icon-moon');
+        const sunIcon = document.getElementById('theme-icon-sun');
+        if (moonIcon && sunIcon) {
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = '';
+        }
+    }
+})();
+
+// ====================================
 // SISTEMA DE TRADUCCIÓN
 // ====================================
 let currentLanguage = 'es'; // Idioma por defecto: español

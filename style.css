@@ -25,6 +25,20 @@
     --white: #ffffff;
 }
 
+/* Modo oscuro — tonos cálidos, no negro OLED */
+[data-theme="dark"] {
+    --cream: #1c1918;
+    --light-beige: #242020;
+    --beige-accent: #3c3230;
+    --sand: #4a3a38;
+    --metallic-rose: #c9a9a1;
+    --metallic-mauve: #b39b9a;
+    --dark-mauve: #c4b0ae;
+    --dark-text: #f0ece9;
+    --soft-gray: #b0a8a5;
+    --white: #1c1918;
+}
+
 body {
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.7;
@@ -253,6 +267,29 @@ header.light-bg .mobile-menu-toggle span {
 .lang-divider {
     color: var(--soft-gray);
     margin: 0 8px;
+}
+
+/* Botón de tema oscuro/claro */
+.mobile-menu .language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--dark-text);
+    display: flex;
+    align-items: center;
+    opacity: 0.65;
+    transition: opacity 0.2s ease;
+}
+
+.theme-btn:hover {
+    opacity: 1;
 }
 
 main {
