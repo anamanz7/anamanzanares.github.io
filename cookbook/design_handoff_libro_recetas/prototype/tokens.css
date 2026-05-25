@@ -1,0 +1,245 @@
+/* =====================================================================
+   mac-soles — Core design tokens
+   Source of truth: the live Angular SPA in /mac-soles/src/
+   Three colors. One typeface. No exceptions.
+   ===================================================================== */
+
+/* --- Webfont -------------------------------------------------------- */
+@font-face {
+  font-family: "Syne";
+  src: url("fonts/Syne-VariableFont_wght.ttf") format("truetype-variations"),
+       url("fonts/Syne-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =====================================================================
+   BASE TOKENS
+   ===================================================================== */
+:root {
+  /* Palette — the only three colors allowed in the system */
+  --olive:  #253518;
+  --terra:  #C4622D;
+  --cream:  #F6EBD9;
+
+  /* Typography */
+  --font-sans: "Syne", system-ui, sans-serif;
+
+  /* Weights — all of 400 / 700 / 800 are used on text in the live site.
+     500 / 600 are unused. */
+  --fw-regular: 400;  /* used ONLY at ≥24px (list/step descriptions) */
+  --fw-bold:    700;  /* body, labels, footer, step numbers */
+  --fw-black:   800;  /* card h1, list/step headings */
+
+  /* Type scale — lifted from the shipped Angular components.
+     All sizes satisfy WCAG AA-large: ≥20px at 700+ OR ≥24px at any weight. */
+  --fs-card-h1:     30px;   /* card title, 800, line-height 1.2 */
+  --fs-item-desc:   24px;   /* list/step description, 400, line-height 1.6 */
+  --fs-body:        22px;   /* card body paragraph, 700, line-height 1.75 */
+  --fs-card-label:  20px;   /* uppercase eyebrow, 700, tracking 0.18em */
+  --fs-item-h:      20px;   /* list/step heading, 800 */
+  --fs-step-num:    20px;   /* step number in accent, 700, tracking 0.08em */
+  --fs-footer:      20px;   /* footer text + links, 700 */
+
+  /* Line-height */
+  --lh-tight: 1.2;   /* card h1 */
+  --lh-body:  1.6;   /* list/step descriptions */
+  --lh-loose: 1.75;  /* card body paragraphs */
+
+  /* Letter-spacing */
+  --ls-label: 0.18em;   /* uppercase eyebrows / footer labels */
+  --ls-step:  0.08em;   /* step numbers only */
+  --ls-normal: 0;
+
+  /* Spacing — 8px-ish base, with documented exceptions (20, 28, 36)
+     where a component's intrinsic rhythm called for them. */
+  --sp-1:   4px;
+  --sp-2:   8px;
+  --sp-3:  16px;
+  --sp-4:  20px;  /* card heading margin, list item gap */
+  --sp-5:  24px;  /* section gap */
+  --sp-6:  28px;  /* content-panel horizontal padding (1.75rem) */
+  --sp-7:  36px;  /* card vertical padding */
+  --sp-8:  40px;  /* footer py */
+  --sp-9:  56px;  /* nav left offset */
+  --sp-10: 64px;  /* footer px */
+
+  /* Borders — 1px is the whole system. 2px survives only on the skip link. */
+  --bw-rule:     1px;
+  --bw-skiplink: 2px;
+
+  /* Radius — ZERO on layout. 2px on every focus ring + the skip link. */
+  --radius-focus: 2px;
+
+  /* Motion — two systems, and only two.
+     1) Theme transitions: 500ms ease on color-family properties.
+     2) Logo dash: 350ms cubic-bezier transform on the dash + letters. */
+  --dur-theme: 500ms;
+  --ease-theme: ease;
+  --dur-logo:  350ms;
+  --ease-logo: cubic-bezier(0.4, 0, 0.2, 1);
+  --t-colors: background-color var(--dur-theme) var(--ease-theme),
+              color            var(--dur-theme) var(--ease-theme),
+              border-color     var(--dur-theme) var(--ease-theme),
+              fill             var(--dur-theme) var(--ease-theme),
+              stroke           var(--dur-theme) var(--ease-theme);
+
+  /* Layout */
+  --page-max: 1440px;
+  --nav-left: 56px;
+
+  /* Focus ring — 2px accent, 3px offset. Logo uses 4px offset by exception. */
+  --focus-width: 2px;
+  --focus-offset: 3px;
+}
+
+/* =====================================================================
+   SEMANTIC ROLES — driven by [data-theme]
+   The live rotation from src/styles.css.
+   NEVER reference --olive/--terra/--cream directly in components;
+   always use --bg, --text, --accent, --border.
+   ===================================================================== */
+
+/* Default / "c" — Creative — the heaviest, darkest page */
+:root,
+[data-theme="c"] {
+  --bg:     var(--olive);
+  --text:   var(--cream);
+  --accent: var(--terra);
+}
+
+/* "m" — Machine Intelligence — warm terra page, olive ink, cream accent */
+[data-theme="m"] {
+  --bg:     var(--terra);
+  --text:   var(--olive);
+  --accent: var(--cream);
+}
+
+/* "a" — Accessibility — cream page, terra ink, olive accent */
+[data-theme="a"] {
+  --bg:     var(--cream);
+  --text:   var(--terra);
+  --accent: var(--olive);
+}
+
+/* All dividers/borders are accent-colored. */
+:root {
+  --border: var(--accent);
+}
+
+/* =====================================================================
+   ELEMENT DEFAULTS
+   ===================================================================== */
+html { background: var(--bg); color: var(--text); transition: var(--t-colors); }
+body {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
+  line-height: var(--lh-loose);
+  letter-spacing: var(--ls-normal);
+  background: var(--bg);
+  color: var(--text);
+  transition: var(--t-colors);
+  margin: 0;
+}
+
+h1 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-card-h1);
+  line-height: var(--lh-tight);
+  margin: 0;
+}
+
+p { margin: 0; line-height: var(--lh-loose); }
+
+/* Card label / eyebrow — uppercase, 20/700, accent color */
+.label, [data-role="label"] {
+  font-size: var(--fs-card-label);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-label);
+  color: var(--accent);
+  transition: color var(--dur-theme) var(--ease-theme);
+}
+
+/* titleAccent — a span of the h1 rendered in accent color */
+h1 em, h1 [data-role="title-accent"] {
+  font-style: normal;
+  color: var(--accent);
+  transition: color var(--dur-theme) var(--ease-theme);
+}
+
+/* Links — no underlines; inherit text color; shift to accent on hover */
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+  transition: color var(--dur-theme) var(--ease-theme);
+}
+a:hover { color: var(--accent); }
+
+/* Focus — always visible, 2px accent, 3px offset, 2px radius */
+:focus-visible {
+  outline: var(--focus-width) solid var(--accent);
+  outline-offset: var(--focus-offset);
+  border-radius: var(--radius-focus);
+}
+
+/* Skip link — the only non-focus use of the 2px radius */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: var(--sp-3);
+  z-index: 9999;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--bg);
+  color: var(--text);
+  border: var(--bw-skiplink) solid var(--accent);
+  border-radius: var(--radius-focus);
+  font-size: 14px;
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.skip-link:focus { top: var(--sp-3); }
+
+/* Card block — as used by content-panel */
+.card { padding: var(--sp-7) var(--sp-6); }
+.card + .card {
+  border-top: var(--bw-rule) solid var(--border);
+  transition: border-color var(--dur-theme) var(--ease-theme);
+}
+
+/* Lists — item headings at 800/20, descriptions at 400/24 */
+.list, .steps {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-5) 0 0;
+}
+.list > li + li, .steps > li + li { margin-top: var(--sp-5); }
+.list strong, .steps strong {
+  display: block;
+  font-size: var(--fs-item-h);
+  font-weight: var(--fw-black);
+  margin-bottom: var(--sp-1);
+}
+.list span, .steps span {
+  font-size: var(--fs-item-desc);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+}
+
+/* Steps — numbered list, accent number */
+.steps > li { display: flex; gap: var(--sp-3); align-items: flex-start; }
+.steps .num {
+  font-size: var(--fs-step-num);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-step);
+  color: var(--accent);
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+/* Never apply opacity to text. If you think you need it, you don't. */
