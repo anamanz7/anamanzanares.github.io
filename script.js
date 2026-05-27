@@ -633,6 +633,51 @@ const projectsData = {
             }
         ],
         planos: []
+    },
+
+    'atypical': {
+        title: 'Atypical',
+        year: '2024',
+        category: {
+            es: 'TFG · Restauración y Moda',
+            en: 'Final Degree Project · Gastronomy & Fashion'
+        },
+        location: { es: 'Marbella, Málaga', en: 'Marbella, Málaga' },
+        client: { es: 'Proyecto Fin de Grado — Escuela de Artes Almería', en: 'Final Degree Project — School of Arts Almería' },
+        role: { es: 'Proyecto académico integral', en: 'Comprehensive academic project' },
+        materials: ['Microcemento blanco', 'Terrazo', 'Estuco texturizado', 'Madera natural', 'Vegetación mediterránea'],
+        story: {
+            es: [
+                'Atypical nace de la fusión de dos disciplinas aparentemente opuestas: la gastronomía mediterránea y la moda de alto diseño. Un espacio polivalente en el corazón del casco histórico de Marbella donde comer y vivir la moda se convierten en una misma experiencia.',
+                'El local ocupa un edificio en esquina de 1953, con muros de mampostería de piedra de hasta 80 cm de grosor distribuido en tres plantas. La intervención respeta la estructura original e integra líneas orgánicas inspiradas en el Art Nouveau, con una paleta de tonos neutros y detalles vegetales mediterráneos.',
+                'Todo el mobiliario —bancos corridos, mesas, sillas— fue diseñado a medida para adaptarse a las geometrías del espacio. La primera planta alberga el comedor principal, iluminado por una claraboya de 6×2m. La segunda planta se reserva como sala privada para clientes VIP y reuniones de marca.'
+            ],
+            en: [
+                'Atypical was born from the fusion of two seemingly opposite disciplines: Mediterranean gastronomy and high-end fashion. A versatile space in the heart of Marbella\'s historic quarter, where dining and experiencing fashion become one and the same.',
+                'The space occupies a 1953 corner building with stone masonry walls up to 80 cm thick, spread across three floors. The intervention preserves the original structure while integrating Art Nouveau-inspired organic lines, a neutral colour palette and Mediterranean plant details.',
+                'All furniture — banquette seating, tables, chairs — was custom-designed to fit the geometry of the space. The first floor houses the main dining room, lit by a 6×2m skylight. The second floor is reserved as a private room for VIP clients and brand meetings.'
+            ]
+        },
+        heroImage: 'PORTFOLIO/ATYPICAL/render-comedor-principal.jpg',
+        description: {
+            es: `
+                <p>Proyecto Fin de Grado desarrollado en Marbella. Atypical es un espacio de restauración y moda de alto diseño situado en un edificio en esquina de 1953 en el casco histórico de la ciudad, en la Plaza General Chinchilla.</p>
+                <p>El concepto fusiona gastronomía mediterránea y moda de alta gama en un espacio polivalente de tres plantas. La intervención preserva los muros de mampostería de piedra originales e integra líneas orgánicas inspiradas en el Art Nouveau, vegetación mediterránea y mobiliario diseñado íntegramente para el proyecto.</p>
+                <p>La documentación incluye memoria constructiva, normativa, instalaciones completas (electricidad, fontanería, saneamiento, climatización), presupuesto y mediciones.</p>
+            `,
+            en: `
+                <p>Final Degree Project developed in Marbella. Atypical is a high-design restaurant and fashion space located in a 1953 corner building in the city's historic quarter, at Plaza General Chinchilla.</p>
+                <p>The concept merges Mediterranean gastronomy and high-end fashion into a versatile three-floor space. The intervention preserves the original stone masonry walls while integrating Art Nouveau-inspired organic lines, Mediterranean vegetation, and furniture designed entirely for the project.</p>
+                <p>The documentation includes construction report, building regulations compliance, full installations (electrical, plumbing, drainage, HVAC), budget and measurements.</p>
+            `
+        },
+        renderizados: [
+            {
+                src: 'PORTFOLIO/ATYPICAL/render-comedor-principal.jpg',
+                caption: { es: 'Comedor principal — vista desde el arco', en: 'Main dining room — view through the arch' }
+            }
+        ],
+        planos: []
     }
 };
 
