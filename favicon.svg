@@ -1,4 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#2a2a2a"/>
-  <text x="32" y="44" font-family="Georgia, serif" font-size="26" font-weight="400" fill="#c9a9a1" text-anchor="middle" letter-spacing="1">AM</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABtElEQVR4nGN8/ezxf4YBBEwDafmoA0ZDAARYyEk4j+/cY7h9+RrD62fPGX5+/8HAzsnBIColwaCsrckgp6rMwMjISLRZjKRkw18/fzIc3LSd4en9hzjVSMrLMjj4eYEdRVUH/P//n2HHirUMLx8/ZeAXEmTQszQD+5qbl4fh6+cvDG+ev2C4dPw0w4e378DinlGhDExMTNSLgtuXroItBxnuHh7EwMLKCpfjExQAY3k1FYZdq9YzvHzyjOHG+UsMWsYG1CuIbl64DKat3J1RLEcGzCwsDJbuzmD2rYtXiDKXiRhFf37/YXj78hUDFw8Pg6CoCF61AsJCDDz8fAwf3rxl+PXjJ3Uc8OPbNzDNwUVcwuLg4gLT379+pY4D/v75C6Z//fzF8O8vhI0L/Pv3j+H3r18QfQTUggBJ5cCXj58YFvVOYRhWtSELKYq5eXkZglLjwKkdX3RtnL+E4dP7D9QPAXZOdryWgwAzCzMDOwdxiZVkB9ACMI06gGHUASQBIhsajFQuB7h4uRm4+XgZxGWkiDJUTFqK4dvnL2A9VG0R0QIw0cTUUQeQAJgYBhgwjXgHAADlpoRSRgGP8wAAAABJRU5ErkJggg==" width="32" height="32"/>
 </svg>
